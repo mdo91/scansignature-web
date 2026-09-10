@@ -31,11 +31,11 @@ Pushing to `main` runs **Validate SignDocs website**, which installs the locked 
 
 To launch the site:
 
-1. In the repository's **Settings → Pages**, the **Source** must be **GitHub Actions**.
+1. **Settings → Pages** is configured with **GitHub Actions** as the source and HTTPS enforcement enabled.
 2. Open [Publish SignDocs to GitHub Pages](https://github.com/mdo91/scansignature-web/actions/workflows/deploy-pages.yml) under **Actions**, select **Run workflow**, and choose `main`.
-3. When deployment succeeds, the site will be available at [mdo91.github.io/scansignature-web](https://mdo91.github.io/scansignature-web/).
+3. When deployment succeeds, GitHub's configured site URL is [damascenerose.com/scansignature-web](https://damascenerose.com/scansignature-web/). This project inherits the account's existing custom domain; no separate domain is configured on this repository.
 
-The publishing workflow obtains the repository path from GitHub Pages and sets `NEXT_PUBLIC_BASE_PATH` at build time. This supports the project site at `https://mdo91.github.io/scansignature-web/` and a root/custom-domain site. Only `site/dist/client` is uploaded.
+The publishing workflow obtains the repository path from GitHub Pages and sets `NEXT_PUBLIC_BASE_PATH` at build time. The current project uses `/scansignature-web`, including under the inherited custom domain. The workflow also supports a root/custom-domain site if the Pages configuration changes. Only `site/dist/client` is uploaded.
 
 The build includes `site/scripts/prepare-static.mjs`, which places Vinext's path-prefixed export at the artifact root. GitHub Pages supplies the URL prefix when serving the artifact.
 
