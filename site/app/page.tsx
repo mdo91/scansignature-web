@@ -11,6 +11,7 @@ import {
   Check,
 } from 'lucide-react';
 import FeatureGallery from './feature-gallery';
+import SiteFooter from '@/components/site-footer';
 
 const appStoreUrl = 'https://apps.apple.com/app/id6805875185';
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
@@ -240,25 +241,7 @@ export default function Home() {
           <p className="download-note">For iPhone and iPad.</p>
         </section>
       </main>
-      <footer className="site-footer wrap">
-        <a className="brand footer-brand" href="#" aria-label="SignDocs home">
-          <img
-            src={asset('app-logo.png')}
-            width="28"
-            height="28"
-            alt=""
-            loading="lazy"
-          />
-          <span>SignDocs</span>
-        </a>
-        <p>© {new Date().getFullYear()} SignDocs</p>
-        <nav aria-label="Footer navigation">
-          <a href="#privacy">On-device privacy</a>
-          <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">
-            Terms of Use <ArrowUpRight size={13} aria-hidden="true" />
-          </a>
-        </nav>
-      </footer>
+      <SiteFooter />
     </>
   );
 }

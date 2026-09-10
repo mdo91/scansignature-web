@@ -22,6 +22,10 @@ if (basePath) {
   await rename(staging, output);
 }
 
-await access(join(output, 'index.html'));
+for (const page of ['index.html', 'terms/index.html', 'privacy/index.html']) {
+  await access(join(output, page));
+}
 await access(join(output, '.nojekyll'));
-console.log(`Static website ready in dist/client (URL path: ${basePath || '/'}).`);
+console.log(
+  `Static website ready in dist/client (URL path: ${basePath || '/'}).`,
+);

@@ -40,6 +40,8 @@ jobs:
       - name: Verify the publication artifact
         run: |
           test -f site/dist/client/index.html
+          test -f site/dist/client/terms/index.html
+          test -f site/dist/client/privacy/index.html
           test -f site/dist/client/.nojekyll
           test -f site/dist/client/mockup/main.png
           test -f site/dist/client/mockup/DownloadAppleBadge.svg

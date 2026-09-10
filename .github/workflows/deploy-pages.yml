@@ -41,7 +41,7 @@ jobs:
         working-directory: site
         env:
           NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
-      - name: Verify the landing page artifact
+      - name: Verify the website artifact
         run: |
           test -f site/dist/client/index.html
           test -f site/dist/client/.nojekyll
@@ -52,6 +52,12 @@ jobs:
           const html = readFileSync('site/dist/client/index.html', 'utf8');
           for (const marker of ['id="hero-title"', 'id="features"', 'id="privacy"', 'id6805875185']) {
             if (!html.includes(marker)) throw new Error(`Missing landing page content: ${marker}`);
+          }
+          for (const route of ['terms', 'privacy']) {
+            const legal = readFileSync(`site/dist/client/${route}/index.html`, 'utf8');
+            for (const marker of ['Damas Technologies LLC', 'mailto:hi@damastechnologies.com']) {
+              if (!legal.includes(marker)) throw new Error(`Missing ${route} content: ${marker}`);
+            }
           }
           JS
       - name: Upload static website

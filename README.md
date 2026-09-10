@@ -53,18 +53,28 @@ Build without that variable for the custom domain or the root-path local product
 - `site/app/feature-gallery.tsx`: five feature captions and the accessible manual carousel.
 - `site/app/globals.css`: responsive layout, typography, and colors.
 - `site/app/layout.tsx`: page title, descriptions, and icons.
+- `site/app/terms/page.tsx`: Terms of Use, supplementing Apple's Standard EULA.
+- `site/app/privacy/page.tsx`: Privacy Policy covering local files, planned AppsFlyer attribution, support, and hosting.
+- `site/components/legal-page.tsx`: shared legal document layout and table of contents.
+- `site/components/site-footer.tsx`: ownership, legal links, and contact information on every page.
 - `mockup/`: untouched source assets.
 - `site/public/mockup/`: published assets; the app icon is reduced for web delivery.
 
-The site uses React, Vinext static export, and the supplied Shadcn/Embla carousel primitive. On-device privacy statements describe the app's processing, as provided in the product description. The footer links to that explanation and Apple's standard EULA, not an invented legal privacy policy.
+The site uses React, Vinext static export, and the supplied Shadcn/Embla carousel primitive. On-device privacy statements describe the app's document and signature processing, as provided in the product description. The footer links to the [Privacy Policy](https://scansignature.app/privacy/), [Terms of Use](https://scansignature.app/terms/), and hi@damastechnologies.com. Both legal pages identify Damas Technologies LLC as the owner.
+
+## App privacy integration
+
+The policy labels AppsFlyer as a **planned** integration for advertising campaign measurement. No AppsFlyer SDK or tracking code has been added to this website. Before releasing the app integration, reconcile the policy and App Store privacy disclosures with the actual SDK settings, measured events, partner sharing, retention, and consent behavior. Website publication does not configure the iOS app or App Store Connect.
+
+The disclosures distinguish local document processing from attribution data. They do not promise that declining Apple's tracking permission stops every form of measurement. Reference material: [AppsFlyer customer data processing](https://www.appsflyer.com/legal/processing-customer-data/), [AppsFlyer iOS privacy controls](https://dev.appsflyer.com/hc/docs/preserve-user-privacy-ios), [Apple user privacy and data use](https://developer.apple.com/app-store/user-privacy-and-data-use/), and [GitHub Pages data collection](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection).
 
 ## Validation
 
 - TypeScript checks and the production static export pass.
-- Root-path and `/ScanSignatureWeb` exports were checked for valid local image, stylesheet, script, and anchor references.
+- Root-path and `/scansignature-web` exports are checked for legal pages and valid local image, stylesheet, script, and anchor references.
 - All eight supplied assets are used; images have alt attributes and explicit dimensions.
 - Starter dependencies were updated to compatible patched versions; npm reported zero known vulnerabilities after installation on September 10, 2026.
-- The publishing workflow verifies that the generated artifact contains the landing page, its main sections, App Store link, and assets before deploying. Deployment results are available in GitHub Actions.
+- The publishing workflow verifies that the generated artifact contains the landing page, both legal pages with ownership/contact information, the App Store link, and assets before deploying. Deployment results are available in GitHub Actions.
 - The local page returns HTTP 200. Browser interaction/visual testing has not been performed.
 
 ## UX decisions and sources
