@@ -1,0 +1,10 @@
+{
+  "name": "signdocs-website",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix site run dev -- --port 3000",
+    "build": "npm --prefix site run build",
+    "preview": "npm --prefix site run preview",
+    "check": "npm --prefix site run check"
+  }
+}
