@@ -23,19 +23,19 @@ npm run preview
 
 The static output is `site/dist/client/`. The production preview runs at http://127.0.0.1:4173. There is no runtime server, database, account system, analytics, or external font dependency in the published page.
 
-## Publish later on GitHub Pages
+## Publish on GitHub Pages
 
 Repository: [mdo91/scansignature-web](https://github.com/mdo91/scansignature-web), default branch `main`.
 
-Pushing to `main` runs **Validate SignDocs website**, which installs the locked dependencies, checks TypeScript, builds for the repository URL path, and verifies the publication artifact. Pull requests to `main` run the same checks. Publishing is manual.
+Pushing to `main` automatically runs **Publish SignDocs to GitHub Pages**. It installs the locked dependencies, checks TypeScript, builds the landing page, verifies its content and assets, and publishes only the static output. **Validate SignDocs website** also checks builds for a repository URL path on pushes and pull requests to `main`.
 
-To launch the site:
+The public site is [scansignature.app](https://scansignature.app/).
 
-1. **Settings → Pages** is configured with **GitHub Actions** as the source and HTTPS enforcement enabled.
-2. Open [Publish SignDocs to GitHub Pages](https://github.com/mdo91/scansignature-web/actions/workflows/deploy-pages.yml) under **Actions**, select **Run workflow**, and choose `main`.
-3. When deployment succeeds, GitHub's configured site URL is [damascenerose.com/scansignature-web](https://damascenerose.com/scansignature-web/). This project inherits the account's existing custom domain; no separate domain is configured on this repository.
+Keep **Settings → Pages → Source** set to **GitHub Actions**, with **Custom domain** set to `scansignature.app` and **Enforce HTTPS** enabled. Publishing directly from the `main` branch's root renders the README instead of building the landing page.
 
-The publishing workflow obtains the repository path from GitHub Pages and sets `NEXT_PUBLIC_BASE_PATH` at build time. The current project uses `/scansignature-web`, including under the inherited custom domain. The workflow also supports a root/custom-domain site if the Pages configuration changes. Only `site/dist/client` is uploaded.
+To republish without a new commit, open [Publish SignDocs to GitHub Pages](https://github.com/mdo91/scansignature-web/actions/workflows/deploy-pages.yml), select **Run workflow**, and choose `main`. Monitor that run for deployment results.
+
+The publishing workflow obtains the URL path from GitHub Pages and sets `NEXT_PUBLIC_BASE_PATH` at build time. For the custom domain `scansignature.app`, the path is empty, so the site and its assets are served at the domain root. A standard repository URL such as `mdo91.github.io/scansignature-web/` uses `/scansignature-web`. Only `site/dist/client` is uploaded.
 
 The build includes `site/scripts/prepare-static.mjs`, which places Vinext's path-prefixed export at the artifact root. GitHub Pages supplies the URL prefix when serving the artifact.
 
@@ -45,7 +45,7 @@ For a manual project-path build:
 NEXT_PUBLIC_BASE_PATH=/scansignature-web npm run build
 ```
 
-Build again without that variable before using a root-path local production preview. The workflow itself must be run on GitHub to verify the deployment and account-specific Pages settings.
+Build without that variable for the custom domain or the root-path local production preview.
 
 ## Content and assets
 
@@ -64,7 +64,8 @@ The site uses React, Vinext static export, and the supplied Shadcn/Embla carouse
 - Root-path and `/ScanSignatureWeb` exports were checked for valid local image, stylesheet, script, and anchor references.
 - All eight supplied assets are used; images have alt attributes and explicit dimensions.
 - Starter dependencies were updated to compatible patched versions; npm reported zero known vulnerabilities after installation on September 10, 2026.
-- The local page returns HTTP 200. Browser interaction/visual testing and an actual GitHub deployment have not been performed.
+- The publishing workflow verifies that the generated artifact contains the landing page, its main sections, App Store link, and assets before deploying. Deployment results are available in GitHub Actions.
+- The local page returns HTTP 200. Browser interaction/visual testing has not been performed.
 
 ## UX decisions and sources
 
