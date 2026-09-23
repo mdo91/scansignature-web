@@ -54,7 +54,7 @@ Build without that variable for the custom domain or the root-path local product
 - `site/app/globals.css`: responsive layout, typography, and colors.
 - `site/app/layout.tsx`: page title, descriptions, and icons.
 - `site/app/terms/page.tsx`: Terms of Use, supplementing Apple's Standard EULA.
-- `site/app/privacy/page.tsx`: Privacy Policy covering local files, planned AppsFlyer attribution, support, and hosting.
+- `site/app/privacy/page.tsx`: Privacy Policy covering local files, AppsFlyer removal in 1.0.1, earlier-version attribution, Apple services, support, and hosting.
 - `site/components/legal-page.tsx`: shared legal document layout and table of contents.
 - `site/components/site-footer.tsx`: ownership, legal links, and contact information on every page.
 - `mockup/`: untouched source assets.
@@ -64,9 +64,9 @@ The site uses React, Vinext static export, and the supplied Shadcn/Embla carouse
 
 ## App privacy integration
 
-The policy labels AppsFlyer as a **planned** integration for advertising campaign measurement. No AppsFlyer SDK or tracking code has been added to this website. Before releasing the app integration, reconcile the policy and App Store privacy disclosures with the actual SDK settings, measured events, partner sharing, retention, and consent behavior. Website publication does not configure the iOS app or App Store Connect.
+The policy distinguishes version **1.0**, which starts AppsFlyer attribution only after tracking permission, from **1.0.1**, which removes the SDK and its tracking prompt. It retains guidance for earlier-version users and previously collected attribution records. No AppsFlyer SDK or tracking code has been added to this website. Website publication does not configure the iOS app or App Store Connect; publish the new App Store privacy label when 1.0.1 becomes the available release.
 
-The disclosures distinguish local document processing from attribution data. They do not promise that declining Apple's tracking permission stops every form of measurement. Reference material: [AppsFlyer customer data processing](https://www.appsflyer.com/legal/processing-customer-data/), [AppsFlyer iOS privacy controls](https://dev.appsflyer.com/hc/docs/preserve-user-privacy-ios), [Apple user privacy and data use](https://developer.apple.com/app-store/user-privacy-and-data-use/), and [GitHub Pages data collection](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection).
+The disclosures distinguish local document processing from earlier-version attribution, Apple services, and voluntary support emails. Reference material: [AppsFlyer customer data processing](https://www.appsflyer.com/legal/processing-customer-data/), [AppsFlyer iOS privacy controls](https://dev.appsflyer.com/hc/docs/preserve-user-privacy-ios), [Apple user privacy and data use](https://developer.apple.com/app-store/user-privacy-and-data-use/), and [GitHub Pages data collection](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection).
 
 ## Validation
 
