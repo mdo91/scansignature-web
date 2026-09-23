@@ -4,7 +4,7 @@ import LegalPage, { type LegalSection } from '@/components/legal-page';
 export const metadata: Metadata = {
   title: 'Privacy Policy — SignDocs | Damas Technologies LLC',
   description:
-    'How SignDocs handles local documents, signatures, planned AppsFlyer advertising attribution, support requests, and website visits. Damas Technologies LLC.',
+    'How SignDocs handles local documents, Apple services, support, and website visits, including the removal of AppsFlyer in version 1.0.1. Damas Technologies LLC.',
   openGraph: {
     title: 'Privacy Policy — SignDocs',
     description: 'Privacy information for SignDocs by Damas Technologies LLC.',
@@ -35,6 +35,14 @@ const sections: LegalSection[] = [
           This policy covers the SignDocs app for iPhone and iPad, this website,
           and communications with us. No account is required to use SignDocs.
         </p>
+        <p>
+          <strong>Version 1.0.1 removes AppsFlyer and advertising attribution.</strong>{' '}
+          It does not collect analytics, diagnostics, location, or device
+          identifiers for us or a third-party analytics provider, and it does
+          not request tracking permission. Until 1.0.1 is available, the version
+          you download may still be 1.0. The earlier-version information below
+          applies to anyone still using 1.0.
+        </p>
       </>
     ),
   },
@@ -51,15 +59,15 @@ const sections: LegalSection[] = [
         </p>
         <p>
           Saved signatures and documents remain on your device unless you choose
-          to export or share them, or your device’s backup and storage settings
-          copy them elsewhere. We do not receive document contents or signature
-          images through advertising measurement.
+          to export or share them. The app excludes its saved document and
+          signature library from device backups. We do not receive document
+          contents or signature images through advertising measurement.
         </p>
         <p>
           You choose which files to open and where to share exported copies.
           AirDrop, Mail, Messages, Files storage providers, and other
-          destinations handle those copies under their own practices. Device or
-          cloud backups are controlled by your settings and the relevant
+          destinations handle those copies under their own practices. Backups
+          of exported copies are controlled by your settings and the relevant
           provider.
         </p>
       </>
@@ -80,19 +88,42 @@ const sections: LegalSection[] = [
     ),
   },
   {
-    id: 'advertising-measurement',
-    title: 'AppsFlyer and advertising measurement',
+    id: 'apple-services',
+    title: 'Purchases and update checks',
     content: (
       <>
         <p>
-          <strong>Planned integration:</strong> we intend to add AppsFlyer to
-          measure campaigns that promote SignDocs. This section applies to app
-          versions in which that integration is enabled.
+          Purchases and restores use Apple’s StoreKit service and require a
+          connection to Apple. The app verifies your purchase entitlement on
+          your device. We do not operate a receipt-validation server or send
+          transaction or customer identifiers to an analytics service.
         </p>
         <p>
-          AppsFlyer helps us understand which campaigns lead to installs and app
-          launches and detect advertising fraud. Depending on the enabled
-          settings and your permissions, it may receive:
+          The app can check Apple’s public App Store lookup service for a newer
+          version using the app’s App Store ID and, when available, the country
+          code from your device’s region setting. This request does not include an advertising or
+          installation identifier. Apple handles these services under its own{' '}
+          <a href="https://www.apple.com/legal/privacy/">privacy policy</a>.
+        </p>
+      </>
+    ),
+  },
+  {
+    id: 'advertising-measurement',
+    title: 'AppsFlyer in version 1.0',
+    content: (
+      <>
+        <p>
+          <strong>Earlier version only:</strong> version 1.0 includes AppsFlyer
+          to measure campaigns that promote SignDocs. It starts attribution
+          only after you grant Apple’s tracking permission. AppsFlyer is removed
+          in version 1.0.1; that version sends no AppsFlyer events, regardless of
+          any tracking permission previously granted.
+        </p>
+        <p>
+          In version 1.0, AppsFlyer helps us understand which campaigns lead to
+          installs and app launches and detect advertising fraud. Depending on
+          the enabled settings and your permissions, it may receive:
         </p>
         <ul>
           <li>
@@ -139,19 +170,17 @@ const sections: LegalSection[] = [
     content: (
       <>
         <p>
-          Where the integration involves tracking across other companies’ apps
-          or websites, we will request permission through Apple’s App Tracking
-          Transparency prompt before enabling that tracking or accessing the
-          IDFA. We will also obtain any additional consent required by
-          applicable law.
+          Version 1.0.1 does not request App Tracking Transparency permission or
+          perform advertising tracking. Version 1.0 requests permission through
+          Apple’s prompt before starting AppsFlyer attribution or accessing the
+          advertising identifier (IDFA).
         </p>
         <p>
           You can decline tracking and change your choice in{' '}
           <strong>Settings → Privacy &amp; Security → Tracking</strong>.
-          Scanning and signing do not depend on permission to track. Declining
-          tracking does not necessarily stop all measurement: limited
-          measurement that does not track you across companies may still occur
-          where permitted.
+          Scanning and signing do not depend on permission to track. In version
+          1.0, declining or withdrawing tracking permission prevents AppsFlyer
+          attribution events. Updating to 1.0.1 removes that SDK entirely.
         </p>
         <p>
           To ask about attribution data, request deletion, or exercise an
@@ -177,6 +206,12 @@ const sections: LegalSection[] = [
           or attachments you choose to send. We use this information to respond,
           troubleshoot issues, and handle your request. Please send only the
           information needed for your request.
+        </p>
+        <p>
+          In-app support opens an editable email with the app version, operating
+          system, device family, and selected appearance. You can review or
+          remove these details before sending. Documents are not attached
+          automatically, and no support message is sent without your action.
         </p>
         <p>
           This website is hosted on GitHub Pages. GitHub logs visitors’ IP
@@ -207,7 +242,8 @@ const sections: LegalSection[] = [
         <p>
           We use information for the purposes described above: providing the
           app’s features, responding to you, operating and protecting the
-          website, and measuring advertising campaigns when enabled.
+          website, and measuring advertising campaigns for version 1.0 when
+          tracking permission is granted.
         </p>
         <p>
           Where a legal basis is required, we rely on consent for processing
@@ -218,8 +254,8 @@ const sections: LegalSection[] = [
         </p>
         <p>
           Service providers, including email providers, GitHub, and AppsFlyer
-          when enabled, handle information needed for their services. We may
-          disclose information when legally required or necessary to address
+          for the earlier version 1.0, handle information needed for their
+          services. We may disclose information when legally required or necessary to address
           fraud, protect rights or safety, or complete a business transfer with
           appropriate protections. Your local documents are not available to us
           through these services unless you separately send them to us.
@@ -245,12 +281,18 @@ const sections: LegalSection[] = [
         </p>
         <p>
           We retain support correspondence only for as long as needed to handle
-          your request, resolve related issues, and meet legal obligations. When
-          attribution is enabled, retention depends on the measurement purpose,
-          AppsFlyer account settings, and applicable legal requirements. Contact
+          your request, resolve related issues, and meet legal obligations. For
+          attribution information collected in version 1.0, retention depends
+          on the measurement purpose, AppsFlyer account settings, and applicable
+          legal requirements. Contact
           us to request information about retention or deletion of data
           associated with your device. GitHub manages its hosting logs under its
           own policies.
+        </p>
+        <p>
+          Removing the SDK in version 1.0.1 stops new AppsFlyer collection from
+          that version; it does not automatically delete previously collected
+          attribution records. Contact us with requests about those records.
         </p>
         <p>
           We use reasonable measures to protect information handled by us. No
@@ -298,9 +340,8 @@ const sections: LegalSection[] = [
           information that should be removed, contact us.
         </p>
         <p>
-          We will update this policy when data practices change, including to
-          reflect the released AppsFlyer configuration. The effective date above
-          identifies this version. We will provide additional notice and request
+          We will update this policy when data practices change. The effective
+          date above identifies this version. We will provide additional notice and request
           consent for changes where required.
         </p>
       </>
@@ -329,11 +370,13 @@ export default function PrivacyPage() {
   return (
     <LegalPage
       title="Privacy Policy"
+      effectiveDate={{ iso: '2026-09-23', label: 'September 23, 2026' }}
       introduction={
         <p>
-          Your documents are processed on your device. This policy explains that
-          processing, our planned AppsFlyer integration, and information handled
-          through support and this website.
+          Your documents are processed on your device. Version 1.0.1 removes
+          advertising attribution and tracking. This policy explains local
+          processing, earlier-version attribution, Apple services, support, and
+          this website.
         </p>
       }
       sections={sections}

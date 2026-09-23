@@ -10,10 +10,12 @@ export default function LegalPage({
   title,
   introduction,
   sections,
+  effectiveDate = { iso: '2026-09-10', label: 'September 10, 2026' },
 }: {
   title: string;
   introduction: ReactNode;
   sections: LegalSection[];
+  effectiveDate?: { iso: string; label: string };
 }) {
   return (
     <>
@@ -39,7 +41,7 @@ export default function LegalPage({
           <p className="eyebrow">DAMAS TECHNOLOGIES LLC</p>
           <h1>{title}</h1>
           <p className="legal-date">
-            Effective <time dateTime="2026-09-10">September 10, 2026</time>
+            Effective <time dateTime={effectiveDate.iso}>{effectiveDate.label}</time>
           </p>
           <div className="legal-introduction">{introduction}</div>
         </div>
