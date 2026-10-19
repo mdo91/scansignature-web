@@ -41,7 +41,7 @@ npm run growth:keywords
 npm run growth:collect
 ```
 
-`--plan` prints the seed topics and targeting without making requests. Seeds come from published guides' `primaryQuery` values. API collection uses only `generateKeywordIdeas` and `generateKeywordHistoricalMetrics`, batches idea seeds in groups of 20, paginates, and explicitly sends US `geoTargetConstants/2840`, English `languageConstants/1000`, and `GOOGLE_SEARCH`. `--refresh` forces a real request for approval checks or manual recovery.
+`--plan` prints the seed topics and targeting without making requests. Seeds combine short phrases for the six core workflows with published guides' `primaryQuery` values. Article-specific phrases alone can be too narrow to produce useful discovery; both sets use the same US/English/Google Search targeting. API collection uses only `generateKeywordIdeas` and `generateKeywordHistoricalMetrics`, batches idea seeds in groups of 20, paginates, and explicitly sends US `geoTargetConstants/2840`, English `languageConstants/1000`, and `GOOGLE_SEARCH`. `--refresh` forces a real request for approval checks or manual recovery.
 
 Private `.growth/keyword-settings.json` contains a ten-digit `customerId`, optional `loginCustomerId`, and `accessStatus`. Use `pending-basic` until both Basic access and Ads OAuth are verified. Set `accessStatus` to `ready` only after a successful real API trial. This file must not contain credentials. `npm run growth:collect` refreshes keyword data when needed, but a keyword failure must never hide the Search Console result. A fresh cache causes no daily API calls.
 

@@ -12,6 +12,7 @@ import { spawnSync } from 'node:child_process';
 import { getPosts } from '../lib/posts.mjs';
 import {
   keywordTargeting,
+  keywordDiscoverySeeds,
   makeKeywordCache,
   assessKeywordCache,
   parseKeywordCsv,
@@ -37,7 +38,12 @@ for (let i = 2; i < process.argv.length; i++) {
     flags[key] = process.argv[++i];
   } else throw new Error('Unknown keyword option: ' + key);
 }
-const seeds = [...new Set(getPosts().map((p) => p.primaryQuery))];
+const seeds = [
+  ...new Set([
+    ...keywordDiscoverySeeds,
+    ...getPosts().map((p) => p.primaryQuery),
+  ]),
+];
 const requestTargeting = {
   geoTargetConstants: keywordTargeting.geoTargetConstants,
   language: keywordTargeting.languageConstant,
