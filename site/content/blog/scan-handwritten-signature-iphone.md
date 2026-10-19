@@ -8,7 +8,7 @@ primaryQuery: "scan handwritten signature iphone"
 image: "/mockup/scan-ink-signature.png"
 imageAlt: "The SignDocs camera guide around a handwritten signature."
 related: ["remove-background-scanned-signature", "sign-pdf-iphone-without-printing"]
-sources: [{"title": "Signature Scan: Sign PDFs — App Store product description", "url": "https://apps.apple.com/us/app/signature-scan-sign-pdfs/id6805875185"}]
+sources: [{"title": "Signature Scan: Sign PDFs — App Store product description", "url": "https://apps.apple.com/us/app/signature-scan-sign-pdfs/id6805875185"}, {"title": "Apple iPhone User Guide: Fill out forms, sign documents, and create signatures", "url": "https://support.apple.com/guide/iphone/fill-forms-sign-documents-create-signatures-iph1d3607e5c/27/ios"}]
 status: "published"
 ---
 
@@ -39,6 +39,18 @@ If the image is blurred, take another capture before continuing. Trying to rescu
 SignDocs offers Clean, Balanced, and Bold variants so you can compare paper removal with stroke detail. Look at the thinnest parts of your handwriting, not just the heaviest lines. The best choice is the one that preserves the signature clearly on the document you will sign.
 
 A faded stroke or a remaining paper shadow is a reason to compare another preview or recapture the image. See [how to remove the paper background from a scanned signature](/blog/remove-background-scanned-signature/) for a more detailed checklist.
+
+## Fix a faint or incomplete signature
+
+If a thin stroke looks faint or disappears, check the original capture before choosing a stronger-looking cleanup result. A preview cannot restore ink detail that was blurred, cropped out, or never visible in the photo.
+
+1. Look at the captured image and confirm that the signature is in focus and every intended stroke is inside the frame. If it is blurred, take a new photo.
+2. Put the paper flat in even light. Move your hand and phone so they do not cast a shadow over the writing, then hold the iPhone steady while capturing.
+3. Crop around the complete signature. Leave enough room for the ends of long strokes, dots, and flourishes; do not trim close to a faint mark.
+4. Compare Clean, Balanced, and Bold at the size you expect to use. Inspect the thinnest parts of the handwriting in each preview and choose the one that keeps them visible while removing enough of the paper background.
+5. If the same stroke is missing in every preview, recapture the signature or write a fresh one on plain paper with supported ink. Changing the preview cannot recreate detail that the source image does not contain.
+
+Before sharing, place the saved signature on a PDF and check the exported copy at a readable size. If you only need to add a signature to a PDF and do not need to capture your handwriting from paper, Apple's built-in [Markup signature tools](https://support.apple.com/guide/iphone/fill-forms-sign-documents-create-signatures-iph1d3607e5c/27/ios) may be enough.
 
 ## Save it for the next PDF
 
