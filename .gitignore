@@ -10,4 +10,13 @@ dist/
 
 # Machine-local Gum integration (no credentials in source control)
 .codex/
-.agents/
+# Keep machine-local agent configuration ignored, while sharing this project skill.
+.agents/*
+!.agents/skills/
+.agents/skills/*
+!.agents/skills/organic-growth/
+.agents/skills/organic-growth/*
+!.agents/skills/organic-growth/SKILL.md
+!.agents/skills/organic-growth/references/
+.agents/skills/organic-growth/references/*
+!.agents/skills/organic-growth/references/project-brief-template.md
