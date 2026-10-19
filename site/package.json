@@ -15,7 +15,8 @@
     "check": "tsc --noEmit",
     "test": "node --test scripts/*.test.mjs",
     "validate": "node scripts/validate-site.mjs",
-    "growth:collect": "node scripts/growth-collect.mjs"
+    "growth:collect": "node scripts/growth-collect.mjs",
+    "growth:keywords": "node scripts/keyword-collect.mjs"
   },
   "dependencies": {
     "@base-ui/react": "1.7.0",

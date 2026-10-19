@@ -1,4 +1,4 @@
-import { pageMetadata } from '@/lib/site';
+import { pageMetadata, sitePath } from '@/lib/site';
 import type { Metadata } from 'next';
 import LegalPage, { type LegalSection } from '@/components/legal-page';
 
@@ -224,6 +224,14 @@ const sections: LegalSection[] = [
           analytics scripts, and we do not set advertising or analytics cookies
           here. Following an App Store or other external link takes you to a
           service with its own privacy practices.
+        </p>
+        <p>
+          Our owner-operated Google research tool is covered by the separate{' '}
+          <a href={sitePath('/growth/privacy/')}>
+            Signature Scan Growth privacy notice
+          </a>
+          . Website visitors and SignDocs users do not need to connect a Google
+          account.
         </p>
       </>
     ),
