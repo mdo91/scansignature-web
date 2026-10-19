@@ -5,6 +5,16 @@ export const keywordTargeting = Object.freeze({
   geoTargetConstants: ['geoTargetConstants/2840'],
   languageConstant: 'languageConstants/1000',
 });
+// Broad workflow phrases complement article-specific queries, which can be too
+// narrow for Keyword Planner to return related ideas or historical demand.
+export const keywordDiscoverySeeds = Object.freeze([
+  'sign pdf on iphone',
+  'scan handwritten signature',
+  'remove background from signature',
+  'scan multiple pages iphone',
+  'sign pdf offline iphone',
+  'save signed pdf iphone',
+]);
 export const keywordKey = (text) =>
   String(text)
     .normalize('NFKC')
