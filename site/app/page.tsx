@@ -12,27 +12,14 @@ import {
 } from 'lucide-react';
 import FeatureGallery from './feature-gallery';
 import SiteFooter from '@/components/site-footer';
+import StoreBadge from '@/components/store-badge';
+import GuidePreview from '@/components/guide-preview';
+import StructuredData from '@/components/structured-data';
+import { absoluteUrl, appStoreUrl } from '@/lib/site';
 
-const appStoreUrl = 'https://apps.apple.com/app/id6805875185';
+const storeUrl = appStoreUrl('homepage');
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 const asset = (name: string) => `${basePath}/mockup/${name}`;
-
-function StoreBadge() {
-  return (
-    <a
-      className="store-badge"
-      href={appStoreUrl}
-      aria-label="Download SignDocs on the App Store"
-    >
-      <img
-        src={asset('DownloadAppleBadge.svg')}
-        alt="Download on the App Store"
-        width="156"
-        height="52"
-      />
-    </a>
-  );
-}
 
 export default function Home() {
   return (
@@ -40,17 +27,17 @@ export default function Home() {
       <a className="skip-link" href="#main">
         Skip to content
       </a>
-      <header className="site-header wrap">
+      <header className="site-header wrap guide-header">
         <a className="brand" href="#" aria-label="SignDocs home">
           <img src={asset('app-logo.png')} alt="" width="38" height="38" />
           <span>SignDocs</span>
         </a>
         <nav aria-label="Main navigation">
           <a href="#features">How it works</a>
-          <a href="#privacy">Privacy</a>
+          <a href={`${basePath}/blog/`}>Guides</a>
         </nav>
-        <a className="header-download" href={appStoreUrl}>
-          Get SignDocs <ArrowUpRight size={16} aria-hidden="true" />
+        <a className="header-download" href={storeUrl}>
+          Get the app <ArrowUpRight size={16} aria-hidden="true" />
         </a>
       </header>
       <main id="main">
@@ -60,18 +47,19 @@ export default function Home() {
               <span className="status-dot" /> MADE FOR IPHONE & IPAD
             </p>
             <h1 id="hero-title">
-              From paper
+              Scan paper.
               <br />
-              to <span>signed.</span>
+              <span>Sign PDFs.</span>
               <br />
-              Just like that.
+              On iPhone.
             </h1>
             <p className="hero-description">
-              Scan a document. Capture your real signature. Share a signed PDF.
-              Everyday paperwork, handled with SignDocs.
+              Turn documents into PDFs, capture your real handwritten signature,
+              and save a signed copy. Signature Scan: Sign PDFs — the app you
+              know as SignDocs — for iPhone and iPad.
             </p>
             <div className="hero-actions">
-              <StoreBadge />
+              <StoreBadge campaign="homepage" />
               <a className="text-link" href="#features">
                 Take a closer look <ArrowDown size={16} aria-hidden="true" />
               </a>
@@ -79,6 +67,9 @@ export default function Home() {
             <p className="hero-note">
               <LockKeyhole size={14} aria-hidden="true" /> On-device processing.
               No account required.
+            </p>
+            <p className="hero-compatibility">
+              Requires iOS 26 or iPadOS 26 or later.
             </p>
           </div>
           <div className="hero-visual">
@@ -89,7 +80,7 @@ export default function Home() {
               alt="Position and resize your handwritten signature on a PDF in SignDocs."
               width="450"
               height="920"
-              fetchPriority="high"
+              decoding="async"
             />
             <img
               className="hero-phone hero-phone-front"
@@ -220,6 +211,7 @@ export default function Home() {
             </ul>
           </div>
         </section>
+        <GuidePreview />
         <section
           className="download-section wrap"
           aria-labelledby="download-title"
@@ -237,11 +229,51 @@ export default function Home() {
             <br />A little more day.
           </h2>
           <p>Scan, sign, and get on with it.</p>
-          <StoreBadge />
+          <StoreBadge campaign="homepage" />
           <p className="download-note">For iPhone and iPad.</p>
         </section>
       </main>
       <SiteFooter />
+      <StructuredData
+        value={{
+          '@context': 'https://schema.org',
+          '@type': 'Organization',
+          '@id': absoluteUrl('/#organization'),
+          name: 'Damas Technologies LLC',
+          url: absoluteUrl('/'),
+          logo: absoluteUrl('/mockup/app-logo.png'),
+          email: 'hi@damastechnologies.com',
+        }}
+      />
+      <StructuredData
+        value={{
+          '@context': 'https://schema.org',
+          '@type': 'WebSite',
+          name: 'Signature Scan · SignDocs',
+          url: absoluteUrl('/'),
+        }}
+      />
+      <StructuredData
+        value={{
+          '@context': 'https://schema.org',
+          '@type': 'MobileApplication',
+          name: 'Signature Scan: Sign PDFs',
+          alternateName: 'SignDocs',
+          operatingSystem: 'iOS 26 or later; iPadOS 26 or later',
+          applicationCategory: 'UtilitiesApplication',
+          url: absoluteUrl('/'),
+          installUrl: appStoreUrl(),
+          image: absoluteUrl('/mockup/app-logo.png'),
+          author: { '@id': absoluteUrl('/#organization') },
+          featureList: [
+            'Scan paper documents to PDF',
+            'Capture handwritten signatures',
+            'Remove the paper background from signatures',
+            'Place signatures on PDFs',
+            'Save and share signed copies',
+          ],
+        }}
+      />
     </>
   );
 }

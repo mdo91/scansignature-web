@@ -83,3 +83,18 @@ The disclosures distinguish local document processing from earlier-version attri
 - Use a manual carousel with keyboard navigation, descriptive labels, announced slide changes, touch dragging, and reduced-motion support. All screenshots and captions are included in the HTML, with horizontal scrolling as a no-JavaScript fallback. [W3C WAI: Carousels Tutorial](https://www.w3.org/WAI/tutorials/carousels/).
 - Use the supplied official App Store badge without redrawing it and link it directly to the app listing. [Apple: Marketing Resources and Identity Guidelines](https://developer.apple.com/app-store/marketing/guidelines/).
 - Keep the output static and let the Pages workflow configure the deployment path. [GitHub: Using custom workflows with GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
+
+## SEO and guides
+
+The site now includes a static [guide library](https://scansignature.app/blog/). Markdown lives in `site/content/blog/`; `site/lib/posts.mjs` validates metadata, rejects unsafe markup, and excludes drafts. `/blog/[slug]/` exports every published guide as HTML. The build generates `robots.txt` and `sitemap.xml` and validates every public page, asset, internal link, anchor, canonical URL, and structured-data block before publication.
+
+```sh
+npm test
+npm run check
+NEXT_PUBLIC_BASE_PATH=/scansignature-web npm run build
+npm run build
+```
+
+Production canonicals always use `https://scansignature.app`, including repository-path test builds. Public configuration in `site/growth.config.json` contains Google's persistent HTML ownership-verification token and the genuine Apple campaign provider token. Neither is a login credential. App Store links distinguish guide campaigns without adding website analytics. Apple's attribution thresholds and reporting delays apply.
+
+The daily agent follows [the growth playbook](docs/growth-playbook.md). Run `npm run growth:collect` to collect private US Search Console data through Gum, or `npm run growth:collect -- --fixture scripts/growth-fixture.json` for an explicitly synthetic integration trial. Reports are ignored under `.growth/`; a fixture result is never proof of Google authentication. Gum and its generated project integration live in ignored `.tools/`, `.agents/`, and `.codex/` directories. Credentials are not committed. Google Ads Keyword Planner enrichment remains optional until authorized API access is available.

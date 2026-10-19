@@ -1189,3 +1189,352 @@ h1 span {
     padding: 0;
   }
 }
+/* Practical guides share the landing page's type and purple accents. */
+.hero-compatibility {
+  font-size: 12px;
+  color: var(--muted-foreground);
+  margin: 10px 0 0;
+}
+.home-guides {
+  padding-block: 20px 85px;
+}
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+.guide-card {
+  padding: 30px;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  background: #faf9fd;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.guide-card .eyebrow {
+  font-size: 11px;
+  margin-bottom: 16px;
+  justify-content: flex-start;
+}
+.guide-card h2,
+.guide-card h3 {
+  font-size: 22px;
+  line-height: 1.35;
+  letter-spacing: -0.6px;
+  margin: 0 0 14px;
+  font-weight: 600;
+}
+.guide-card h2 a:hover,
+.guide-card h3 a:hover {
+  color: var(--primary);
+}
+.guide-card > p:not(.eyebrow) {
+  color: var(--muted-foreground);
+  line-height: 1.75;
+  margin: 0 0 20px;
+}
+.guide-card .text-link {
+  margin-top: auto;
+  color: var(--primary);
+}
+.reading-time {
+  color: var(--muted-foreground);
+  font-size: 12px;
+  margin-top: 8px;
+}
+.blog-main {
+  padding-block: 24px 80px;
+}
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--muted-foreground);
+  margin-bottom: 48px;
+}
+.breadcrumbs a:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+.blog-intro {
+  max-width: 690px;
+  padding-block: 10px 56px;
+}
+.blog-intro h1 {
+  font-size: clamp(52px, 7vw, 80px);
+}
+.blog-intro > p:last-child {
+  font-size: 19px;
+  line-height: 1.75;
+  color: var(--muted-foreground);
+  margin: 26px 0 0;
+  max-width: 580px;
+}
+.editorial-note {
+  border-top: 1px solid var(--border);
+  margin-top: 48px;
+  padding-top: 24px;
+  max-width: 850px;
+  color: var(--muted-foreground);
+  font-size: 14px;
+  line-height: 1.8;
+}
+.article-main {
+  padding-block: 24px 70px;
+}
+.article-title {
+  max-width: 960px;
+  margin-bottom: 52px;
+}
+.article-title h1 {
+  font-size: clamp(38px, 4.5vw, 60px);
+  line-height: 1.12;
+  letter-spacing: -0.045em;
+}
+.article-title .eyebrow {
+  justify-content: flex-start;
+}
+.article-deck {
+  color: var(--muted-foreground);
+  font-size: 20px;
+  line-height: 1.7;
+  max-width: 780px;
+  margin: 24px 0 18px;
+}
+.article-byline {
+  color: var(--muted-foreground);
+  font-size: 13px;
+  line-height: 1.8;
+}
+.article-layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 720px);
+  gap: 65px;
+  align-items: start;
+}
+.article-sidebar {
+  position: sticky;
+  top: 28px;
+  font-size: 14px;
+}
+.article-sidebar nav > p {
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+.article-sidebar ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.article-sidebar li a {
+  display: block;
+  color: var(--muted-foreground);
+  padding: 8px 0;
+  line-height: 1.5;
+}
+.article-sidebar li a:hover {
+  color: var(--primary);
+}
+.sidebar-app {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+.sidebar-app > p {
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+.sidebar-app small,
+.article-cta small {
+  display: block;
+  color: var(--muted-foreground);
+  line-height: 1.7;
+  font-size: 12px;
+  margin-top: 13px;
+}
+.prose {
+  font-size: 17px;
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+.prose > p:first-child {
+  font-size: 20px;
+  line-height: 1.8;
+  color: #3a354a;
+  margin-top: 0;
+  padding: 24px 28px;
+  border-left: 3px solid var(--primary);
+  background: #f7f5fd;
+  border-radius: 0 14px 14px 0;
+}
+.prose h2 {
+  font-size: 29px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.8px;
+  margin: 44px 0 17px;
+  scroll-margin-top: 28px;
+}
+.prose h3 {
+  font-size: 22px;
+  line-height: 1.4;
+  margin-top: 30px;
+}
+.prose p,
+.prose ul,
+.prose ol {
+  margin: 0 0 23px;
+}
+.prose li {
+  padding-left: 5px;
+  margin-bottom: 11px;
+}
+.prose a,
+.article-sources a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prose img {
+  width: min(100%, 290px);
+  height: auto;
+  margin: 30px auto;
+  border-radius: 20px;
+}
+.article-cta {
+  background: #f5f3fc;
+  border: 1px solid #ebe7f6;
+  border-radius: 23px;
+  padding: 34px;
+  margin-top: 45px;
+}
+.article-cta > img {
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+.article-cta h2 {
+  font-size: 30px;
+  line-height: 1.25;
+  letter-spacing: -1px;
+  margin: 0 0 16px;
+}
+.article-cta > p {
+  color: var(--muted-foreground);
+  line-height: 1.8;
+}
+.article-sources {
+  margin-top: 42px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  font-size: 14px;
+  line-height: 1.8;
+}
+.article-sources h2 {
+  font-size: 19px;
+  margin: 0 0 14px;
+}
+.article-sources > p {
+  color: var(--muted-foreground);
+}
+.related-guides {
+  border-top: 1px solid var(--border);
+  margin-top: 65px;
+  padding-top: 42px;
+}
+.related-guides > h2 {
+  font-size: 34px;
+  letter-spacing: -1px;
+  font-weight: 600;
+  margin: 0 0 28px;
+}
+@media (max-width: 1050px) {
+  .article-layout {
+    grid-template-columns: 200px minmax(0, 1fr);
+    gap: 38px;
+  }
+  .guide-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 760px) {
+  .guide-header {
+    flex-wrap: wrap;
+    height: auto;
+    min-height: 84px;
+    padding-block: 16px;
+    gap: 10px;
+  }
+  .guide-header nav {
+    display: flex;
+    order: 3;
+    flex-basis: 100%;
+    margin: 0;
+    gap: 24px;
+    justify-content: center;
+  }
+  .guide-header .header-download {
+    margin-left: auto;
+  }
+  .guide-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .guide-card {
+    padding: 26px;
+  }
+  .home-guides {
+    padding-bottom: 50px;
+  }
+  .home-guides .section-heading > a {
+    margin-top: 18px;
+  }
+  .blog-intro .eyebrow {
+    justify-content: flex-start;
+    font-size: 10px;
+  }
+  .breadcrumbs {
+    margin-bottom: 30px;
+  }
+  .article-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .article-sidebar {
+    position: static;
+    padding: 23px;
+    background: #faf9fd;
+    border-radius: 16px;
+  }
+  .sidebar-app {
+    display: none;
+  }
+  .article-title {
+    margin-bottom: 30px;
+  }
+  .article-deck {
+    font-size: 18px;
+  }
+  .prose {
+    font-size: 16px;
+  }
+  .prose > p:first-child {
+    padding: 22px;
+    font-size: 18px;
+  }
+  .prose h2 {
+    font-size: 26px;
+  }
+  .article-cta {
+    padding: 26px;
+  }
+  .article-cta h2 {
+    font-size: 27px;
+  }
+  .site-footer nav {
+    gap: 14px;
+  }
+}

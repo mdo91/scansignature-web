@@ -5,6 +5,9 @@
     "dev": "npm --prefix site run dev -- --port 3000",
     "build": "npm --prefix site run build",
     "preview": "npm --prefix site run preview",
-    "check": "npm --prefix site run check"
+    "check": "npm --prefix site run check",
+    "test": "npm --prefix site test",
+    "validate": "npm --prefix site run validate",
+    "growth:collect": "npm --prefix site run growth:collect --"
   }
 }

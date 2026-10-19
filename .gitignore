@@ -3,3 +3,11 @@ node_modules/
 dist/
 .env*
 *.tsbuildinfo
+
+# Private growth reports and local tools
+.growth/
+.tools/
+
+# Machine-local Gum integration (no credentials in source control)
+.codex/
+.agents/
