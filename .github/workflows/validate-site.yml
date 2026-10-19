@@ -34,3 +34,15 @@ jobs:
         working-directory: site
         env:
           NEXT_PUBLIC_BASE_PATH: ${{ matrix.base_path }}
+
+  keyword-gum:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-go@v7
+        with:
+          go-version: '1.27.2'
+          cache: false
+      - name: Verify and build the pinned keyword integration binary
+        run: GUM_GO_BINARY="$(command -v go)" scripts/gum/build-keyword-gum.sh

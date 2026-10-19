@@ -2,6 +2,12 @@ import { spawnSync } from 'node:child_process';
 import { mkdirSync, writeFileSync, readFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 import {
+  assessKeywordCache,
+  matchKeywordDemand,
+  keywordCandidates,
+} from '../lib/keywords.mjs';
+import { getPosts } from '../lib/posts.mjs';
+import {
   reportingWindows,
   normalizeRows,
   opportunities,
@@ -104,23 +110,41 @@ try {
     current = collect(windows.current);
     previous = collect(windows.previous);
   }
+  // Keyword refresh is optional: its failure must not hide Search Console data.
+  if (fixtureFlag < 0)
+    spawnSync(process.execPath, [resolve('scripts/keyword-collect.mjs')], {
+      encoding: 'utf8',
+      timeout: 600000,
+      maxBuffer: 1024 * 1024,
+    });
   const cacheFile = resolve(directory, 'keyword-cache.json');
-  const cache = existsSync(cacheFile)
-    ? JSON.parse(readFileSync(cacheFile, 'utf8'))
-    : null;
+  let cache;
+  try {
+    cache = assessKeywordCache(
+      existsSync(cacheFile)
+        ? JSON.parse(readFileSync(cacheFile, 'utf8'))
+        : null,
+    );
+  } catch (error) {
+    cache = { status: 'invalid', note: error.message };
+  }
+  const keywordStatusFile = resolve(directory, 'keyword-status.json');
+  let refreshStatus = null;
+  try {
+    if (existsSync(keywordStatusFile))
+      refreshStatus = JSON.parse(readFileSync(keywordStatusFile, 'utf8'));
+  } catch {}
   report = {
     ...report,
     status: current.totals ? 'ready' : 'no-data-yet',
     current,
     previous,
-    opportunities: opportunities(current.rows),
-    keywordPlanner:
-      cache && Date.now() - Date.parse(cache.generatedAt) < 30 * 86400000
-        ? cache
-        : {
-            status: 'unavailable',
-            note: 'Keyword Planner is optional and needs approved Ads access; never invent volume or competition.',
-          },
+    opportunities: opportunities(current.rows).map((row) => ({
+      ...row,
+      keywordDemand: matchKeywordDemand(row.query, cache),
+    })),
+    keywordCandidates: keywordCandidates(cache, getPosts()),
+    keywordPlanner: { ...cache, refreshStatus },
   };
 } catch (error) {
   report = {

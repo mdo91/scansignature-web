@@ -6,13 +6,15 @@ const output = resolve('dist/client');
 const base = process.env.NEXT_PUBLIC_BASE_PATH || '';
 const origin = 'https://scansignature.app';
 const posts = getPosts();
-const routes = [
+const indexableRoutes = [
   '/',
   '/privacy/',
   '/terms/',
   '/blog/',
   ...posts.map((p) => `/blog/${p.slug}/`),
 ];
+const utilityRoutes = ['/growth/', '/growth/privacy/'];
+const routes = [...indexableRoutes, ...utilityRoutes];
 const titles = new Set();
 function fail(message) {
   throw new Error(message);
@@ -37,8 +39,9 @@ for (const route of routes) {
     fail(`${route}: incorrect canonical`);
   if (!$('meta[property="og:image"]').attr('content'))
     fail(`${route}: missing social image`);
-  if ($('meta[name="robots"]').attr('content')?.includes('noindex'))
-    fail(`${route}: unexpectedly noindex`);
+  const noindex = $('meta[name="robots"]').attr('content')?.includes('noindex');
+  if (utilityRoutes.includes(route) ? !noindex : noindex)
+    fail(`${route}: unexpected indexing directive`);
   if (!$('a[href*="id6805875185"]').length && route.startsWith('/blog/'))
     fail(`${route}: missing app link`);
   $('script[type="application/ld+json"]').each((_, e) => {
@@ -94,9 +97,10 @@ const urls = sitemap('loc')
   .map((_, e) => sitemap(e).text())
   .get();
 if (
-  urls.length !== routes.length ||
-  new Set(urls).size !== routes.length ||
-  routes.some((p) => !urls.includes(origin + p))
+  urls.length !== indexableRoutes.length ||
+  new Set(urls).size !== indexableRoutes.length ||
+  indexableRoutes.some((p) => !urls.includes(origin + p)) ||
+  utilityRoutes.some((p) => urls.includes(origin + p))
 )
   fail('Sitemap does not match public routes');
 for (const draft of getPosts({ includeDrafts: true }).filter(
