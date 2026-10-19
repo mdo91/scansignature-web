@@ -19,6 +19,7 @@ export default function SiteFooter() {
       </a>
       <p>© {new Date().getFullYear()} Damas Technologies LLC</p>
       <nav aria-label="Footer navigation">
+        <a href={`${basePath}/blog/`}>Guides</a>
         <a href={`${basePath}/privacy/`}>Privacy Policy</a>
         <a href={`${basePath}/terms/`}>Terms of Use</a>
         <a href="mailto:hi@damastechnologies.com">Contact</a>

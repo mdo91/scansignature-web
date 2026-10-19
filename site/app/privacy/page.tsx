@@ -1,21 +1,12 @@
+import { pageMetadata } from '@/lib/site';
 import type { Metadata } from 'next';
 import LegalPage, { type LegalSection } from '@/components/legal-page';
 
-export const metadata: Metadata = {
-  title: 'Privacy Policy — SignDocs | Damas Technologies LLC',
-  description:
-    'How SignDocs handles local documents, Apple services, support, and website visits, including the removal of AppsFlyer in version 1.0.1. Damas Technologies LLC.',
-  openGraph: {
-    title: 'Privacy Policy — SignDocs',
-    description: 'Privacy information for SignDocs by Damas Technologies LLC.',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary',
-    title: 'Privacy Policy — SignDocs',
-    description: 'Privacy information for SignDocs by Damas Technologies LLC.',
-  },
-};
+export const metadata: Metadata = pageMetadata(
+  'Privacy Policy — SignDocs | Damas Technologies LLC',
+  'How SignDocs handles local documents, signatures, earlier-version attribution, Apple services, and support. Read the policy for Signature Scan: Sign PDFs.',
+  '/privacy/',
+);
 
 const sections: LegalSection[] = [
   {
@@ -36,7 +27,9 @@ const sections: LegalSection[] = [
           and communications with us. No account is required to use SignDocs.
         </p>
         <p>
-          <strong>Version 1.0.1 removes AppsFlyer and advertising attribution.</strong>{' '}
+          <strong>
+            Version 1.0.1 removes AppsFlyer and advertising attribution.
+          </strong>{' '}
           It does not collect analytics, diagnostics, location, or device
           identifiers for us or a third-party analytics provider, and it does
           not request tracking permission. Until 1.0.1 is available, the version
@@ -66,8 +59,8 @@ const sections: LegalSection[] = [
         <p>
           You choose which files to open and where to share exported copies.
           AirDrop, Mail, Messages, Files storage providers, and other
-          destinations handle those copies under their own practices. Backups
-          of exported copies are controlled by your settings and the relevant
+          destinations handle those copies under their own practices. Backups of
+          exported copies are controlled by your settings and the relevant
           provider.
         </p>
       </>
@@ -101,8 +94,9 @@ const sections: LegalSection[] = [
         <p>
           The app can check Apple’s public App Store lookup service for a newer
           version using the app’s App Store ID and, when available, the country
-          code from your device’s region setting. This request does not include an advertising or
-          installation identifier. Apple handles these services under its own{' '}
+          code from your device’s region setting. This request does not include
+          an advertising or installation identifier. Apple handles these
+          services under its own{' '}
           <a href="https://www.apple.com/legal/privacy/">privacy policy</a>.
         </p>
       </>
@@ -115,9 +109,9 @@ const sections: LegalSection[] = [
       <>
         <p>
           <strong>Earlier version only:</strong> version 1.0 includes AppsFlyer
-          to measure campaigns that promote SignDocs. It starts attribution
-          only after you grant Apple’s tracking permission. AppsFlyer is removed
-          in version 1.0.1; that version sends no AppsFlyer events, regardless of
+          to measure campaigns that promote SignDocs. It starts attribution only
+          after you grant Apple’s tracking permission. AppsFlyer is removed in
+          version 1.0.1; that version sends no AppsFlyer events, regardless of
           any tracking permission previously granted.
         </p>
         <p>
@@ -255,10 +249,11 @@ const sections: LegalSection[] = [
         <p>
           Service providers, including email providers, GitHub, and AppsFlyer
           for the earlier version 1.0, handle information needed for their
-          services. We may disclose information when legally required or necessary to address
-          fraud, protect rights or safety, or complete a business transfer with
-          appropriate protections. Your local documents are not available to us
-          through these services unless you separately send them to us.
+          services. We may disclose information when legally required or
+          necessary to address fraud, protect rights or safety, or complete a
+          business transfer with appropriate protections. Your local documents
+          are not available to us through these services unless you separately
+          send them to us.
         </p>
         <p>
           Providers may process information outside your country. Where
@@ -282,12 +277,11 @@ const sections: LegalSection[] = [
         <p>
           We retain support correspondence only for as long as needed to handle
           your request, resolve related issues, and meet legal obligations. For
-          attribution information collected in version 1.0, retention depends
-          on the measurement purpose, AppsFlyer account settings, and applicable
-          legal requirements. Contact
-          us to request information about retention or deletion of data
-          associated with your device. GitHub manages its hosting logs under its
-          own policies.
+          attribution information collected in version 1.0, retention depends on
+          the measurement purpose, AppsFlyer account settings, and applicable
+          legal requirements. Contact us to request information about retention
+          or deletion of data associated with your device. GitHub manages its
+          hosting logs under its own policies.
         </p>
         <p>
           Removing the SDK in version 1.0.1 stops new AppsFlyer collection from
@@ -341,8 +335,8 @@ const sections: LegalSection[] = [
         </p>
         <p>
           We will update this policy when data practices change. The effective
-          date above identifies this version. We will provide additional notice and request
-          consent for changes where required.
+          date above identifies this version. We will provide additional notice
+          and request consent for changes where required.
         </p>
       </>
     ),

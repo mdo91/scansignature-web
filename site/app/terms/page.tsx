@@ -1,22 +1,13 @@
+import { pageMetadata } from '@/lib/site';
 import type { Metadata } from 'next';
 import LegalPage, { type LegalSection } from '@/components/legal-page';
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
-export const metadata: Metadata = {
-  title: 'Terms of Use — SignDocs | Damas Technologies LLC',
-  description:
-    'Terms for using SignDocs and scansignature.app, owned and operated by Damas Technologies LLC. Contact hi@damastechnologies.com.',
-  openGraph: {
-    title: 'Terms of Use — SignDocs',
-    description: 'Terms of Use for SignDocs by Damas Technologies LLC.',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary',
-    title: 'Terms of Use — SignDocs',
-    description: 'Terms of Use for SignDocs by Damas Technologies LLC.',
-  },
-};
+export const metadata: Metadata = pageMetadata(
+  'Terms of Use — SignDocs | Damas Technologies LLC',
+  'Terms for Signature Scan: Sign PDFs (SignDocs) and scansignature.app, provided by Damas Technologies LLC.',
+  '/terms/',
+);
 
 const sections: LegalSection[] = [
   {
