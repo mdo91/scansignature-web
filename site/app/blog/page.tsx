@@ -2,32 +2,33 @@ import SiteHeader from '@/components/site-header';
 import SiteFooter from '@/components/site-footer';
 import { getPosts } from '@/lib/posts.mjs';
 import { pageMetadata, sitePath } from '@/lib/site';
+import { copy, localePath, type Locale } from '@/lib/locales';
 export const metadata = pageMetadata(
   'iPhone PDF & Signature Guides | SignDocs',
   'Practical guides to scan documents, capture handwritten signatures, sign PDFs offline, and share signed copies from iPhone and iPad.',
-  '/blog/',
+  '/blog/', false, 'en', true,
 );
-export default function BlogPage() {
-  const posts = getPosts();
+export function BlogIndex({ locale = 'en' }: { locale?: Locale }) {
+  const t = copy[locale];
+  const posts = getPosts({ locale });
   return (
     <>
-      <SiteHeader />
+      <SiteHeader locale={locale} route="/blog/" />
       <main id="main" className="wrap blog-main">
         <nav className="breadcrumbs" aria-label="Breadcrumb">
-          <a href={sitePath('/')}>Home</a>
+          <a href={sitePath(localePath(locale, '/'))}>{t.homeLabel}</a>
           <span aria-hidden="true">/</span>
-          <span>Guides</span>
+          <span>{t.guides}</span>
         </nav>
         <div className="blog-intro">
-          <p className="eyebrow">LESS PAPERWORK. A LITTLE KNOW-HOW.</p>
+          <p className="eyebrow">{t.blogEyebrow}</p>
           <h1>
-            Scan. Sign.
+            {t.blogTitleA}
             <br />
-            <span>Know how.</span>
+            <span>{t.blogTitleB}</span>
           </h1>
           <p>
-            Clear, practical guides for the paperwork in front of you. From your
-            first scan to a signed PDF, ready to send.
+            {t.blogIntro}
           </p>
         </div>
         <div className="guide-grid">
@@ -35,29 +36,28 @@ export default function BlogPage() {
             <article key={post.slug} className="guide-card">
               <p className="eyebrow">{post.topic}</p>
               <h2>
-                <a href={sitePath(`/blog/${post.slug}/`)}>{post.title}</a>
+                <a href={sitePath(localePath(locale, `/blog/${post.slug}/`))}>{post.title}</a>
               </h2>
               <p>{post.description}</p>
-              <a className="text-link" href={sitePath(`/blog/${post.slug}/`)}>
-                Read the guide <span aria-hidden="true">↗</span>
+              <a className="text-link" href={sitePath(localePath(locale, `/blog/${post.slug}/`))}>
+                {t.readGuide} <span aria-hidden="true">↗</span>
               </a>
               <span className="reading-time">
-                {post.readingMinutes} min read
+              {post.readingMinutes} {t.minRead}
               </span>
             </article>
           ))}
         </div>
         <aside className="editorial-note">
           <p>
-            Written by Damas Technologies LLC, the maker of Signature Scan: Sign
-            PDFs (SignDocs). Our guides use product documentation and Apple
-            Support, with AI assistance for drafting and editing. Sources are
-            listed in each guide. App workflows require iOS 26 or iPadOS 26 or
-            later.
+            {t.editorial}
           </p>
         </aside>
       </main>
-      <SiteFooter />
+      <SiteFooter locale={locale} />
     </>
   );
+}
+export default function BlogPage() {
+  return <BlogIndex locale="en" />;
 }

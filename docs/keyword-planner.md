@@ -1,6 +1,6 @@
 # Keyword Planner integration
 
-This workflow enriches the private daily Search Console report with US English demand estimates. It does not track exact organic rankings, assign SEO difficulty from advertising competition, create ads, or authorize spend.
+This workflow enriches the private daily Search Console report with demand estimates for four separate locale-market pairs: United States/English, Türkiye/Turkish, Germany/German, and Spain/Spanish. It does not track exact organic rankings, assign SEO difficulty from advertising competition, create ads, or authorize spend.
 
 ## Google access
 
@@ -16,6 +16,8 @@ Official sources:
 - https://developers.google.com/google-ads/api/docs/api-policy/access-levels
 - https://developers.google.com/google-ads/api/docs/api-policy/brand-verification
 - https://developers.google.com/google-ads/api/docs/keyword-planning/overview
+- https://developers.google.com/google-ads/api/data/codes-formats
+- https://developers.google.com/google-ads/api/data/geotargets
 
 ## Reproducible Gum compatibility build
 
@@ -41,13 +43,13 @@ npm run growth:keywords
 npm run growth:collect
 ```
 
-`--plan` prints the seed topics and targeting without making requests. Seeds combine short phrases for the six core workflows with published guides' `primaryQuery` values. Article-specific phrases alone can be too narrow to produce useful discovery; both sets use the same US/English/Google Search targeting. API collection uses only `generateKeywordIdeas` and `generateKeywordHistoricalMetrics`, batches idea seeds in groups of 20, paginates, and explicitly sends US `geoTargetConstants/2840`, English `languageConstants/1000`, and `GOOGLE_SEARCH`. `--refresh` forces a real request for approval checks or manual recovery.
+`--plan` prints the seed topics and targeting without making requests. Seeds combine locale-specific phrases for the six core workflows with that locale's published guides' `primaryQuery` values. Article-specific phrases alone can be too narrow to produce useful discovery. API collection uses only `generateKeywordIdeas` and `generateKeywordHistoricalMetrics`, batches idea seeds in groups of 20, paginates, and explicitly sends one country, one language, and `GOOGLE_SEARCH`. Target pairs are US/en (`geoTargetConstants/2840`, `languageConstants/1000`), TR/tr (`2792`, `1037`), DE/de (`2276`, `1001`), and ES/es (`2724`, `1003`). The IDs follow Google's current Geo Targets and Language Codes references; no Ads API permission beyond the existing authorized Keyword Planner workflow is added. `--refresh` forces a real request for approval checks or manual recovery.
 
-Private `.growth/keyword-settings.json` contains a ten-digit `customerId`, optional `loginCustomerId`, and `accessStatus`. Use `pending-basic` until both Basic access and Ads OAuth are verified. Set `accessStatus` to `ready` only after a successful real API trial. This file must not contain credentials. `npm run growth:collect` refreshes keyword data when needed, but a keyword failure must never hide the Search Console result. A fresh cache causes no daily API calls.
+Private `.growth/keyword-settings.json` contains a ten-digit `customerId`, optional `loginCustomerId`, and `accessStatus`. Use `pending-basic` until both Basic access and Ads OAuth are verified. Set `accessStatus` to `ready` only after a successful real API trial. This file must not contain credentials. `npm run growth:collect` reads Search Console separately for each country and refreshes each keyword cache only when needed; a keyword failure must never hide Search Console results. A fresh cache causes no daily API calls. The independent cache files are `.growth/keyword-cache.json` for US/en, `.growth/keyword-cache-TR-tr.json`, `.growth/keyword-cache-DE-de.json`, and `.growth/keyword-cache-ES-es.json`.
 
 ## CSV bridge
 
-In the authorized Google Ads account, open Tools → Planning → Keyword Planner → Discover new keywords. Use the published guides' topics and scansignature.app as seeds. Select **United States**, **English**, and **Google**, then download the keyword-ideas CSV. Do not save ideas into a campaign or activate any existing draft campaign.
+In the authorized Google Ads account, open Tools → Planning → Keyword Planner → Discover new keywords. Use the localized guides' topics and scansignature.app as seeds. Select the matching country, language, and **Google** network, then download the keyword-ideas CSV. Do not save ideas into a campaign or activate any existing draft campaign.
 
 Import with the actual local file and original export date:
 
@@ -55,12 +57,14 @@ Import with the actual local file and original export date:
 npm run growth:keywords -- --import-csv /absolute/path/KeywordStats.csv --country US --language en --network GOOGLE_SEARCH --exported-at YYYY-MM-DD
 ```
 
+Use `--country TR --language tr`, `--country DE --language de`, or `--country ES --language es` for the matching locale caches. Keep the CSV export's original date and targeting.
+
 The targeting flags are an explicit operator assertion: CSV column names alone do not prove country, language, or network. The importer accepts English headers, comma or tab separators, quoted values, UTF-8 and UTF-16LE exports, numeric point estimates and ranges. It preserves ranges as ranges and missing values as null. Numeric CSV values are Google-provided estimates, not exact traffic counts; they may be representative values for the broad ranges shown in the account UI. Data older than 30 days is rejected for a fresh import; re-importing an old export does not reset its observation age. Refresh monthly while API access is pending.
 
 ## Private output and failures
 
-`.growth/keyword-cache.json` uses schema version 1 with retrieval and observation timestamps, explicit targeting, source/provenance, and normalized keywords. Each keyword includes close variants, an average estimate or null, an optional range, optional monthly history, and distinctly named `advertiserCompetition` fields. Preserve Google's grouping; never sum close variants or translate a range into a fabricated exact number.
+Each locale cache uses schema version 1 with retrieval and observation timestamps, explicit matching targeting, source/provenance, and normalized keywords. Each keyword includes close variants, an average estimate or null, an optional range, optional monthly history, and distinctly named `advertiserCompetition` fields. Preserve Google's grouping; never sum close variants or translate a range into a fabricated exact number.
 
-Raw API responses or original CSVs are retained privately, as are `.growth/keyword-status.json` and run history. Writes are atomic and restricted to the owner. A failed refresh retains the prior cache. Missing, wrong-market, invalid, future-dated, and stale caches cannot supply fresh demand. Missing metrics are not zero. Cached demand matches are added to Search Console opportunities, and research candidates include only provisional exact-text coverage matches; an agent must still inspect intent and the full library.
+Raw API responses or original CSVs are retained privately, as are market-specific keyword status files and run history. Writes are atomic and restricted to the owner. A failed refresh retains the prior cache. Missing, wrong-market, invalid, future-dated, and stale caches cannot supply fresh demand. Missing metrics are not zero. Cached demand is matched only to Search Console opportunities for the same locale and market. Research candidates are provisional coverage aids; the agent must still inspect intent and the full localized library.
 
 When access is pending, continue researched content using a fresh CSV when available. Notify once on a changed approval state, credential expiry, or a needed fresh export; do not repeat unchanged setup warnings daily. After authentication or approval recovery, force one keyword refresh, verify targeting and credential refresh, then run the daily collector and inspect its private output. Do not put any private reports or credential downloads in a PR.

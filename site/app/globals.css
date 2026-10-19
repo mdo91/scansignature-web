@@ -122,6 +122,20 @@ button:focus-visible,
 .text-link:hover {
   color: var(--primary);
 }
+.site-header .language-switcher {
+  gap: 8px;
+  margin: 0;
+  font-size: 12px;
+  color: var(--muted-foreground);
+}
+.site-header .language-switcher a {
+  min-height: 36px;
+  padding-inline: 4px;
+}
+.site-header .language-switcher a[aria-current='page'] {
+  color: var(--primary);
+  font-weight: 700;
+}
 .header-download {
   display: inline-flex;
   align-items: center;

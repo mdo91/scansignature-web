@@ -15,61 +15,69 @@ import SiteFooter from '@/components/site-footer';
 import StoreBadge from '@/components/store-badge';
 import GuidePreview from '@/components/guide-preview';
 import StructuredData from '@/components/structured-data';
-import { absoluteUrl, appStoreUrl } from '@/lib/site';
+import { absoluteUrl, appStoreUrl, sitePath } from '@/lib/site';
+import { copy, localeInfo, localePath, locales, type Locale } from '@/lib/locales';
 
-const storeUrl = appStoreUrl('homepage');
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 const asset = (name: string) => `${basePath}/mockup/${name}`;
 
-export default function Home() {
+export function HomePage({ locale = 'en' }: { locale?: Locale }) {
+  const t = copy[locale];
+  const homePath = localePath(locale, '/');
+  const campaign = `homepage-${locale}`;
+  const storeUrl = appStoreUrl(campaign);
   return (
     <>
       <a className="skip-link" href="#main">
-        Skip to content
+        {t.skip}
       </a>
       <header className="site-header wrap guide-header">
-        <a className="brand" href="#" aria-label="SignDocs home">
+        <a className="brand" href={sitePath(homePath)} aria-label={t.home}>
           <img src={asset('app-logo.png')} alt="" width="38" height="38" />
           <span>SignDocs</span>
         </a>
-        <nav aria-label="Main navigation">
-          <a href="#features">How it works</a>
-          <a href={`${basePath}/blog/`}>Guides</a>
+        <nav aria-label={t.navLabel}>
+          <a href={`${sitePath(homePath)}#features`}>{t.how}</a>
+          <a href={sitePath(localePath(locale, '/blog/'))}>{t.guides}</a>
+        </nav>
+        <nav className="language-switcher" aria-label={t.language}>
+          {locales.map((code) => (
+            <a key={code} href={sitePath(localePath(code, '/'))} lang={localeInfo[code].htmlLang} aria-label={localeInfo[code].language} aria-current={code === locale ? 'page' : undefined}>
+              {code.toUpperCase()}
+            </a>
+          ))}
         </nav>
         <a className="header-download" href={storeUrl}>
-          Get the app <ArrowUpRight size={16} aria-hidden="true" />
+          {t.getApp} <ArrowUpRight size={16} aria-hidden="true" />
         </a>
       </header>
       <main id="main">
         <section className="hero wrap" aria-labelledby="hero-title">
           <div className="hero-copy">
             <p className="eyebrow">
-              <span className="status-dot" /> MADE FOR IPHONE & IPAD
+              <span className="status-dot" /> {t.heroEyebrow}
             </p>
             <h1 id="hero-title">
-              Scan paper.
+              {t.heroTitleA}
               <br />
-              <span>Sign PDFs.</span>
+              <span>{t.heroTitleB}</span>
               <br />
-              On iPhone.
+              {t.heroTitleC}
             </h1>
             <p className="hero-description">
-              Turn documents into PDFs, capture your real handwritten signature,
-              and save a signed copy. Signature Scan: Sign PDFs — the app you
-              know as SignDocs — for iPhone and iPad.
+              {t.heroDescription}
             </p>
             <div className="hero-actions">
-              <StoreBadge campaign="homepage" />
-              <a className="text-link" href="#features">
-                Take a closer look <ArrowDown size={16} aria-hidden="true" />
+              <StoreBadge campaign={campaign} locale={locale} />
+              <a className="text-link" href={`${sitePath(homePath)}#features`}>
+                {t.closer} <ArrowDown size={16} aria-hidden="true" />
               </a>
             </div>
             <p className="hero-note">
-              <LockKeyhole size={14} aria-hidden="true" /> On-device processing.
-              No account required.
+              <LockKeyhole size={14} aria-hidden="true" /> {t.privacyNote}
             </p>
             <p className="hero-compatibility">
-              Requires iOS 26 or iPadOS 26 or later.
+              {t.compatibility}
             </p>
           </div>
           <div className="hero-visual">
@@ -77,7 +85,7 @@ export default function Home() {
             <img
               className="hero-phone hero-phone-back"
               src={asset('place-signature.png')}
-              alt="Position and resize your handwritten signature on a PDF in SignDocs."
+              alt={t.features[4][3]}
               width="450"
               height="920"
               decoding="async"
@@ -85,7 +93,7 @@ export default function Home() {
             <img
               className="hero-phone hero-phone-front"
               src={asset('main.png')}
-              alt="The SignDocs document studio, with Scan Document, Choose PDF, and Scan Signature options."
+              alt={t.features[0][3]}
               width="450"
               height="920"
               fetchPriority="high"
@@ -95,38 +103,23 @@ export default function Home() {
                 <LockKeyhole size={17} aria-hidden="true" />
               </span>
               <span>
-                Yours. And only yours.<small>Processed on your device.</small>
+                {t.privacyLabelTitle}<small>{t.privacyLabelDescription}</small>
               </span>
             </div>
           </div>
         </section>
         <section
           className="workflow wrap"
-          aria-label="From paper to a signed PDF"
+          aria-label={t.workflowLabel}
         >
-          <article>
-            <ScanLine aria-hidden="true" />
-            <div>
-              <h2>Scan the paper.</h2>
-              <p>Turn one page or many into a PDF.</p>
-            </div>
-          </article>
-          <article>
-            <PenLine aria-hidden="true" />
-            <div>
-              <h2>Make it yours.</h2>
-              <p>Add your own handwritten signature.</p>
-            </div>
-          </article>
-          <article>
-            <Send aria-hidden="true" />
-            <div>
-              <h2>Send it on its way.</h2>
-              <p>Save a signed copy, ready to share.</p>
-            </div>
-          </article>
+          {t.workflow.map(([title, description], index) => (
+            <article key={title}>
+              {index === 0 ? <ScanLine aria-hidden="true" /> : index === 1 ? <PenLine aria-hidden="true" /> : <Send aria-hidden="true" />}
+              <div><h2>{title}</h2><p>{description}</p></div>
+            </article>
+          ))}
         </section>
-        <FeatureGallery />
+        <FeatureGallery locale={locale} />
         <section
           id="privacy"
           className="privacy-section wrap"
@@ -136,82 +129,44 @@ export default function Home() {
             <div className="privacy-symbol">
               <LockKeyhole size={27} strokeWidth={1.5} aria-hidden="true" />
             </div>
-            <p className="eyebrow">PRIVATE BY DESIGN</p>
+            <p className="eyebrow">{t.privateEyebrow}</p>
             <h2 id="privacy-title">
-              Your paperwork.
+              {t.privacyTitleA}
               <br />
-              <span>Your business.</span>
+              <span>{t.privacyTitleB}</span>
             </h2>
             <p>
-              Your documents and signatures are processed entirely on your
-              iPhone or iPad. SignDocs never uploads them for processing. You
-              decide when and where to share.
+              {t.privacyIntro}
             </p>
           </div>
           <div className="privacy-points">
-            <article>
-              <WifiOff size={22} strokeWidth={1.6} aria-hidden="true" />
-              <div>
-                <h3>No internet required.</h3>
-                <p>
-                  Scanning, signature cropping, background removal, and PDF
-                  creation all happen on your device.
-                </p>
-              </div>
-            </article>
-            <article>
-              <UserRoundCheck size={22} strokeWidth={1.6} aria-hidden="true" />
-              <div>
-                <h3>No account to create.</h3>
-                <p>
-                  Open the app and get to work. Your saved signatures stay on
-                  your device, ready when you need them.
-                </p>
-              </div>
-            </article>
-            <article>
-              <FolderCheck size={22} strokeWidth={1.6} aria-hidden="true" />
-              <div>
-                <h3>Your original stays original.</h3>
-                <p>
-                  Save a new PDF with your signature embedded. The original PDF
-                  stays unchanged.
-                </p>
-              </div>
-            </article>
+            {t.privacyPoints.map(([title, description], index) => (
+              <article key={title}>
+                {index === 0 ? <WifiOff size={22} strokeWidth={1.6} aria-hidden="true" /> : index === 1 ? <UserRoundCheck size={22} strokeWidth={1.6} aria-hidden="true" /> : <FolderCheck size={22} strokeWidth={1.6} aria-hidden="true" />}
+                <div><h3>{title}</h3><p>{description}</p></div>
+              </article>
+            ))}
           </div>
         </section>
         <section className="share-section wrap" aria-labelledby="share-title">
           <div>
-            <p className="eyebrow">READY FOR WHAT’S NEXT</p>
+            <p className="eyebrow">{t.shareEyebrow}</p>
             <h2 id="share-title">
-              Signed. Saved.
+              {t.shareTitleA}
               <br />
-              <span>On its way.</span>
+              <span>{t.shareTitleB}</span>
             </h2>
           </div>
           <div className="share-copy">
             <p>
-              Name your finished PDF, find it again in Recent Docs, and send it
-              wherever it needs to go.
+              {t.shareCopy}
             </p>
             <ul>
-              <li>
-                <Check size={16} aria-hidden="true" /> AirDrop to a nearby
-                device
-              </li>
-              <li>
-                <Check size={16} aria-hidden="true" /> Share with Mail,
-                Messages, and compatible apps
-              </li>
-              <li>
-                <Check size={16} aria-hidden="true" /> Reopen saved PDFs
-                whenever you need
-              </li>
+              {t.sharePoints.map((point) => <li key={point}><Check size={16} aria-hidden="true" /> {point}</li>)}
             </ul>
           </div>
         </section>
-        <GuidePreview />
+        <GuidePreview locale={locale} />
         <section
           className="download-section wrap"
           aria-labelledby="download-title"
@@ -225,15 +180,15 @@ export default function Home() {
             loading="lazy"
           />
           <h2 id="download-title">
-            A little less paperwork.
-            <br />A little more day.
+            {t.downloadTitleA}
+            <br />{t.downloadTitleB}
           </h2>
-          <p>Scan, sign, and get on with it.</p>
-          <StoreBadge campaign="homepage" />
-          <p className="download-note">For iPhone and iPad.</p>
+          <p>{t.downloadCopy}</p>
+          <StoreBadge campaign={campaign} locale={locale} />
+          <p className="download-note">{t.device}</p>
         </section>
       </main>
-      <SiteFooter />
+      <SiteFooter locale={locale} />
       <StructuredData
         value={{
           '@context': 'https://schema.org',
@@ -250,7 +205,7 @@ export default function Home() {
           '@context': 'https://schema.org',
           '@type': 'WebSite',
           name: 'Signature Scan · SignDocs',
-          url: absoluteUrl('/'),
+          url: absoluteUrl(homePath),
         }}
       />
       <StructuredData
@@ -261,19 +216,17 @@ export default function Home() {
           alternateName: 'SignDocs',
           operatingSystem: 'iOS 26 or later; iPadOS 26 or later',
           applicationCategory: 'UtilitiesApplication',
-          url: absoluteUrl('/'),
+          url: absoluteUrl(homePath),
           installUrl: appStoreUrl(),
           image: absoluteUrl('/mockup/app-logo.png'),
           author: { '@id': absoluteUrl('/#organization') },
-          featureList: [
-            'Scan paper documents to PDF',
-            'Capture handwritten signatures',
-            'Remove the paper background from signatures',
-            'Place signatures on PDFs',
-            'Save and share signed copies',
-          ],
+          featureList: t.features.map((feature) => feature[2]),
         }}
       />
     </>
   );
+}
+
+export default function Home() {
+  return <HomePage locale="en" />;
 }

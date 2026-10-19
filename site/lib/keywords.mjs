@@ -1,10 +1,18 @@
-export const keywordTargeting = Object.freeze({
-  country: 'US',
-  language: 'en',
-  network: 'GOOGLE_SEARCH',
-  geoTargetConstants: ['geoTargetConstants/2840'],
-  languageConstant: 'languageConstants/1000',
-});
+import { readFileSync } from 'node:fs';
+const growthConfig = JSON.parse(readFileSync(new URL('../growth.config.json', import.meta.url), 'utf8'));
+export const keywordMarkets = Object.freeze(growthConfig.markets);
+export const keywordTargetingFor = (country = 'US', language = 'en') => {
+  const market = keywordMarkets.find((item) => item.country === country && item.locale === language);
+  if (!market) throw new Error(`Unsupported keyword targeting: ${country}/${language}`);
+  return Object.freeze({
+    country: market.country,
+    language: market.locale,
+    network: 'GOOGLE_SEARCH',
+    geoTargetConstants: [`geoTargetConstants/${market.geoTargetId}`],
+    languageConstant: `languageConstants/${market.languageId}`,
+  });
+};
+export const keywordTargeting = keywordTargetingFor();
 // Broad workflow phrases complement article-specific queries, which can be too
 // narrow for Keyword Planner to return related ideas or historical demand.
 export const keywordDiscoverySeeds = Object.freeze([
@@ -15,6 +23,12 @@ export const keywordDiscoverySeeds = Object.freeze([
   'sign pdf offline iphone',
   'save signed pdf iphone',
 ]);
+export const keywordDiscoverySeedsByLocale = Object.freeze({
+  en: keywordDiscoverySeeds,
+  tr: ['iphone pdf imzalama', 'iphone belge tarama', 'el yazısı imza tarama', 'imza arka plan kaldırma', 'iphone çok sayfalı pdf', 'imzalı pdf paylaşma'],
+  de: ['pdf auf iphone unterschreiben', 'dokumente mit iphone scannen', 'handschriftliche unterschrift scannen', 'hintergrund unterschrift entfernen', 'mehrere seiten als pdf scannen', 'signiertes pdf teilen iphone'],
+  es: ['firmar pdf en iphone', 'escanear documentos iphone', 'escanear firma manuscrita', 'quitar fondo de firma', 'varias páginas en un pdf iphone', 'compartir pdf firmado iphone'],
+});
 export const keywordKey = (text) =>
   String(text)
     .normalize('NFKC')
@@ -70,13 +84,14 @@ export function normalizeKeywordResults(results = []) {
 export function makeKeywordCache({
   results,
   source,
+  targeting = keywordTargeting,
   generatedAt = new Date().toISOString(),
 }) {
   const cache = {
     schemaVersion: 1,
     generatedAt,
     observedAt: source.exportedAt || generatedAt,
-    targeting: { ...keywordTargeting },
+    targeting: { ...targeting },
     source,
     keywords: normalizeKeywordResults(results),
     note: 'Demand estimates are not exact traffic counts. CSV exports may provide representative point values for ranges shown in the UI. Close variants can share estimates and low-volume terms may be omitted. Advertising competition is not organic ranking difficulty.',
@@ -95,15 +110,17 @@ export function assessKeywordCache(cache, now = new Date()) {
     if (cache.schemaVersion !== 1 || !Array.isArray(cache.keywords))
       throw new Error('Unsupported keyword cache');
     const t = cache.targeting;
+    const expected = t && keywordTargetingFor(t.country, t.language);
     if (
       !t ||
-      t.country !== 'US' ||
-      t.language !== 'en' ||
+      !expected ||
+      t.country !== expected.country ||
+      t.language !== expected.language ||
       t.network !== 'GOOGLE_SEARCH' ||
-      t.languageConstant !== 'languageConstants/1000' ||
-      JSON.stringify(t.geoTargetConstants) !== '["geoTargetConstants/2840"]'
+      t.languageConstant !== expected.languageConstant ||
+      JSON.stringify(t.geoTargetConstants) !== JSON.stringify(expected.geoTargetConstants)
     )
-      throw new Error('Keyword targeting must be US, English, Google Search');
+      throw new Error('Keyword targeting must match a supported locale and country on Google Search');
     if (!['google-ads-api', 'keyword-planner-csv'].includes(cache.source?.kind))
       throw new Error('Keyword source missing');
     const age = now.getTime() - Date.parse(cache.observedAt);
@@ -161,9 +178,7 @@ export function keywordCandidates(cache, posts) {
   if (cache?.status !== 'ready') return [];
   return cache.keywords
     .filter(
-      (k) =>
-        /pdf|signature|scan|document/i.test(k.text) &&
-        /iphone|ipad|ios|signature|sign.*pdf/i.test(k.text),
+      (k) => /pdf|signature|scan|document|imza|tarama|belge|unterschrift|dokument|escaneo|firma|documento/i.test(k.text),
     )
     .map((k) => ({
       ...k,

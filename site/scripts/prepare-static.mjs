@@ -1,4 +1,4 @@
-import { cp, access, mkdtemp, rename, rm } from 'node:fs/promises';
+import { cp, access, mkdtemp, rename, rm, readdir, readFile, writeFile } from 'node:fs/promises';
 import { resolve, sep, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -26,6 +26,23 @@ for (const page of ['index.html', 'terms/index.html', 'privacy/index.html']) {
   await access(join(output, page));
 }
 await access(join(output, '.nojekyll'));
+
+async function setDocumentLanguage(directory, root = directory) {
+  const entries = await readdir(directory, { withFileTypes: true });
+  for (const entry of entries) {
+    const file = join(directory, entry.name);
+    if (entry.isDirectory()) await setDocumentLanguage(file, root);
+    else if (entry.name.endsWith('.html')) {
+      const relative = file.slice(root.length + 1).split(sep);
+      const locale = ['tr', 'de', 'es'].includes(relative[0]) ? relative[0] : 'en';
+      if (locale !== 'en') {
+        const html = await readFile(file, 'utf8');
+        await writeFile(file, html.replace(/<html lang="[^"]*"/, `<html lang="${locale}"`));
+      }
+    }
+  }
+}
+await setDocumentLanguage(output);
 console.log(
   `Static website ready in dist/client (URL path: ${basePath || '/'}).`,
 );

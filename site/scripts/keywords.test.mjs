@@ -7,6 +7,7 @@ import {
   parseKeywordCsv,
   matchKeywordDemand,
   keywordCandidates,
+  keywordTargetingFor,
 } from '../lib/keywords.mjs';
 const now = '2026-10-19T12:00:00Z';
 const create = (results) =>
@@ -73,6 +74,14 @@ test('targeting and observation age are validated, stale CSV imports cannot beco
     source: { kind: 'keyword-planner-csv', exportedAt: '2026-08-01' },
   });
   assert.equal(assessKeywordCache(csv, new Date(now)).status, 'stale');
+});
+test('keyword caches validate each supported locale and market pair independently', () => {
+  const targeting = keywordTargetingFor('TR', 'tr');
+  const tr = makeKeywordCache({ results: [], generatedAt: now, targeting, source: { kind: 'google-ads-api' } });
+  assert.equal(assessKeywordCache(tr, new Date(now)).status, 'ready');
+  assert.equal(assessKeywordCache({ ...tr, targeting: { ...targeting, country: 'DE' } }, new Date(now)).status, 'invalid');
+  assert.deepEqual(keywordTargetingFor('ES', 'es').geoTargetConstants, ['geoTargetConstants/2724']);
+  assert.equal(keywordTargetingFor('DE', 'de').languageConstant, 'languageConstants/1001');
 });
 test('English CSV handles metadata preamble, quoted commas, ranges, missing values and zero', () => {
   const csv = Buffer.from(
