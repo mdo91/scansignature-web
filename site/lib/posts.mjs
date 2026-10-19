@@ -6,11 +6,12 @@ import { marked } from 'marked';
 /** @typedef {{slug:string,title:string,description:string,publishedAt:string,updatedAt:string,topic:string,primaryQuery:string,image:string,imageAlt:string,related:string[],sources:{title:string,url:string}[],status:'published'|'draft',body:string,readingMinutes:number}} Post */
 const slugPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 export const contentDirectory = resolve(process.cwd(), 'content/blog');
+const localeCodes = new Set(['en', 'tr', 'de', 'es']);
 /** @param {string} input */
 export const headingId = (input) =>
   input
     .toLowerCase()
-    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/[^\p{L}\p{N}\s-]/gu, '')
     .trim()
     .replace(/\s+/g, '-');
 /** @param {string} input */
@@ -100,12 +101,14 @@ export function parsePost(source, filename) {
     readingMinutes: Math.max(1, Math.ceil(content.split(/\s+/).length / 210)),
   };
 }
-/** @param {{includeDrafts?: boolean}} [options] @returns {Post[]} */
-export function getPosts({ includeDrafts = false } = {}) {
-  const all = readdirSync(contentDirectory)
+/** @param {{includeDrafts?: boolean,locale?:string}} [options] @returns {Post[]} */
+export function getPosts({ includeDrafts = false, locale = 'en' } = {}) {
+  if (!localeCodes.has(locale)) throw new Error(`Unsupported content locale: ${locale}`);
+  const directory = locale === 'en' ? contentDirectory : resolve(contentDirectory, locale);
+  const all = readdirSync(directory)
     .filter((f) => f.endsWith('.md'))
     .map((f) =>
-      parsePost(readFileSync(resolve(contentDirectory, f), 'utf8'), f),
+      parsePost(readFileSync(resolve(directory, f), 'utf8'), f),
     );
   const published = all.filter((p) => p.status === 'published');
   for (const post of all)
@@ -124,8 +127,8 @@ export function getPosts({ includeDrafts = false } = {}) {
       a.slug.localeCompare(b.slug),
   );
 }
-/** @param {Post} post @param {string} [basePath] */
-export function renderPost(post, basePath = '') {
+/** @param {Post} post @param {string} [basePath] @param {string} [locale] */
+export function renderPost(post, basePath = '', locale = 'en') {
   /** @type {{id:string,text:string}[]} */
   const headings = [];
   const counts = new Map();
@@ -140,7 +143,8 @@ export function renderPost(post, basePath = '') {
   };
   renderer.link = function ({ href, tokens, title }) {
     if (!safeUrl(href)) throw new Error('Unsafe article URL');
-    const url = href.startsWith('/') ? basePath + href : href;
+    const localized = href.startsWith('/blog/') && locale !== 'en' ? `/${locale}${href}` : href;
+    const url = localized.startsWith('/') ? basePath + localized : localized;
     return `<a href="${escape(url)}"${title ? ` title="${escape(title)}"` : ''}>${this.parser.parseInline(tokens)}</a>`;
   };
   renderer.image = function ({ href, text }) {

@@ -31,15 +31,33 @@ export function normalizeRows(rows = []) {
     averagePosition: row.position,
   }));
 }
-export function opportunities(rows) {
+const queryTerms = {
+  en: { topic: /pdf|signature|scan|document|paperwork/i, intent: /iphone|ipad|ios|signature|sign.*pdf/i },
+  tr: { topic: /pdf|imza|tarama|belge|evrak/i, intent: /iphone|ipad|ios|imza|pdf|belge|tara/i },
+  de: { topic: /pdf|unterschrift|scan|dokument|papier/i, intent: /iphone|ipad|ios|unterschrift|pdf|dokument|scan/i },
+  es: { topic: /pdf|firma|escane|documento|papel/i, intent: /iphone|ipad|ios|firma|pdf|documento|escane/i },
+};
+function matchesLocalePage(page, locale) {
+  try {
+    const path = new URL(page).pathname;
+    return locale === 'en'
+      ? !/^\/(?:tr|de|es)(?:\/|$)/.test(path)
+      : path.startsWith(`/${locale}/`);
+  } catch {
+    return locale === 'en' || String(page).startsWith(`/${locale}/`);
+  }
+}
+export function opportunities(rows, locale = 'en') {
+  const terms = queryTerms[locale] || queryTerms.en;
   const groups = new Map();
   for (const row of rows) {
     if (
-      !/pdf|signature|scan|document|paperwork/i.test(row.query) ||
-      /signdocs|scansignature|damas technologies/i.test(row.query)
+      !terms.topic.test(row.query) ||
+      /signdocs|scansignature|damas technologies/i.test(row.query) ||
+      !matchesLocalePage(row.page, locale)
     )
       continue;
-    if (!/iphone|ipad|ios|signature|sign.*pdf/i.test(row.query)) continue;
+    if (!terms.intent.test(row.query)) continue;
     const key = JSON.stringify([row.query, row.page]);
     const group = groups.get(key) || {
       query: row.query,

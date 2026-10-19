@@ -2,5 +2,11 @@
   "appStoreProviderToken": "128835034",
   "googleSiteVerification": "VXJA3lz1FLhO2qu7cjiW7k69kBlSVCeW9BdTyLGyHG4",
   "market": "US",
-  "language": "en"
+  "language": "en",
+  "markets": [
+    { "locale": "en", "country": "US", "countryName": "United States", "searchConsoleCountry": "usa", "geoTargetId": "2840", "languageId": "1000" },
+    { "locale": "tr", "country": "TR", "countryName": "Türkiye", "searchConsoleCountry": "tur", "geoTargetId": "2792", "languageId": "1037" },
+    { "locale": "de", "country": "DE", "countryName": "Germany", "searchConsoleCountry": "deu", "geoTargetId": "2276", "languageId": "1001" },
+    { "locale": "es", "country": "ES", "countryName": "Spain", "searchConsoleCountry": "esp", "geoTargetId": "2724", "languageId": "1003" }
+  ]
 }

@@ -17,6 +17,18 @@ test('published guides render with prefixed links and valid table of contents', 
     assert.ok(!html.includes('href="/blog/'));
   }
 });
+test('localized guides are complete, share the source slug set, and keep links inside their locale', () => {
+  const englishSlugs = getPosts({ locale: 'en' }).map((post) => post.slug).sort();
+  for (const locale of ['tr', 'de', 'es']) {
+    const posts = getPosts({ locale });
+    assert.deepEqual(posts.map((post) => post.slug).sort(), englishSlugs);
+    for (const post of posts) {
+      const { html } = renderPost(post, '/scansignature-web', locale);
+      assert.ok(post.body.trim().split(/\s+/).length >= 250, `${locale}/${post.slug} is too short`);
+      assert.match(html, new RegExp(`href="/scansignature-web/${locale}/blog/`));
+    }
+  }
+});
 test('invalid metadata, dates, HTML, and executable URLs are rejected', () => {
   for (const bad of [
     source.replace('status: "published"', 'status: "unknown"'),

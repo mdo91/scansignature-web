@@ -60,3 +60,13 @@ test('empty data stays empty rather than inventing zero-valued rankings', () => 
   assert.deepEqual(normalizeRows(), []);
   assert.deepEqual(opportunities([]), []);
 });
+test('localized opportunity matching keeps each language tied to its locale pages', () => {
+  const rows = normalizeRows([
+    { keys: ['iphone pdf imzalama', 'https://scansignature.app/tr/blog/sign-pdf/', 'MOBILE'], clicks: 1, impressions: 80, ctr: 0.0125, position: 12 },
+    { keys: ['sign pdf on iphone', 'https://scansignature.app/blog/sign-pdf/', 'MOBILE'], clicks: 0, impressions: 100, ctr: 0, position: 12 },
+    { keys: ['pdf unterschreiben iphone', 'https://scansignature.app/de/blog/sign-pdf/', 'MOBILE'], clicks: 1, impressions: 60, ctr: 0.016, position: 9 },
+  ]);
+  assert.equal(opportunities(rows, 'tr').length, 1);
+  assert.equal(opportunities(rows, 'de').length, 1);
+  assert.equal(opportunities(rows, 'en').length, 1);
+});

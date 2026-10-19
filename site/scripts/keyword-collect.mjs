@@ -11,8 +11,9 @@ import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import { getPosts } from '../lib/posts.mjs';
 import {
-  keywordTargeting,
-  keywordDiscoverySeeds,
+  keywordMarkets,
+  keywordTargetingFor,
+  keywordDiscoverySeedsByLocale,
   makeKeywordCache,
   assessKeywordCache,
   parseKeywordCsv,
@@ -38,10 +39,17 @@ for (let i = 2; i < process.argv.length; i++) {
     flags[key] = process.argv[++i];
   } else throw new Error('Unknown keyword option: ' + key);
 }
+const country = flags['--country'] || 'US';
+const language = flags['--language'] || 'en';
+const market = keywordMarkets.find((item) => item.country === country && item.locale === language);
+if (!market) throw new Error(`Unsupported market/language pair: ${country}/${language}`);
+const keywordTargeting = keywordTargetingFor(country, language);
+const cacheName = country === 'US' && language === 'en' ? 'keyword-cache.json' : `keyword-cache-${country}-${language}.json`;
+const statusName = country === 'US' && language === 'en' ? 'keyword-status.json' : `keyword-status-${country}-${language}.json`;
 const seeds = [
   ...new Set([
-    ...keywordDiscoverySeeds,
-    ...getPosts().map((p) => p.primaryQuery),
+    ...keywordDiscoverySeedsByLocale[language],
+    ...getPosts({ locale: language }).map((p) => p.primaryQuery),
   ]),
 ];
 const requestTargeting = {
@@ -58,6 +66,7 @@ if (flags['--plan']) {
           'generateKeywordHistoricalMetrics',
         ],
         targeting: keywordTargeting,
+        market,
         seeds,
         profile: 'scansignature-keywords',
         cacheDays: 30,
@@ -79,14 +88,14 @@ function save(name, value) {
 }
 function finish(status, extra = {}) {
   const result = { checkedAt: new Date().toISOString(), status, ...extra };
-  save('keyword-status.json', result);
+  save(statusName, result);
   console.log(JSON.stringify(result, null, 2));
 }
 function cached() {
   try {
     return assessKeywordCache(
       JSON.parse(
-        readFileSync(resolve(directory, 'keyword-cache.json'), 'utf8'),
+        readFileSync(resolve(directory, cacheName), 'utf8'),
       ),
     );
   } catch (error) {
@@ -97,13 +106,13 @@ try {
   const now = new Date().toISOString();
   if (flags['--import-csv']) {
     if (
-      flags['--country'] !== 'US' ||
-      flags['--language'] !== 'en' ||
+      flags['--country'] !== country ||
+      flags['--language'] !== language ||
       flags['--network'] !== 'GOOGLE_SEARCH' ||
       !flags['--exported-at']
     )
       throw new Error(
-        'CSV imports require explicit --country US --language en --network GOOGLE_SEARCH --exported-at <ISO date/time>. Check the export targeting first.',
+        `CSV imports require explicit --country ${country} --language ${language} --network GOOGLE_SEARCH --exported-at <ISO date/time>. Check the export targeting first.`,
       );
     const bytes = readFileSync(resolve(flags['--import-csv']));
     const results = parseKeywordCsv(bytes);
@@ -111,6 +120,7 @@ try {
     const cache = makeKeywordCache({
       results,
       generatedAt: now,
+      targeting: keywordTargeting,
       source: {
         kind: 'keyword-planner-csv',
         exportedAt: flags['--exported-at'],
@@ -120,10 +130,10 @@ try {
     });
     if (assessKeywordCache(cache).status !== 'ready')
       throw new Error('CSV export must be newer than 30 days');
-    const rawName = 'keyword-raw-' + now.replace(/[:.]/g, '-') + '.csv';
+    const rawName = `keyword-raw-${country}-${language}-${now.replace(/[:.]/g, '-')}.csv`;
     writeFileSync(resolve(directory, rawName), bytes, { mode: 0o600 });
     cache.source.rawFile = rawName;
-    save('keyword-cache.json', cache);
+    save(cacheName, cache);
     finish('ready', {
       source: 'keyword-planner-csv',
       keywords: cache.keywords.length,
@@ -143,7 +153,7 @@ try {
     const settingsFile = resolve(directory, 'keyword-settings.json');
     if (!existsSync(settingsFile)) {
       finish('setup-required', {
-        note: 'Google Ads API Basic access and a separate OAuth profile must be configured. CSV import is available.',
+        note: `Google Ads API Basic access and a separate OAuth profile must be configured for ${country}/${language}. CSV import is available.`,
         cacheStatus: previous.status,
       });
       process.exit(0);
@@ -220,7 +230,7 @@ try {
       do {
         const response = call('generateKeywordIdeas', {
           keywords: batch,
-          url: 'https://scansignature.app/blog/',
+          url: language === 'en' ? 'https://scansignature.app/blog/' : `https://scansignature.app/${language}/blog/`,
           pageSize: 10000,
           ...(pageToken ? { pageToken } : {}),
         });
@@ -243,7 +253,7 @@ try {
       throw new Error(
         'Google returned no keyword estimates; missing demand is not zero',
       );
-    const rawName = 'keyword-raw-' + now.replace(/[:.]/g, '-') + '.json';
+    const rawName = `keyword-raw-${country}-${language}-${now.replace(/[:.]/g, '-')}.json`;
     save(rawName, {
       generatedAt: now,
       targeting: keywordTargeting,
@@ -252,13 +262,14 @@ try {
     const cache = makeKeywordCache({
       results: [...byText.values()],
       generatedAt: now,
+      targeting: keywordTargeting,
       source: {
         kind: 'google-ads-api',
         customerId: settings.customerId,
         rawFile: rawName,
       },
     });
-    save('keyword-cache.json', cache);
+    save(cacheName, cache);
     finish('ready', {
       source: 'google-ads-api',
       keywords: cache.keywords.length,
