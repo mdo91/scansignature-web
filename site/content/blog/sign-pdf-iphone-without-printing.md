@@ -2,13 +2,13 @@
 title: "How to sign a PDF on iPhone without printing"
 description: "Sign an existing PDF on your iPhone, add your real handwritten signature, and save a separate signed copy without printing or scanning the whole document."
 publishedAt: "2026-10-19"
-updatedAt: "2026-10-19"
+updatedAt: "2026-10-20"
 topic: "SIGN A PDF"
 primaryQuery: "how to sign a pdf on iphone without printing"
 image: "/mockup/place-signature.png"
 imageAlt: "A handwritten signature positioned on a PDF in SignDocs."
 related: ["scan-handwritten-signature-iphone", "save-share-signed-pdf-iphone"]
-sources: [{"title": "Signature Scan: Sign PDFs — App Store product description", "url": "https://apps.apple.com/us/app/signature-scan-sign-pdfs/id6805875185"}, {"title": "Apple iPhone User Guide: Fill out and sign PDF forms in Preview", "url": "https://support.apple.com/guide/iphone/fill-out-and-sign-pdf-forms-iphd7e3c0c74/ios"}]
+sources: [{"title": "Signature Scan: Sign PDFs — App Store product description", "url": "https://apps.apple.com/us/app/signature-scan-sign-pdfs/id6805875185"}, {"title": "Apple iPhone User Guide (iOS 26): Fill out and sign PDF forms in Preview", "url": "https://support.apple.com/guide/iphone/fill-out-and-sign-pdf-forms-iphd7e3c0c74/26/ios/26"}, {"title": "Apple iPhone User Guide (iOS 26): Save, rename, or move PDFs and images in Preview", "url": "https://support.apple.com/guide/iphone/save-rename-or-move-pdfs-and-images-iph0bd249ff4/26/ios/26"}]
 status: "published"
 ---
 
@@ -38,9 +38,24 @@ Need help with the capture step? Follow the [handwritten signature scanning guid
 
 ## Use Apple's built-in option
 
-In the Preview app on iPhone, open your PDF form and use the form-filling controls. Apple's guide explains how to add a signature or text form box with the Add button. This is useful when the built-in signing method already meets your needs.
+If the PDF needs a typed name, date, or other answers as well as a signature, complete those entries too. A signature image does not fill the rest of the form. Preview on iOS 26 provides built-in form-filling and signing tools; you can finish there when they meet your needs.
 
-The tools and menu positions depend on your OS version. Use Apple's current instructions rather than assuming a screenshot from an older iPhone tutorial will match your screen. SignDocs is an alternative for the specific workflow of capturing handwriting from paper and reusing it on PDFs.
+### Fill the text fields in Preview
+
+1. Open the PDF form in Preview. If you need an untouched original, use the actions menu beside the filename and choose **Duplicate** before editing.
+2. Select the **Form Filling** control.
+3. Select a field and type the required information. Check any AutoFill suggestion before using it so the form contains the details you intend to send.
+4. Use **Add** when you need to insert a text form box or a signature. Apple's linked guide explains these controls for iOS 26.
+
+Check each required entry at a readable size. Typing a name into one field does not complete a separate signature line, and adding a signature does not complete empty text fields.
+
+### Save the completed form before choosing the signing step
+
+In Preview, the Back control saves the file and returns to the main menu. The actions menu beside the filename also lets you rename it. Give a working copy a recognizable name so you can distinguish it from the blank original.
+
+If you want to use handwriting captured from paper, open the completed PDF from Files in SignDocs and check that the entered text is visible before placing your saved signature. The SignDocs steps above cover the signature image; they are not instructions for editing PDF form fields. If the required text is still missing, return to the form-filling step before making another signed copy.
+
+If you used Preview's signature tool and the finished PDF already meets the recipient's needs, review and share that file. There is no need to add a second signature through another app. Menu positions can vary by OS version, so use Apple's version-specific instructions alongside this guide.
 
 ## Check the final PDF
 
