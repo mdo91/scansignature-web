@@ -30,6 +30,8 @@ The [PDF signing guide](/blog/sign-pdf-iphone-without-printing/) covers the edit
 
 Use Recent Docs to reopen the file you just saved. Review the signature at a readable size and check its page number, placement, and visibility. Look through the remaining pages for anything you might have missed.
 
+For forms, check the typed name, date, and other required answers too. The [form-filling steps in the signing guide](/blog/sign-pdf-iphone-without-printing/#use-apples-built-in-option) explain how to complete those entries before sharing.
+
 If you have both the original PDF and the new signed copy available, compare them carefully. A name containing “signed” does not prove that a signature is on the required page; looking at the exported document does.
 
 ## Choose a sharing destination
