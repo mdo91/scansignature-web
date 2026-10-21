@@ -102,6 +102,10 @@ const sitemap = load(readFileSync(resolve(output, 'sitemap.xml'), 'utf8'), { xml
 const urls = sitemap('url > loc').map((_, element) => sitemap(element).text()).get();
 const indexable = routes.filter((route) => route.indexable).map((route) => origin + route.path);
 if (urls.length !== indexable.length || new Set(urls).size !== indexable.length || indexable.some((url) => !urls.includes(url)) || routes.filter((route) => !route.indexable).some((route) => urls.includes(origin + route.path))) fail('Sitemap does not match published indexable pages');
+for (const route of routes.filter((route) => route.post)) {
+  const item = sitemap('url').toArray().find((element) => sitemap(element).children('loc').text() === origin + route.path);
+  if (sitemap(item).children('lastmod').text() !== route.post.updatedAt) fail(`${route.path}: sitemap lastmod differs from localized article date`);
+}
 for (const locale of locales) {
   for (const group of ['/', '/blog/', ...basePosts.map((post) => `/blog/${post.slug}/`)]) {
     const url = origin + localePath(locale, group);

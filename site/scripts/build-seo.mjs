@@ -8,9 +8,10 @@ const localePath = (locale, path) => locale === 'en' ? path : `/${locale}${path}
 const origin = 'https://scansignature.app';
 const output = resolve('dist/client');
 const escape = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-const englishPosts = getPosts({ locale: 'en' });
+const postsByLocale = Object.fromEntries(locales.map((locale) => [locale, getPosts({ locale })]));
+const englishPosts = postsByLocale.en;
 for (const locale of locales) {
-  const slugs = getPosts({ locale }).map((post) => post.slug).sort();
+  const slugs = postsByLocale[locale].map((post) => post.slug).sort();
   if (JSON.stringify(slugs) !== JSON.stringify(englishPosts.map((post) => post.slug).sort())) {
     throw new Error(`Published guide set differs for locale ${locale}`);
   }
@@ -22,11 +23,11 @@ const pages = [
   ...[
     { base: '/' },
     { base: '/blog/' },
-    ...englishPosts.map((post) => ({ base: `/blog/${post.slug}/`, updated: post.updatedAt })),
+    ...englishPosts.map((post) => ({ base: `/blog/${post.slug}/`, slug: post.slug })),
   ].flatMap((group) => locales.map((locale) => ({
-      path: localePath(locale, group.base),
+    path: localePath(locale, group.base),
     locale,
-    updated: group.updated,
+    updated: group.slug ? postsByLocale[locale].find((post) => post.slug === group.slug).updatedAt : undefined,
     alternates: [...locales.map((alternate) => ({
       hreflang: hreflangs[alternate],
       url: origin + localePath(alternate, group.base),
