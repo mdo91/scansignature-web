@@ -33,4 +33,6 @@ Verwende unliniertes, glattes Papier und lasse um die Unterschrift etwas Platz. 
 
 Prüfe, ob feine Linien noch sichtbar sind und der Papierhintergrund reduziert wurde. Eine Variante, die mehr Hintergrund entfernt, ist nicht automatisch besser, wenn sie dabei Schrift löscht. Probiere die Unterschrift auf einem PDF aus und achte darauf, dass sie keinen Dokumenttext verdeckt. Die [Anleitung zum Entfernen des Papierhintergrunds](/blog/remove-background-scanned-signature/) erklärt den Vergleich der Vorschauen.
 
+Liegt dein Dokument noch auf Papier vor, kannst du zuerst [mehrere Seiten vollständig in ein PDF scannen](/blog/scan-multiple-pages-one-pdf-iphone/). Prüfe dabei Zuschnitt und Seitenzahl, bevor du deine gespeicherte Unterschrift hinzufügst.
+
 Die Unterschrift bleibt auf deinem Gerät. Für die Dokumentbearbeitung ist keine Internetverbindung erforderlich. Gehe nicht davon aus, dass SignDocs eine separate transparente PNG-Datei exportiert: Diese Anleitung beschreibt das Speichern für die PDF-Signaturfunktion. Ein Unterschriftsbild bestätigt keine Identität und ist keine zertifizierte digitale Signatur.
