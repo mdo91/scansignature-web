@@ -1,7 +1,8 @@
+import {locales} from '../lib/locale-registry.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { getPosts, parsePost, renderPost } from '../lib/posts.mjs';
+import { getPosts, parsePost, renderPost, contentUnits } from '../lib/posts.mjs';
 const source = readFileSync(
   'content/blog/sign-pdf-iphone-without-printing.md',
   'utf8',
@@ -12,19 +13,19 @@ test('published guides render with prefixed links and valid table of contents', 
   for (const post of posts) {
     const { html, headings } = renderPost(post, '/scansignature-web');
     assert.ok(headings.length);
-    assert.ok(html.includes('/scansignature-web/mockup/'));
+    assert.ok(!html.includes('src="/mockup/'));
     for (const h of headings) assert.ok(html.includes(`id="${h.id}"`));
     assert.ok(!html.includes('href="/blog/'));
   }
 });
-test('localized guides are complete, share the source slug set, and keep links inside their locale', () => {
+test('localized guides are complete and keep links inside their own independent library', () => {
   const englishSlugs = getPosts({ locale: 'en' }).map((post) => post.slug).sort();
-  for (const locale of ['tr', 'de', 'es']) {
+  for (const locale of locales.filter(locale=>locale!=='en')) {
     const posts = getPosts({ locale });
-    assert.deepEqual(posts.map((post) => post.slug).sort(), englishSlugs);
+    assert.ok(posts.length >= 6);
     for (const post of posts) {
       const { html } = renderPost(post, '/scansignature-web', locale);
-      assert.ok(post.body.trim().split(/\s+/).length >= 250, `${locale}/${post.slug} is too short`);
+      assert.ok(contentUnits(post.body) >= 250, `${locale}/${post.slug} is too short`);
       assert.match(html, new RegExp(`href="/scansignature-web/${locale}/blog/`));
     }
   }

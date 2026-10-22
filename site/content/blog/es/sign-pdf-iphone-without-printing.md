@@ -1,4 +1,5 @@
 ---
+translationKey: "sign-pdf-iphone-without-printing"
 title: "Cómo firmar un PDF en iPhone sin imprimirlo"
 description: "Añade tu firma manuscrita a un PDF existente en el iPhone, colócala correctamente y guarda una copia firmada sin imprimir el documento."
 publishedAt: "2026-10-19"

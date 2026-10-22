@@ -1,4 +1,5 @@
 ---
+translationKey: "scan-handwritten-signature-iphone"
 title: "El yazısı imzanızı iPhone’da nasıl tararsınız?"
 description: "Kağıda attığınız imzayı iPhone’da yakalayın, arka planını düzenleyin ve SignDocs içinde PDF imzalarken yeniden kullanmak üzere kaydedin."
 publishedAt: "2026-10-19"

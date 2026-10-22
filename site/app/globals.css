@@ -1552,3 +1552,13 @@ h1 span {
     gap: 14px;
   }
 }
+
+/* A native disclosure keeps eleven languages reachable on small screens. */
+.site-header details.language-switcher { position: relative; display: block; margin-left: auto; }
+.language-switcher summary { cursor: pointer; list-style: none; padding: .6rem; border-radius: .5rem; font-size: .85rem; }
+.language-switcher summary::-webkit-details-marker { display: none; }
+.language-switcher summary:focus-visible, .language-switcher a:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+.site-header .language-switcher nav { position: absolute; z-index: 50; right: 0; top: 100%; background: #fff; border: 1px solid #dfd8d2; box-shadow: 0 8px 25px #31201920; border-radius: .75rem; width: 12rem; max-height: 65vh; overflow-y: auto; display: block; }
+.language-switcher ul { list-style: none; padding: .4rem; margin: 0; }
+.site-header .language-switcher a { display: block; padding: .55rem .7rem; font-size: .9rem; }
+@media (max-width: 520px) { .site-header details.language-switcher { margin-left: 0; } .site-header .language-switcher nav { right: -.5rem; } }

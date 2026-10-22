@@ -1,13 +1,11 @@
-export const locales = ['en', 'tr', 'de', 'es'] as const;
+import extraCopy from './additional-locales.json';
+import extraSeo from './additional-seo.json';
+import {locales,localeInfo} from './locale-registry.mjs';
+export {locales,localeInfo};
 export type Locale = (typeof locales)[number];
 
-export const localeInfo: Record<Locale, { language: string; market: string; htmlLang: string; hreflang: string; ogLocale: string }> = {
-  en: { language: 'English', market: 'US', htmlLang: 'en', hreflang: 'en-US', ogLocale: 'en_US' },
-  tr: { language: 'Türkçe', market: 'TR', htmlLang: 'tr', hreflang: 'tr-TR', ogLocale: 'tr_TR' },
-  de: { language: 'Deutsch', market: 'DE', htmlLang: 'de', hreflang: 'de-DE', ogLocale: 'de_DE' },
-  es: { language: 'Español', market: 'ES', htmlLang: 'es', hreflang: 'es-ES', ogLocale: 'es_ES' },
-};
 export const seoCopy: Record<Locale, { homeTitle: string; homeDescription: string; blogTitle: string; blogDescription: string }> = {
+  ...extraSeo,
   en: { homeTitle: 'Signature Scan: Sign PDFs on iPhone & iPad | SignDocs', homeDescription: 'Scan documents, capture your real handwritten signature, and sign PDFs on iPhone and iPad with SignDocs. On-device processing, no account required.', blogTitle: 'iPhone PDF & Signature Guides | SignDocs', blogDescription: 'Practical guides to scan documents, capture handwritten signatures, sign PDFs offline, and share signed copies from iPhone and iPad.' },
   tr: { homeTitle: 'iPhone’da PDF Tara ve İmzala | Signature Scan', homeDescription: 'Belgeleri PDF’ye dönüştürün, el yazısı imzanızı tarayın ve iPhone ya da iPad’de PDF imzalayın. İşlemler cihazda yapılır; hesap gerekmez.', blogTitle: 'iPhone PDF ve İmza Kılavuzları | Signature Scan', blogDescription: 'iPhone ve iPad’de belge tarama, el yazısı imza yakalama, çevrimdışı PDF imzalama ve imzalı kopyaları paylaşma hakkında pratik kılavuzlar.' },
   de: { homeTitle: 'PDFs auf dem iPhone scannen und signieren | Signature Scan', homeDescription: 'Scanne Dokumente, erfasse deine handschriftliche Unterschrift und signiere PDFs auf iPhone und iPad. Die Verarbeitung erfolgt auf dem Gerät; kein Konto nötig.', blogTitle: 'Anleitungen zu PDFs und Unterschriften auf dem iPhone | SignDocs', blogDescription: 'Praktische Anleitungen zum Scannen von Dokumenten, Erfassen handschriftlicher Unterschriften, Offline-Signieren und Teilen signierter PDFs.' },
@@ -25,6 +23,7 @@ export const localizeHref = (locale: Locale, href: string) => {
 };
 
 export const copy = {
+  ...extraCopy,
   en: {
     skip: 'Skip to content', navLabel: 'Main navigation', home: 'SignDocs home', how: 'How it works', guides: 'Guides', getApp: 'Get the app', language: 'Language',
     heroEyebrow: 'MADE FOR IPHONE & IPAD', heroTitleA: 'Scan paper.', heroTitleB: 'Sign PDFs.', heroTitleC: 'On iPhone.', privacyLabelTitle: 'Yours. And only yours.', privacyLabelDescription: 'Processed on your device.',

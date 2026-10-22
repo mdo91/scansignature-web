@@ -8,7 +8,7 @@ Use this guidance alongside the [growth playbook](growth-playbook.md), [Keyword 
 
 ## 1. Improve existing guides with evidence of product value
 
-Start with the page that already serves the reader's task. Add a new guide only when the intent is distinct and the existing library cannot serve it well. One substantial publication per Istanbul calendar day is a ceiling, not a target.
+Start with the page that already serves the reader's task. Add a new guide only when the intent is distinct and the existing library cannot serve it well. The approved daily target is one qualified new guide per language, at most eleven changed guides total; quality skips and eligible substantial-update fallbacks are reported separately.
 
 For each proposed improvement:
 
@@ -36,7 +36,7 @@ Before choosing a topic, record privately:
 
 Prefer a well-supported problem with a clear product connection and a demonstrably better answer over a broad query with a larger estimated volume. Advertising competition is not organic ranking difficulty. Search Console average position is an aggregate metric, not an exact keyword rank.
 
-Keep the existing shared-slug, canonical, reciprocal hreflang, and translation requirements. Do not multiply near-identical pages merely to increase coverage.
+Preserve existing slugs and canonical URLs. Use explicit translation groups and reciprocal hreflang only for genuine published equivalents; independent language libraries are allowed. Do not multiply near-identical pages merely to increase coverage.
 
 ## 3. Add deliberate, useful distribution
 

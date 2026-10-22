@@ -1,0 +1,982 @@
+{
+  "fr": {
+    "skip": "Aller au contenu",
+    "navLabel": "Navigation principale",
+    "home": "Accueil SignDocs",
+    "how": "Comment ça marche",
+    "guides": "Guides",
+    "getApp": "Télécharger l’app",
+    "language": "Langue",
+    "heroEyebrow": "POUR IPHONE ET IPAD",
+    "heroTitleA": "Numérisez le papier.",
+    "heroTitleB": "Signez vos PDF.",
+    "heroTitleC": "Sur iPhone.",
+    "privacyLabelTitle": "Vos documents. À vous seuls.",
+    "privacyLabelDescription": "Traitement sur votre appareil.",
+    "heroDescription": "Numérisez vos documents, capturez votre signature manuscrite et enregistrez une copie signée avec Signature Scan: Sign PDFs, aussi appelée SignDocs, sur iPhone et iPad.",
+    "closer": "Voir de plus près",
+    "privacyNote": "Traitement sur l’appareil. Aucun compte requis.",
+    "compatibility": "iOS 26 ou iPadOS 26 ou version ultérieure requis.",
+    "workflowLabel": "Du papier au PDF signé",
+    "privateEyebrow": "LA CONFIDENTIALITÉ PAR CONCEPTION",
+    "privacyTitleA": "Vos documents.",
+    "privacyTitleB": "Vous décidez.",
+    "privacyIntro": "Vos documents et signatures sont traités sur votre iPhone ou iPad. SignDocs ne les téléverse pas pour les traiter. Vous choisissez quand et où les partager.",
+    "shareEyebrow": "PRÊT POUR LA SUITE",
+    "shareTitleA": "Signé. Enregistré.",
+    "shareTitleB": "Prêt à partir.",
+    "shareCopy": "Nommez votre PDF, retrouvez-le dans Recent Docs et partagez-le avec l’application de votre choix.",
+    "downloadTitleA": "Moins de paperasse.",
+    "downloadTitleB": "Plus de temps pour vous.",
+    "downloadCopy": "Numérisez, signez et poursuivez votre journée.",
+    "device": "Pour iPhone et iPad.",
+    "closerTitle": "Quelques étapes.",
+    "closerTitleB": "La paperasse est réglée.",
+    "closerCopyA": "De la première numérisation à la signature.",
+    "closerCopyB": "Tout sur votre appareil.",
+    "galleryLabel": "VOIR DE PLUS PRÈS",
+    "carouselLabel": "Découvrez cinq fonctions de SignDocs",
+    "galleryHint": "Quelques gestes. Moins de paperasse.",
+    "chooseFeature": "Choisir une fonction",
+    "showFeature": "Afficher la fonction",
+    "featureLive": "Fonction",
+    "previousSlide": "Fonction précédente",
+    "nextSlide": "Fonction suivante",
+    "guidesEyebrow": "UN PEU DE SAVOIR-FAIRE",
+    "guidesTitleA": "Des questions sur vos documents.",
+    "guidesTitleB": "Des réponses pratiques.",
+    "allGuides": "Tous les guides",
+    "readGuide": "Lire le guide",
+    "minRead": "min de lecture",
+    "blogEyebrow": "MOINS DE PAPERASSE. PLUS DE CLARTÉ.",
+    "blogTitleA": "Numériser. Signer.",
+    "blogTitleB": "Comprendre.",
+    "blogIntro": "Des guides pratiques pour passer du premier document papier à une copie PDF signée prête à partager.",
+    "homeLabel": "Accueil",
+    "breadcrumb": "Fil d’Ariane",
+    "onPage": "Sur cette page",
+    "inGuide": "Dans ce guide",
+    "by": "Par",
+    "updated": "Mis à jour",
+    "sources": "Sources et notes éditoriales",
+    "preparedBy": "Préparé par le développeur à partir de la documentation, des captures fournies et des sources citées, avec l’aide de l’IA pour la rédaction. Les captures montrent une interface anglaise ; les menus système varient selon la version et la langue. Aucun test pratique indépendant n’est revendiqué.",
+    "appCtaLabel": "Télécharger Signature Scan",
+    "appCtaTitleA": "Votre papier. Votre signature.",
+    "appCtaTitleB": "Un PDF signé.",
+    "appCtaCopy": "Numérisez un document, capturez votre signature manuscrite et enregistrez une copie signée avec Signature Scan, aussi appelée SignDocs.",
+    "appNote": "Traitement sur l’appareil. iPhone et iPad sous version 26 ou ultérieure.",
+    "relatedEyebrow": "POUR ALLER PLUS LOIN",
+    "relatedTitle": "La prochaine étape.",
+    "editorial": "Guides de Damas Technologies LLC, développeur de Signature Scan, rédigés avec l’aide de l’IA à partir de la documentation et d’Apple Support. Chaque guide cite ses sources. iOS 26 ou iPadOS 26 ou version ultérieure requis.",
+    "footerGuides": "Guides",
+    "privacy": "Confidentialité (en anglais)",
+    "terms": "Conditions d’utilisation (en anglais)",
+    "contact": "Contact",
+    "footerLabel": "Navigation de pied de page",
+    "workflow": [
+      [
+        "Numérisez le papier.",
+        "Une ou plusieurs pages dans un PDF."
+      ],
+      [
+        "Ajoutez votre signature.",
+        "Capturez votre véritable écriture."
+      ],
+      [
+        "Partagez le résultat.",
+        "Enregistrez une copie signée."
+      ]
+    ],
+    "privacyPoints": [
+      [
+        "Sans internet pour le traitement.",
+        "Numérisation, recadrage, suppression du fond et création du PDF se font sur l’appareil."
+      ],
+      [
+        "Sans compte.",
+        "Vos signatures enregistrées restent sur votre appareil."
+      ],
+      [
+        "L’original reste intact.",
+        "La signature est intégrée dans une nouvelle copie PDF."
+      ]
+    ],
+    "sharePoints": [
+      "AirDrop vers un appareil à proximité",
+      "Partager avec Mail, Messages et les applications compatibles",
+      "Rouvrir les PDF enregistrés"
+    ],
+    "features": [
+      [
+        "Du papier au PDF.",
+        "NUMÉRISER",
+        "Capture automatique ou manuelle, recadrage et correction de perspective pour réunir les pages numérisées dans un PDF.",
+        "Éditeur de numérisation avec coins ajustables."
+      ],
+      [
+        "Votre propre signature.",
+        "CAPTURER",
+        "Signez sur papier et alignez votre écriture dans le guide de la caméra.",
+        "Guide de caméra encadrant une signature rouge sur papier."
+      ],
+      [
+        "L’encre, sans le papier.",
+        "AFFINER",
+        "Recadrez et retirez le fond. Comparez Clean, Balanced et Bold pour préserver les traits noirs, rouges ou bleu foncé.",
+        "Aperçus Clean et Balanced d’une signature rouge sans fond papier."
+      ],
+      [
+        "Prête à resservir.",
+        "ENREGISTRER",
+        "Conservez vos signatures localement, réutilisez-les, renommez-les ou supprimez-les.",
+        "Signatures manuscrites enregistrées sur l’appareil."
+      ],
+      [
+        "Placez. Enregistrez. Partagez.",
+        "SIGNER",
+        "Ouvrez un PDF depuis Fichiers ou un scan, choisissez une page et déplacez ou redimensionnez votre signature.",
+        "Signature sur un PDF avec poignées de redimensionnement."
+      ]
+    ]
+  },
+  "pt": {
+    "skip": "Ir para o conteúdo",
+    "navLabel": "Navegação principal",
+    "home": "Página inicial do SignDocs",
+    "how": "Como funciona",
+    "guides": "Guias",
+    "getApp": "Baixar o app",
+    "language": "Idioma",
+    "heroEyebrow": "PARA IPHONE E IPAD",
+    "heroTitleA": "Digitalize o papel.",
+    "heroTitleB": "Assine PDFs.",
+    "heroTitleC": "No iPhone.",
+    "privacyLabelTitle": "Seus documentos. Só seus.",
+    "privacyLabelDescription": "Processamento no dispositivo.",
+    "heroDescription": "Digitalize documentos, capture sua assinatura manuscrita e salve uma cópia assinada com Signature Scan: Sign PDFs, também chamado SignDocs, no iPhone e iPad.",
+    "closer": "Veja de perto",
+    "privacyNote": "Processamento no dispositivo. Sem conta.",
+    "compatibility": "Requer iOS 26 ou iPadOS 26 ou posterior.",
+    "workflowLabel": "Do papel ao PDF assinado",
+    "privateEyebrow": "PRIVACIDADE DESDE O INÍCIO",
+    "privacyTitleA": "Seus documentos.",
+    "privacyTitleB": "Você decide.",
+    "privacyIntro": "Seus documentos e assinaturas são processados no iPhone ou iPad. O SignDocs não os envia para processamento. Você escolhe quando e onde compartilhar.",
+    "shareEyebrow": "PRONTO PARA O PRÓXIMO PASSO",
+    "shareTitleA": "Assinado. Salvo.",
+    "shareTitleB": "Pronto para enviar.",
+    "shareCopy": "Dê um nome ao PDF, encontre-o em Recent Docs e compartilhe pelo aplicativo escolhido.",
+    "downloadTitleA": "Menos papelada.",
+    "downloadTitleB": "Mais tempo para você.",
+    "downloadCopy": "Digitalize, assine e siga seu dia.",
+    "device": "Para iPhone e iPad.",
+    "closerTitle": "Pequenos passos.",
+    "closerTitleB": "Papelada resolvida.",
+    "closerCopyA": "Da primeira digitalização à assinatura.",
+    "closerCopyB": "Tudo no seu dispositivo.",
+    "galleryLabel": "VEJA DE PERTO",
+    "carouselLabel": "Conheça cinco funções do SignDocs",
+    "galleryHint": "Alguns toques. Menos papelada.",
+    "chooseFeature": "Escolher função",
+    "showFeature": "Mostrar função",
+    "featureLive": "Função",
+    "previousSlide": "Função anterior",
+    "nextSlide": "Próxima função",
+    "guidesEyebrow": "UM POUCO DE PRÁTICA",
+    "guidesTitleA": "Dúvidas sobre documentos.",
+    "guidesTitleB": "Respostas práticas.",
+    "allGuides": "Todos os guias",
+    "readGuide": "Ler o guia",
+    "minRead": "min de leitura",
+    "blogEyebrow": "MENOS PAPELADA. MAIS CLAREZA.",
+    "blogTitleA": "Digitalize. Assine.",
+    "blogTitleB": "Saiba como.",
+    "blogIntro": "Guias práticos para transformar documentos em uma cópia PDF assinada, pronta para compartilhar.",
+    "homeLabel": "Início",
+    "breadcrumb": "Navegação estrutural",
+    "onPage": "Nesta página",
+    "inGuide": "Neste guia",
+    "by": "Por",
+    "updated": "Atualizado",
+    "sources": "Fontes e notas editoriais",
+    "preparedBy": "Preparado pelo desenvolvedor com documentação, capturas fornecidas e fontes citadas, com auxílio de IA na redação. As capturas mostram a interface em inglês; menus do sistema variam por versão e idioma. Não alegamos testes práticos independentes.",
+    "appCtaLabel": "Baixar Signature Scan",
+    "appCtaTitleA": "Seu papel. Sua assinatura.",
+    "appCtaTitleB": "Um PDF assinado.",
+    "appCtaCopy": "Digitalize um documento, capture sua assinatura manuscrita e salve uma cópia assinada com Signature Scan, também chamado SignDocs.",
+    "appNote": "Processamento no dispositivo. iPhone e iPad com versão 26 ou posterior.",
+    "relatedEyebrow": "CONTINUE",
+    "relatedTitle": "O próximo pequeno passo.",
+    "editorial": "Guias da Damas Technologies LLC, desenvolvedora de Signature Scan, com auxílio de IA e fontes da documentação e do Suporte Apple. Cada guia informa suas fontes. Requer iOS 26 ou iPadOS 26 ou posterior.",
+    "footerGuides": "Guias",
+    "privacy": "Privacidade (em inglês)",
+    "terms": "Termos de uso (em inglês)",
+    "contact": "Contato",
+    "footerLabel": "Navegação do rodapé",
+    "workflow": [
+      [
+        "Digitalize o papel.",
+        "Uma ou várias páginas em um PDF."
+      ],
+      [
+        "Adicione sua assinatura.",
+        "Use sua própria letra."
+      ],
+      [
+        "Envie o resultado.",
+        "Salve uma cópia assinada."
+      ]
+    ],
+    "privacyPoints": [
+      [
+        "Processamento sem internet.",
+        "Digitalização, recorte, remoção de fundo e criação de PDF ocorrem no dispositivo."
+      ],
+      [
+        "Sem criar conta.",
+        "Suas assinaturas salvas permanecem no dispositivo."
+      ],
+      [
+        "O original é preservado.",
+        "Salve outro PDF com a assinatura incorporada."
+      ]
+    ],
+    "sharePoints": [
+      "AirDrop para um dispositivo próximo",
+      "Compartilhe com Mail, Mensagens e apps compatíveis",
+      "Reabra PDFs salvos quando precisar"
+    ],
+    "features": [
+      [
+        "Do papel ao PDF.",
+        "DIGITALIZAR",
+        "Capture de forma automática ou manual, ajuste os cantos, corrija a perspectiva e reúna páginas digitalizadas em um PDF.",
+        "Editor de digitalização com cantos ajustáveis."
+      ],
+      [
+        "Sua própria assinatura.",
+        "CAPTURAR",
+        "Assine no papel e alinhe sua escrita com o guia da câmera.",
+        "Guia da câmera enquadrando uma assinatura vermelha no papel."
+      ],
+      [
+        "Fica a tinta. Sai o papel.",
+        "AJUSTAR",
+        "Recorte e remova o fundo. Compare Clean, Balanced e Bold, preservando tinta preta, vermelha ou azul-escura.",
+        "Prévias Clean e Balanced de uma assinatura vermelha sem fundo."
+      ],
+      [
+        "Pronta para reutilizar.",
+        "SALVAR",
+        "Guarde assinaturas no dispositivo para reutilizar, renomear ou excluir.",
+        "Assinaturas manuscritas salvas no dispositivo."
+      ],
+      [
+        "Posicione. Salve. Envie.",
+        "ASSINAR",
+        "Abra um PDF em Arquivos ou uma nova digitalização, escolha a página e ajuste a posição e o tamanho da assinatura.",
+        "Assinatura em PDF com controles de tamanho e seleção de página."
+      ]
+    ]
+  },
+  "ms": {
+    "skip": "Langkau ke kandungan",
+    "navLabel": "Navigasi utama",
+    "home": "Laman utama SignDocs",
+    "how": "Cara penggunaan",
+    "guides": "Panduan",
+    "getApp": "Dapatkan aplikasi",
+    "language": "Bahasa",
+    "heroEyebrow": "UNTUK IPHONE DAN IPAD",
+    "heroTitleA": "Imbas kertas.",
+    "heroTitleB": "Tandatangani PDF.",
+    "heroTitleC": "Pada iPhone.",
+    "privacyLabelTitle": "Dokumen anda. Milik anda.",
+    "privacyLabelDescription": "Diproses pada peranti.",
+    "heroDescription": "Imbas dokumen, rakam tandatangan tulisan tangan dan simpan salinan yang ditandatangani dengan Signature Scan: Sign PDFs, juga dikenali sebagai SignDocs, pada iPhone dan iPad.",
+    "closer": "Lihat dengan lebih dekat",
+    "privacyNote": "Pemprosesan pada peranti. Akaun tidak diperlukan.",
+    "compatibility": "Memerlukan iOS 26 atau iPadOS 26 atau lebih baharu.",
+    "workflowLabel": "Daripada kertas kepada PDF bertandatangan",
+    "privateEyebrow": "PRIVASI SEJAK REKA BENTUK",
+    "privacyTitleA": "Dokumen anda.",
+    "privacyTitleB": "Anda yang tentukan.",
+    "privacyIntro": "Dokumen dan tandatangan diproses sepenuhnya pada iPhone atau iPad anda. SignDocs tidak memuat naiknya untuk pemprosesan. Anda memilih masa dan tempat untuk berkongsi.",
+    "shareEyebrow": "SEDIA UNTUK LANGKAH SETERUSNYA",
+    "shareTitleA": "Ditandatangani. Disimpan.",
+    "shareTitleB": "Sedia dihantar.",
+    "shareCopy": "Namakan PDF, cari semula dalam Recent Docs dan kongsi melalui aplikasi pilihan anda.",
+    "downloadTitleA": "Kurangkan kerja kertas.",
+    "downloadTitleB": "Lebihkan masa untuk diri.",
+    "downloadCopy": "Imbas, tandatangani dan teruskan hari anda.",
+    "device": "Untuk iPhone dan iPad.",
+    "closerTitle": "Langkah kecil.",
+    "closerTitleB": "Urusan dokumen selesai.",
+    "closerCopyA": "Daripada imbasan pertama kepada tandatangan.",
+    "closerCopyB": "Semuanya pada peranti anda.",
+    "galleryLabel": "LIHAT DENGAN LEBIH DEKAT",
+    "carouselLabel": "Terokai lima ciri SignDocs",
+    "galleryHint": "Beberapa ketikan. Kurang kerja kertas.",
+    "chooseFeature": "Pilih ciri",
+    "showFeature": "Paparkan ciri",
+    "featureLive": "Ciri",
+    "previousSlide": "Ciri sebelumnya",
+    "nextSlide": "Ciri seterusnya",
+    "guidesEyebrow": "SEDIKIT PENGETAHUAN",
+    "guidesTitleA": "Soalan tentang dokumen.",
+    "guidesTitleB": "Jawapan praktikal.",
+    "allGuides": "Semua panduan",
+    "readGuide": "Baca panduan",
+    "minRead": "minit bacaan",
+    "blogEyebrow": "KURANG KERJA KERTAS. LEBIH JELAS.",
+    "blogTitleA": "Imbas. Tandatangani.",
+    "blogTitleB": "Ketahui caranya.",
+    "blogIntro": "Panduan praktikal daripada imbasan pertama hingga salinan PDF bertandatangan yang sedia dikongsi.",
+    "homeLabel": "Laman utama",
+    "breadcrumb": "Jejak navigasi",
+    "onPage": "Pada halaman ini",
+    "inGuide": "Dalam panduan ini",
+    "by": "Oleh",
+    "updated": "Dikemas kini",
+    "sources": "Sumber dan nota editorial",
+    "preparedBy": "Disediakan oleh pembangun menggunakan dokumentasi produk, tangkapan skrin yang dibekalkan dan sumber yang dinyatakan, dengan bantuan AI untuk penulisan. Skrin menunjukkan antara muka bahasa Inggeris; menu sistem berbeza mengikut versi dan bahasa. Tiada dakwaan ujian praktikal bebas.",
+    "appCtaLabel": "Dapatkan Signature Scan",
+    "appCtaTitleA": "Kertas anda. Tandatangan anda.",
+    "appCtaTitleB": "Satu PDF bertandatangan.",
+    "appCtaCopy": "Imbas dokumen, rakam tulisan tangan dan simpan salinan bertandatangan dengan Signature Scan, juga dikenali sebagai SignDocs.",
+    "appNote": "Pemprosesan pada peranti. iPhone dan iPad versi 26 atau lebih baharu.",
+    "relatedEyebrow": "TERUSKAN",
+    "relatedTitle": "Langkah kecil seterusnya.",
+    "editorial": "Panduan oleh Damas Technologies LLC, pembangun Signature Scan, menggunakan dokumentasi produk dan Sokongan Apple dengan bantuan AI. Sumber disenaraikan dalam setiap panduan. Memerlukan iOS 26 atau iPadOS 26 atau lebih baharu.",
+    "footerGuides": "Panduan",
+    "privacy": "Dasar privasi (bahasa Inggeris)",
+    "terms": "Syarat penggunaan (bahasa Inggeris)",
+    "contact": "Hubungi kami",
+    "footerLabel": "Navigasi pengaki",
+    "workflow": [
+      [
+        "Imbas kertas.",
+        "Jadikan satu atau beberapa halaman sebagai PDF."
+      ],
+      [
+        "Tambahkan tandatangan.",
+        "Gunakan tulisan tangan anda sendiri."
+      ],
+      [
+        "Hantar hasilnya.",
+        "Simpan salinan bertandatangan."
+      ]
+    ],
+    "privacyPoints": [
+      [
+        "Pemprosesan tanpa internet.",
+        "Imbasan, pemotongan, pembuangan latar dan penciptaan PDF berlaku pada peranti."
+      ],
+      [
+        "Tiada akaun diperlukan.",
+        "Tandatangan tersimpan kekal pada peranti anda."
+      ],
+      [
+        "Dokumen asal tidak berubah.",
+        "Simpan PDF baharu dengan tandatangan yang dibenamkan."
+      ]
+    ],
+    "sharePoints": [
+      "AirDrop ke peranti berdekatan",
+      "Kongsi melalui Mail, Messages dan aplikasi serasi",
+      "Buka semula PDF yang disimpan"
+    ],
+    "features": [
+      [
+        "Daripada kertas kepada PDF.",
+        "IMBAS",
+        "Imbas secara automatik atau manual, laraskan bucu, betulkan perspektif dan satukan halaman yang diimbas dalam satu PDF.",
+        "Editor imbasan dengan bucu halaman boleh laras."
+      ],
+      [
+        "Tandatangan anda sendiri.",
+        "RAKAM",
+        "Tandatangani kertas dan jajarkan tulisan dalam panduan kamera.",
+        "Panduan kamera membingkai tandatangan dakwat merah pada kertas."
+      ],
+      [
+        "Kekalkan dakwat. Buang kertas.",
+        "PERHALUS",
+        "Potong dan buang latar. Bandingkan Clean, Balanced dan Bold sambil mengekalkan dakwat hitam, merah atau biru tua.",
+        "Pratonton Clean dan Balanced bagi tandatangan merah tanpa latar kertas."
+      ],
+      [
+        "Sedia digunakan semula.",
+        "SIMPAN",
+        "Simpan tandatangan pada peranti untuk digunakan semula, dinamakan semula atau dipadamkan.",
+        "Tandatangan tulisan tangan yang disimpan pada peranti."
+      ],
+      [
+        "Letak. Simpan. Hantar.",
+        "TANDATANGANI",
+        "Buka PDF daripada Files atau imbasan baharu, pilih halaman, kemudian seret dan cubit untuk melaraskan tandatangan.",
+        "Tandatangan pada PDF dengan pemegang saiz dan pemilih halaman."
+      ]
+    ]
+  },
+  "ja": {
+    "skip": "本文へ移動",
+    "navLabel": "メインナビゲーション",
+    "home": "SignDocs ホーム",
+    "how": "使い方",
+    "guides": "ガイド",
+    "getApp": "アプリを入手",
+    "language": "言語",
+    "heroEyebrow": "IPHONEとIPAD向け",
+    "heroTitleA": "紙をスキャン。",
+    "heroTitleB": "PDFに署名。",
+    "heroTitleC": "iPhoneで。",
+    "privacyLabelTitle": "あなたの書類は、あなたのもの。",
+    "privacyLabelDescription": "端末内で処理します。",
+    "heroDescription": "Signature Scan: Sign PDFs（SignDocs）で書類をスキャンし、手書きの署名を取り込み、署名済みコピーを保存。iPhoneとiPadで使えます。",
+    "closer": "詳しく見る",
+    "privacyNote": "端末内で処理。アカウント不要。",
+    "compatibility": "iOS 26またはiPadOS 26以降が必要です。",
+    "workflowLabel": "紙から署名済みPDFまで",
+    "privateEyebrow": "プライバシーに配慮した設計",
+    "privacyTitleA": "あなたの書類。",
+    "privacyTitleB": "管理するのはあなた。",
+    "privacyIntro": "書類と署名はiPhoneまたはiPadの中で処理されます。SignDocsは処理のためにアップロードしません。共有する日時と方法は自分で選べます。",
+    "shareEyebrow": "次の作業へ",
+    "shareTitleA": "署名して保存。",
+    "shareTitleB": "あとは送るだけ。",
+    "shareCopy": "PDFに名前を付け、Recent Docsから再度開き、対応するアプリで共有できます。",
+    "downloadTitleA": "書類仕事を少なく。",
+    "downloadTitleB": "自分の時間を多く。",
+    "downloadCopy": "スキャンして署名。次の作業へ。",
+    "device": "iPhoneとiPad向け。",
+    "closerTitle": "小さな手順で。",
+    "closerTitleB": "書類仕事を完了。",
+    "closerCopyA": "最初のスキャンから署名まで。",
+    "closerCopyB": "すべて自分の端末で。",
+    "galleryLabel": "詳しく見る",
+    "carouselLabel": "SignDocsの5つの機能",
+    "galleryHint": "数回の操作で、書類仕事を少なく。",
+    "chooseFeature": "機能を選ぶ",
+    "showFeature": "機能を表示",
+    "featureLive": "機能",
+    "previousSlide": "前の機能",
+    "nextSlide": "次の機能",
+    "guidesEyebrow": "知っておきたいこと",
+    "guidesTitleA": "書類についての疑問に。",
+    "guidesTitleB": "実用的な答えを。",
+    "allGuides": "すべてのガイド",
+    "readGuide": "ガイドを読む",
+    "minRead": "分で読めます",
+    "blogEyebrow": "書類仕事をもっとわかりやすく。",
+    "blogTitleA": "スキャン。署名。",
+    "blogTitleB": "使い方を知る。",
+    "blogIntro": "最初のスキャンから共有できる署名済みPDFまで、書類作業に役立つ実用的なガイドです。",
+    "homeLabel": "ホーム",
+    "breadcrumb": "パンくずナビゲーション",
+    "onPage": "このページの内容",
+    "inGuide": "このガイドの内容",
+    "by": "作成",
+    "updated": "更新日",
+    "sources": "出典と編集方針",
+    "preparedBy": "アプリ開発者が製品資料、提供されたスクリーンショット、記載の出典を基に、AIの補助を受けて執筆・編集しています。画像のアプリ表示は英語で、システムメニューはOSと言語により異なります。独立した実機テストを行ったという主張はしていません。",
+    "appCtaLabel": "Signature Scanを入手",
+    "appCtaTitleA": "自分の紙。自分の署名。",
+    "appCtaTitleB": "ひとつの署名済みPDF。",
+    "appCtaCopy": "Signature Scan（SignDocs）で書類をスキャンし、手書きの署名を取り込んで署名済みコピーを保存できます。",
+    "appNote": "端末内で処理。iPhoneとiPadのバージョン26以降に対応。",
+    "relatedEyebrow": "次に読む",
+    "relatedTitle": "次の小さな一歩。",
+    "editorial": "Signature Scanの開発元Damas Technologies LLCが、製品資料とAppleサポートを基にAIの補助を受けて作成しています。各ガイドに出典を掲載。iOS 26またはiPadOS 26以降が必要です。",
+    "footerGuides": "ガイド",
+    "privacy": "プライバシーポリシー（英語）",
+    "terms": "利用規約（英語）",
+    "contact": "お問い合わせ",
+    "footerLabel": "フッターナビゲーション",
+    "workflow": [
+      [
+        "紙をスキャン。",
+        "1枚でも複数枚でもPDFに。"
+      ],
+      [
+        "自分の署名を追加。",
+        "紙に書いた筆跡を取り込みます。"
+      ],
+      [
+        "共有する準備。",
+        "署名済みのコピーを保存します。"
+      ]
+    ],
+    "privacyPoints": [
+      [
+        "処理にインターネットは不要。",
+        "スキャン、署名の切り抜き、背景除去、PDF作成は端末内で行われます。"
+      ],
+      [
+        "アカウント登録は不要。",
+        "保存した署名は端末内に残り、再利用できます。"
+      ],
+      [
+        "元のPDFを保持。",
+        "署名を埋め込んだ新しいPDFを保存します。"
+      ]
+    ],
+    "sharePoints": [
+      "近くの端末にAirDropで送信",
+      "メール、メッセージなど対応アプリで共有",
+      "保存済みPDFを再度開く"
+    ],
+    "features": [
+      [
+        "紙からPDFへ。",
+        "書類をスキャン",
+        "自動または手動で撮影し、四隅と遠近を調整。スキャンした複数ページを1つのPDFにします。",
+        "四隅を調整できるSignDocsのスキャン編集画面。"
+      ],
+      [
+        "自分の手書き署名。",
+        "署名を取り込む",
+        "紙に署名し、カメラガイドに筆跡を合わせます。",
+        "紙に書かれた赤い署名を囲むカメラガイド。"
+      ],
+      [
+        "インクを残して、紙を除去。",
+        "細部を調整",
+        "切り抜いて背景を除去。Clean、Balanced、Boldを比較し、黒・赤・濃い青のインクを保持します。",
+        "紙の背景を除いた赤い署名のCleanとBalancedのプレビュー。"
+      ],
+      [
+        "次回もすぐ使える。",
+        "署名を保存",
+        "署名を端末に保存し、再利用、名前変更、削除ができます。",
+        "端末に保存された再利用可能な手書き署名。"
+      ],
+      [
+        "配置して保存、共有。",
+        "PDFに署名",
+        "ファイルからPDFを開くか、新しいスキャンを使用。ページを選び、ドラッグやピンチで署名を調整します。",
+        "サイズ調整ハンドルとページ選択がある署名済みPDF画面。"
+      ]
+    ]
+  },
+  "ko": {
+    "skip": "본문으로 이동",
+    "navLabel": "주요 탐색",
+    "home": "SignDocs 홈",
+    "how": "사용 방법",
+    "guides": "가이드",
+    "getApp": "앱 받기",
+    "language": "언어",
+    "heroEyebrow": "IPHONE 및 IPAD용",
+    "heroTitleA": "종이를 스캔하고.",
+    "heroTitleB": "PDF에 서명하세요.",
+    "heroTitleC": "iPhone에서.",
+    "privacyLabelTitle": "나의 문서는 나의 것.",
+    "privacyLabelDescription": "기기에서 처리합니다.",
+    "heroDescription": "Signature Scan: Sign PDFs, 즉 SignDocs로 문서를 스캔하고 손으로 쓴 서명을 캡처해 서명된 사본을 저장하세요. iPhone과 iPad에서 사용할 수 있습니다.",
+    "closer": "자세히 보기",
+    "privacyNote": "기기 내 처리. 계정 불필요.",
+    "compatibility": "iOS 26 또는 iPadOS 26 이상이 필요합니다.",
+    "workflowLabel": "종이에서 서명된 PDF까지",
+    "privateEyebrow": "개인정보 보호를 고려한 설계",
+    "privacyTitleA": "나의 문서.",
+    "privacyTitleB": "선택은 내가.",
+    "privacyIntro": "문서와 서명은 iPhone 또는 iPad에서 처리됩니다. SignDocs는 처리를 위해 파일을 업로드하지 않습니다. 공유 시점과 방법은 직접 선택합니다.",
+    "shareEyebrow": "다음 작업 준비 완료",
+    "shareTitleA": "서명하고 저장하고.",
+    "shareTitleB": "이제 보내세요.",
+    "shareCopy": "완성한 PDF에 이름을 붙이고 Recent Docs에서 다시 찾아 원하는 앱으로 공유하세요.",
+    "downloadTitleA": "서류 작업은 줄이고.",
+    "downloadTitleB": "나를 위한 시간은 늘리고.",
+    "downloadCopy": "스캔하고 서명한 뒤 다음 일을 하세요.",
+    "device": "iPhone 및 iPad용.",
+    "closerTitle": "간단한 단계로.",
+    "closerTitleB": "서류 작업 끝.",
+    "closerCopyA": "첫 스캔부터 마지막 서명까지.",
+    "closerCopyB": "모두 내 기기에서.",
+    "galleryLabel": "자세히 보기",
+    "carouselLabel": "SignDocs의 다섯 가지 기능",
+    "galleryHint": "몇 번의 터치로 줄이는 서류 작업.",
+    "chooseFeature": "기능 선택",
+    "showFeature": "기능 표시",
+    "featureLive": "기능",
+    "previousSlide": "이전 기능",
+    "nextSlide": "다음 기능",
+    "guidesEyebrow": "알아 두면 좋은 정보",
+    "guidesTitleA": "문서에 관한 질문.",
+    "guidesTitleB": "실용적인 답변.",
+    "allGuides": "모든 가이드",
+    "readGuide": "가이드 읽기",
+    "minRead": "분 읽기",
+    "blogEyebrow": "서류 작업을 더 알기 쉽게.",
+    "blogTitleA": "스캔. 서명.",
+    "blogTitleB": "사용법 알아보기.",
+    "blogIntro": "첫 스캔부터 공유할 수 있는 서명된 PDF까지, 문서 작업을 위한 실용적인 가이드입니다.",
+    "homeLabel": "홈",
+    "breadcrumb": "탐색 경로",
+    "onPage": "이 페이지에서",
+    "inGuide": "이 가이드에서",
+    "by": "작성",
+    "updated": "업데이트",
+    "sources": "출처 및 편집 안내",
+    "preparedBy": "앱 개발자가 제품 문서, 제공된 스크린샷 및 명시된 출처를 바탕으로 AI의 도움을 받아 작성하고 편집했습니다. 스크린샷의 앱 인터페이스는 영어이며 시스템 메뉴는 OS 버전과 언어에 따라 다릅니다. 독립적인 실사용 테스트를 했다고 주장하지 않습니다.",
+    "appCtaLabel": "Signature Scan 받기",
+    "appCtaTitleA": "내 종이. 내 서명.",
+    "appCtaTitleB": "하나의 서명된 PDF.",
+    "appCtaCopy": "Signature Scan, 즉 SignDocs로 문서를 스캔하고 손글씨 서명을 캡처해 서명된 사본을 저장하세요.",
+    "appNote": "기기 내 문서 처리. iPhone 및 iPad 버전 26 이상.",
+    "relatedEyebrow": "계속 알아보기",
+    "relatedTitle": "다음 작은 단계.",
+    "editorial": "Signature Scan 개발사 Damas Technologies LLC가 제품 문서와 Apple 지원을 참고하고 AI의 도움을 받아 작성한 가이드입니다. 각 가이드에 출처를 표시합니다. iOS 26 또는 iPadOS 26 이상이 필요합니다.",
+    "footerGuides": "가이드",
+    "privacy": "개인정보 처리방침 (영어)",
+    "terms": "이용 약관 (영어)",
+    "contact": "문의",
+    "footerLabel": "바닥글 탐색",
+    "workflow": [
+      [
+        "종이를 스캔하세요.",
+        "한 장 또는 여러 장을 PDF로 만드세요."
+      ],
+      [
+        "내 서명을 추가하세요.",
+        "직접 쓴 서명을 사용하세요."
+      ],
+      [
+        "결과를 공유하세요.",
+        "서명된 사본을 저장하세요."
+      ]
+    ],
+    "privacyPoints": [
+      [
+        "처리에 인터넷 불필요.",
+        "스캔, 서명 자르기, 배경 제거 및 PDF 생성은 기기에서 이루어집니다."
+      ],
+      [
+        "계정 생성 불필요.",
+        "저장한 서명은 기기에 남아 다시 사용할 수 있습니다."
+      ],
+      [
+        "원본 유지.",
+        "서명을 포함한 새 PDF를 저장하고 원본은 그대로 둡니다."
+      ]
+    ],
+    "sharePoints": [
+      "근처 기기에 AirDrop으로 전송",
+      "Mail, 메시지 및 호환 앱으로 공유",
+      "저장한 PDF 다시 열기"
+    ],
+    "features": [
+      [
+        "종이에서 PDF로.",
+        "문서 스캔",
+        "자동 또는 수동으로 촬영하고 모서리와 원근을 조정해 스캔한 여러 페이지를 하나의 PDF로 만드세요.",
+        "페이지 모서리를 조정하는 SignDocs 스캔 편집 화면."
+      ],
+      [
+        "직접 쓴 내 서명.",
+        "서명 캡처",
+        "종이에 서명하고 카메라 가이드에 맞춰 손글씨를 캡처하세요.",
+        "종이에 쓴 빨간 서명을 표시하는 카메라 가이드."
+      ],
+      [
+        "잉크만 남기고 종이는 제거.",
+        "세부 조정",
+        "자르고 배경을 제거하세요. 검정, 빨강, 진한 파랑 잉크를 유지하며 Clean, Balanced, Bold를 비교하세요.",
+        "종이 배경을 제거한 빨간 서명의 Clean 및 Balanced 미리보기."
+      ],
+      [
+        "다음에도 바로 사용.",
+        "서명 저장",
+        "기기에 서명을 저장해 재사용하고 이름을 바꾸거나 삭제하세요.",
+        "기기에 저장된 재사용 가능한 손글씨 서명."
+      ],
+      [
+        "배치하고 저장하고 공유.",
+        "PDF 서명",
+        "파일 앱의 PDF나 새 스캔을 열고 페이지를 선택한 다음 드래그와 핀치로 서명 위치와 크기를 조정하세요.",
+        "크기 조절 핸들과 페이지 선택기가 있는 PDF 서명 화면."
+      ]
+    ]
+  },
+  "ru": {
+    "skip": "Перейти к содержимому",
+    "navLabel": "Основная навигация",
+    "home": "Главная SignDocs",
+    "how": "Как это работает",
+    "guides": "Руководства",
+    "getApp": "Скачать приложение",
+    "language": "Язык",
+    "heroEyebrow": "ДЛЯ IPHONE И IPAD",
+    "heroTitleA": "Сканируйте бумагу.",
+    "heroTitleB": "Подписывайте PDF.",
+    "heroTitleC": "На iPhone.",
+    "privacyLabelTitle": "Ваши документы. Только ваши.",
+    "privacyLabelDescription": "Обработка на устройстве.",
+    "heroDescription": "Сканируйте документы, захватывайте рукописную подпись и сохраняйте подписанную копию в Signature Scan: Sign PDFs, также известном как SignDocs, на iPhone и iPad.",
+    "closer": "Рассмотреть подробнее",
+    "privacyNote": "Обработка на устройстве. Аккаунт не нужен.",
+    "compatibility": "Требуется iOS 26 или iPadOS 26 либо новее.",
+    "workflowLabel": "От бумаги до подписанного PDF",
+    "privateEyebrow": "КОНФИДЕНЦИАЛЬНОСТЬ ПО ЗАМЫСЛУ",
+    "privacyTitleA": "Ваши документы.",
+    "privacyTitleB": "Ваш выбор.",
+    "privacyIntro": "Документы и подписи обрабатываются на iPhone или iPad. SignDocs не загружает их для обработки. Вы сами выбираете, когда и куда отправить файл.",
+    "shareEyebrow": "ГОТОВО К СЛЕДУЮЩЕМУ ШАГУ",
+    "shareTitleA": "Подписано. Сохранено.",
+    "shareTitleB": "Можно отправлять.",
+    "shareCopy": "Назовите PDF, найдите его в Recent Docs и отправьте через подходящее приложение.",
+    "downloadTitleA": "Меньше бумажной работы.",
+    "downloadTitleB": "Больше времени для себя.",
+    "downloadCopy": "Сканируйте, подписывайте и занимайтесь своим днём.",
+    "device": "Для iPhone и iPad.",
+    "closerTitle": "Небольшие шаги.",
+    "closerTitleB": "Документы готовы.",
+    "closerCopyA": "От первого скана до подписи.",
+    "closerCopyB": "Всё на вашем устройстве.",
+    "galleryLabel": "РАССМОТРЕТЬ ПОДРОБНЕЕ",
+    "carouselLabel": "Пять возможностей SignDocs",
+    "galleryHint": "Несколько касаний. Меньше бумажной работы.",
+    "chooseFeature": "Выбрать функцию",
+    "showFeature": "Показать функцию",
+    "featureLive": "Функция",
+    "previousSlide": "Предыдущая функция",
+    "nextSlide": "Следующая функция",
+    "guidesEyebrow": "ПОЛЕЗНО ЗНАТЬ",
+    "guidesTitleA": "Вопросы о документах.",
+    "guidesTitleB": "Практические ответы.",
+    "allGuides": "Все руководства",
+    "readGuide": "Читать руководство",
+    "minRead": "мин чтения",
+    "blogEyebrow": "МЕНЬШЕ БУМАГ. БОЛЬШЕ ЯСНОСТИ.",
+    "blogTitleA": "Сканируйте. Подписывайте.",
+    "blogTitleB": "Узнайте как.",
+    "blogIntro": "Практические руководства: от первого сканирования до подписанного PDF, готового к отправке.",
+    "homeLabel": "Главная",
+    "breadcrumb": "Навигационная цепочка",
+    "onPage": "На этой странице",
+    "inGuide": "В этом руководстве",
+    "by": "Автор",
+    "updated": "Обновлено",
+    "sources": "Источники и редакционные примечания",
+    "preparedBy": "Подготовлено разработчиком по документации, предоставленным снимкам экрана и указанным источникам с помощью ИИ при написании и редактировании. На снимках показан английский интерфейс; системные меню зависят от версии ОС и языка. Независимые практические испытания не заявляются.",
+    "appCtaLabel": "Скачать Signature Scan",
+    "appCtaTitleA": "Ваша бумага. Ваша подпись.",
+    "appCtaTitleB": "Один подписанный PDF.",
+    "appCtaCopy": "Сканируйте документ, захватите рукописную подпись и сохраните подписанную копию с Signature Scan, также известным как SignDocs.",
+    "appNote": "Обработка на устройстве. iPhone и iPad с версией 26 или новее.",
+    "relatedEyebrow": "ПРОДОЛЖАЙТЕ",
+    "relatedTitle": "Следующий небольшой шаг.",
+    "editorial": "Руководства Damas Technologies LLC, разработчика Signature Scan, основаны на документации и Службе поддержки Apple и подготовлены с помощью ИИ. Источники указаны в каждом материале. Требуется iOS 26 или iPadOS 26 либо новее.",
+    "footerGuides": "Руководства",
+    "privacy": "Конфиденциальность (на английском)",
+    "terms": "Условия использования (на английском)",
+    "contact": "Связаться",
+    "footerLabel": "Навигация в подвале",
+    "workflow": [
+      [
+        "Отсканируйте бумагу.",
+        "Одна или несколько страниц в PDF."
+      ],
+      [
+        "Добавьте подпись.",
+        "Используйте свой почерк."
+      ],
+      [
+        "Отправьте результат.",
+        "Сохраните подписанную копию."
+      ]
+    ],
+    "privacyPoints": [
+      [
+        "Обработка без интернета.",
+        "Сканирование, обрезка подписи, удаление фона и создание PDF выполняются на устройстве."
+      ],
+      [
+        "Без регистрации.",
+        "Сохранённые подписи остаются на вашем устройстве."
+      ],
+      [
+        "Оригинал не меняется.",
+        "Подпись встраивается в новый PDF, а исходный файл сохраняется."
+      ]
+    ],
+    "sharePoints": [
+      "AirDrop на устройство рядом",
+      "Отправка через Почту, Сообщения и совместимые приложения",
+      "Повторное открытие сохранённых PDF"
+    ],
+    "features": [
+      [
+        "Из бумаги в PDF.",
+        "СКАНИРОВАНИЕ",
+        "Снимайте автоматически или вручную, корректируйте углы и перспективу и собирайте отсканированные страницы в один PDF.",
+        "Редактор сканов SignDocs с регулируемыми углами страницы."
+      ],
+      [
+        "Ваша рукописная подпись.",
+        "ЗАХВАТ ПОДПИСИ",
+        "Распишитесь на бумаге и поместите подпись в рамку камеры.",
+        "Рамка камеры вокруг подписи красными чернилами на бумаге."
+      ],
+      [
+        "Чернила остаются. Бумага исчезает.",
+        "УТОЧНЕНИЕ",
+        "Обрежьте изображение и удалите фон. Сравните Clean, Balanced и Bold, сохраняя чёрные, красные или тёмно-синие чернила.",
+        "Предпросмотр красной подписи без бумажного фона в режимах Clean и Balanced."
+      ],
+      [
+        "Для следующего раза.",
+        "СОХРАНЕНИЕ",
+        "Храните подписи на устройстве, используйте повторно, переименовывайте или удаляйте.",
+        "Сохранённые на устройстве рукописные подписи."
+      ],
+      [
+        "Разместите. Сохраните. Отправьте.",
+        "ПОДПИСАНИЕ PDF",
+        "Откройте PDF из Файлов или новый скан, выберите страницу и настройте положение и размер подписи жестами.",
+        "Подпись на PDF с маркерами размера и выбором страницы."
+      ]
+    ]
+  },
+  "zh-hans": {
+    "skip": "跳转到正文",
+    "navLabel": "主导航",
+    "home": "SignDocs 首页",
+    "how": "使用方法",
+    "guides": "指南",
+    "getApp": "获取 App",
+    "language": "语言",
+    "heroEyebrow": "适用于 IPHONE 和 IPAD",
+    "heroTitleA": "扫描纸张。",
+    "heroTitleB": "签署 PDF。",
+    "heroTitleC": "就在 iPhone 上。",
+    "privacyLabelTitle": "你的文件，只属于你。",
+    "privacyLabelDescription": "在设备上处理。",
+    "heroDescription": "使用 Signature Scan: Sign PDFs（也称为 SignDocs）扫描文件、提取手写签名，并保存签署后的副本。适用于 iPhone 和 iPad。",
+    "closer": "进一步了解",
+    "privacyNote": "设备端处理，无需账户。",
+    "compatibility": "需要 iOS 26 或 iPadOS 26 及更新版本。",
+    "workflowLabel": "从纸张到签署后的 PDF",
+    "privateEyebrow": "注重隐私的设计",
+    "privacyTitleA": "你的文件。",
+    "privacyTitleB": "由你决定。",
+    "privacyIntro": "文件和签名都在你的 iPhone 或 iPad 上处理。SignDocs 不会为了处理而上传它们。你可以自行选择何时以及如何分享。",
+    "shareEyebrow": "准备好下一步",
+    "shareTitleA": "签署。保存。",
+    "shareTitleB": "随时发送。",
+    "shareCopy": "为 PDF 命名，在 Recent Docs 中重新找到它，并通过兼容的 App 分享。",
+    "downloadTitleA": "少一点文书工作。",
+    "downloadTitleB": "多一点自己的时间。",
+    "downloadCopy": "扫描、签署，继续你的一天。",
+    "device": "适用于 iPhone 和 iPad。",
+    "closerTitle": "简单几步。",
+    "closerTitleB": "处理好文书工作。",
+    "closerCopyA": "从第一次扫描到添加签名。",
+    "closerCopyB": "都在你的设备上完成。",
+    "galleryLabel": "进一步了解",
+    "carouselLabel": "探索 SignDocs 的五项功能",
+    "galleryHint": "轻点几下，减少文书工作。",
+    "chooseFeature": "选择功能",
+    "showFeature": "显示功能",
+    "featureLive": "功能",
+    "previousSlide": "上一项功能",
+    "nextSlide": "下一项功能",
+    "guidesEyebrow": "实用知识",
+    "guidesTitleA": "文件处理有疑问？",
+    "guidesTitleB": "这里有实用答案。",
+    "allGuides": "所有指南",
+    "readGuide": "阅读指南",
+    "minRead": "分钟阅读",
+    "blogEyebrow": "少一点文书工作，多一点清晰。",
+    "blogTitleA": "扫描。签署。",
+    "blogTitleB": "了解方法。",
+    "blogIntro": "从第一次扫描到可分享的已签署 PDF，这些实用指南帮助你处理眼前的文件。",
+    "homeLabel": "首页",
+    "breadcrumb": "面包屑导航",
+    "onPage": "本页内容",
+    "inGuide": "本指南内容",
+    "by": "作者",
+    "updated": "更新日期",
+    "sources": "来源与编辑说明",
+    "preparedBy": "由 App 开发者根据产品文档、提供的截图及所列来源编写，并使用 AI 辅助起草和编辑。截图显示英文界面；系统菜单因系统版本和语言而异。本指南不声称进行过独立的实际操作测试。",
+    "appCtaLabel": "获取 Signature Scan",
+    "appCtaTitleA": "你的纸张。你的签名。",
+    "appCtaTitleB": "一份签署后的 PDF。",
+    "appCtaCopy": "使用 Signature Scan（SignDocs）扫描文件、提取手写签名，并保存签署后的副本。",
+    "appNote": "设备端文件处理。适用于系统版本 26 或更新的 iPhone 和 iPad。",
+    "relatedEyebrow": "继续了解",
+    "relatedTitle": "接下来的小步骤。",
+    "editorial": "本指南由 Signature Scan 开发者 Damas Technologies LLC 根据产品文档与 Apple 支持资料编写，并使用 AI 辅助起草和编辑。每篇指南均列出来源。需要 iOS 26 或 iPadOS 26 及更新版本。",
+    "footerGuides": "指南",
+    "privacy": "隐私政策（英文）",
+    "terms": "使用条款（英文）",
+    "contact": "联系我们",
+    "footerLabel": "页脚导航",
+    "workflow": [
+      [
+        "扫描纸张。",
+        "将一页或多页扫描件保存为 PDF。"
+      ],
+      [
+        "添加你的签名。",
+        "使用你亲笔书写的签名。"
+      ],
+      [
+        "分享处理结果。",
+        "保存一份签署后的副本。"
+      ]
+    ],
+    "privacyPoints": [
+      [
+        "处理时无需联网。",
+        "扫描、签名裁剪、背景移除和 PDF 创建都在设备上完成。"
+      ],
+      [
+        "无需创建账户。",
+        "保存的签名留在设备上，供以后重复使用。"
+      ],
+      [
+        "保留原始文件。",
+        "将签名嵌入新的 PDF，原始 PDF 保持不变。"
+      ]
+    ],
+    "sharePoints": [
+      "通过 AirDrop 发送到附近设备",
+      "通过邮件、信息和其他兼容 App 分享",
+      "需要时重新打开已保存的 PDF"
+    ],
+    "features": [
+      [
+        "从纸张到 PDF。",
+        "扫描文件",
+        "自动扫描或手动拍摄，调整边角与透视，将多页扫描件放入一个 PDF。",
+        "可调整页面边角的 SignDocs 扫描编辑器。"
+      ],
+      [
+        "你亲笔写下的签名。",
+        "提取签名",
+        "在纸上签名，将笔迹对准专用相机引导框。",
+        "相机引导框圈住纸上红色墨水签名。"
+      ],
+      [
+        "保留墨迹，去掉纸张。",
+        "调整细节",
+        "裁剪并去除背景，比较 Clean、Balanced 与 Bold，保留黑色、红色或深蓝色墨迹。",
+        "Clean 与 Balanced 模式下去除纸张背景的红色签名预览。"
+      ],
+      [
+        "下次随时再用。",
+        "保存签名",
+        "将签名保存在设备上，重复使用、重命名或删除。",
+        "保存在设备上的可重复使用手写签名。"
+      ],
+      [
+        "放置、保存、分享。",
+        "签署 PDF",
+        "从文件 App 打开 PDF 或使用新扫描件，选择页面，拖移并捏合来调整签名位置和大小。",
+        "带大小调整控件和页面选择器的 PDF 签名画面。"
+      ]
+    ]
+  }
+}

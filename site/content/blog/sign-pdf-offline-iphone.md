@@ -1,4 +1,5 @@
 ---
+translationKey: "sign-pdf-offline-iphone"
 title: "How to sign a PDF offline on iPhone"
 description: "Prepare a PDF and signature before you lose internet access, sign locally on iPhone, and understand which saving and sharing steps may still need a connection."
 publishedAt: "2026-10-19"

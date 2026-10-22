@@ -1,4 +1,5 @@
 ---
+translationKey: "sign-pdf-offline-iphone"
 title: "iPhone’da PDF çevrimdışı nasıl imzalanır?"
 description: "İnternet bağlantısı kesilmeden önce PDF’yi ve imzanızı hazırlayın, iPhone’da yerel olarak imzalayın ve hangi paylaşım adımlarının bağlantı gerektirebileceğini öğrenin."
 publishedAt: "2026-10-19"

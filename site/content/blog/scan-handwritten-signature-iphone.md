@@ -1,4 +1,5 @@
 ---
+translationKey: "scan-handwritten-signature-iphone"
 title: "How to scan your handwritten signature on iPhone"
 description: "Capture the signature you write on paper, refine its background, and save it on your iPhone to reuse when signing PDFs in SignDocs."
 publishedAt: "2026-10-19"

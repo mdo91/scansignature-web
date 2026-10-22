@@ -1,3 +1,4 @@
+import LanguageSwitcher from '@/components/language-switcher';
 import {
   ArrowDown,
   ArrowUpRight,
@@ -40,13 +41,7 @@ export function HomePage({ locale = 'en' }: { locale?: Locale }) {
           <a href={`${sitePath(homePath)}#features`}>{t.how}</a>
           <a href={sitePath(localePath(locale, '/blog/'))}>{t.guides}</a>
         </nav>
-        <nav className="language-switcher" aria-label={t.language}>
-          {locales.map((code) => (
-            <a key={code} href={sitePath(localePath(code, '/'))} lang={localeInfo[code].htmlLang} aria-label={localeInfo[code].language} aria-current={code === locale ? 'page' : undefined}>
-              {code.toUpperCase()}
-            </a>
-          ))}
-        </nav>
+        <LanguageSwitcher locale={locale} />
         <a className="header-download" href={storeUrl}>
           {t.getApp} <ArrowUpRight size={16} aria-hidden="true" />
         </a>

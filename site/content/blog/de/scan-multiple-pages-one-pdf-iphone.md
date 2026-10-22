@@ -1,4 +1,5 @@
 ---
+translationKey: "scan-multiple-pages-one-pdf-iphone"
 title: "Mehrere Seiten auf dem iPhone in ein PDF scannen"
 description: "Scanne mehrere Seiten als PDF auf dem iPhone: Prüfe abgeschnittene Ränder, Spiegelungen und Seitenzahl, bevor du das Dokument signierst oder teilst."
 publishedAt: "2026-10-19"

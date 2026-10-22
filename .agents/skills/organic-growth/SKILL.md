@@ -38,13 +38,13 @@ Grow qualified organic visits and the product action that matters (for example, 
 2. Answer the question early. Give accurate, task-specific steps, useful limitations, and an appropriate next action. Cite authoritative sources for changeable platform instructions and product claims.
 3. Use only verified product capabilities. Do not invent testing, authorship, expertise, testimonials, legal outcomes, or screenshots. Attribute content transparently when a named author is not verified.
 4. Add contextual internal links and a relevant conversion path without disrupting the reader's task. Use distinct campaign attribution only when its provider token is authentic and reporting is enabled.
-5. Publish at most one substantial new page or update per scheduled run. Skip the run when evidence, factual support, or reader value is insufficient. Avoid near-duplicate pages, keyword stuffing, bulk AI content, and artificial date changes.
+5. For Signature Scan, follow the owner-approved eleven-language batch policy in the playbook: target one qualified new guide per locale, with at most eleven changed guides total, substantial-update fallbacks and explicit per-language quality skips. The reviewed 42-translation launch is a separate setup change. For other projects, establish their publication limit before scheduling. Skip the run when evidence, factual support, or reader value is insufficient. Avoid near-duplicate pages, keyword stuffing, bulk AI content, and artificial date changes.
 6. Validate metadata, links, rendered output, mobile layout, and the project build. Prefer a reviewable pull request and follow existing repository protections; do not bypass required checks or merge rules.
 
 ## Choose an operating model
 
 - A local Codex automation can use the project's existing local tools and secure credential store. It needs the computer and Codex runtime available at its scheduled time; sleep or shutdown may prevent the run.
-- A hosted runner can run while the owner's computer is offline. It needs a supported AI API credential when the runner uses an API-backed agent, securely provisioned search-provider credentials, private-state handling, repository permissions, and an end-to-end trial. Confirm any API billing and credential transfer explicitly.
+- A hosted runner can run while the owner's computer is offline. Signature Scan uses an isolated managed ChatGPT subscription session, existing authorized Google grants, separate encrypted credential vaults, a website-only publisher App and an authenticated end-to-end trial; it has no paid API fallback. Other API-backed agents need a supported AI API credential. Confirm any API billing and credential transfer explicitly.
 - Do not switch runners or duplicate schedules silently. Keep one active publisher until the replacement has passed a full trial and its deployment is verified.
 
 ## Measure outcomes

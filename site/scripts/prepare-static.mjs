@@ -1,3 +1,4 @@
+import {locales,localeInfo} from '../lib/locale-registry.mjs';
 import { cp, access, mkdtemp, rename, rm, readdir, readFile, writeFile } from 'node:fs/promises';
 import { resolve, sep, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -34,10 +35,10 @@ async function setDocumentLanguage(directory, root = directory) {
     if (entry.isDirectory()) await setDocumentLanguage(file, root);
     else if (entry.name.endsWith('.html')) {
       const relative = file.slice(root.length + 1).split(sep);
-      const locale = ['tr', 'de', 'es'].includes(relative[0]) ? relative[0] : 'en';
+      const locale = locales.includes(relative[0]) ? relative[0] : 'en';
       if (locale !== 'en') {
         const html = await readFile(file, 'utf8');
-        await writeFile(file, html.replace(/<html lang="[^"]*"/, `<html lang="${locale}"`));
+        await writeFile(file, html.replace(/<html lang="[^"]*"/, `<html lang="${localeInfo[locale].htmlLang}"`));
       }
     }
   }

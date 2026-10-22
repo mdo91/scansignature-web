@@ -1,4 +1,5 @@
 ---
+translationKey: "sign-pdf-iphone-without-printing"
 title: "iPhone’da PDF yazdırmadan nasıl imzalanır?"
 description: "Mevcut bir PDF’ye el yazısı imzanızı ekleyin, doğru yere yerleştirin ve belgeyi yazdırmadan ayrı bir imzalı kopya olarak kaydedin."
 publishedAt: "2026-10-19"

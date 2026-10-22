@@ -1,10 +1,8 @@
 import { readFileSync, existsSync } from 'node:fs';
 import { resolve, extname, sep } from 'node:path';
 import { load } from 'cheerio';
-import { getPosts } from '../lib/posts.mjs';
-const locales = ['en', 'tr', 'de', 'es'];
-const localeInfo = { en: { hreflang: 'en-US' }, tr: { hreflang: 'tr-TR' }, de: { hreflang: 'de-DE' }, es: { hreflang: 'es-ES' } };
-const localePath = (locale, path) => locale === 'en' ? path : `/${locale}${path}`;
+import { getPosts, postAlternates, contentUnits } from '../lib/posts.mjs';
+import {locales,localeInfo,localePath} from '../lib/locale-registry.mjs';
 
 const output = resolve('dist/client');
 const base = process.env.NEXT_PUBLIC_BASE_PATH || '';
@@ -17,7 +15,7 @@ const routes = [
     { path: localePath(locale, '/'), locale, group: '/', indexable: true },
     { path: localePath(locale, '/blog/'), locale, group: '/blog/', indexable: true, blog: true },
     ...getPosts({ locale }).map((post) => ({
-      path: localePath(locale, `/blog/${post.slug}/`), locale, group: `/blog/${post.slug}/`, indexable: true, post,
+      path: localePath(locale, `/blog/${post.slug}/`), locale, group: post.translationKey, indexable: true, post,
     })),
   ]),
   { path: '/growth/', locale: 'en', indexable: false },
@@ -31,7 +29,7 @@ function target(path) {
   if (result !== output && !result.startsWith(output + sep)) fail('Reference outside artifact');
   return extname(result) ? result : resolve(result, 'index.html');
 }
-const languageAlternates = (group) => Object.fromEntries(locales.map((locale) => [localeInfo[locale].hreflang, origin + localePath(locale, group)]));
+const languageAlternates = (route) => route.post ? Object.fromEntries(Object.entries(postAlternates(route.post)).map(([lang,path])=>[lang,origin+path])) : Object.fromEntries([...locales.map(locale=>[localeInfo[locale].hreflang,origin+localePath(locale,route.group)]),['x-default',origin+route.group]]);
 
 for (const route of routes) {
   const filename = target(route.path);
@@ -49,13 +47,13 @@ for (const route of routes) {
   if (route.indexable ? noindex : !noindex) fail(`${route.path}: unexpected indexing directive`);
   if (route.post && !$('a[href*="id6805875185"]').length) fail(`${route.path}: missing app link`);
 
-  const expectedAlternates = route.group ? languageAlternates(route.group) : null;
+  const expectedAlternates = route.group ? languageAlternates(route) : null;
   if (expectedAlternates) {
     const actual = Object.fromEntries($('link[rel="alternate"][hreflang]').toArray().map((el) => [$(el).attr('hreflang'), $(el).attr('href')]));
     for (const [language, url] of Object.entries(expectedAlternates)) {
       if (actual[language] !== url) fail(`${route.path}: missing or incorrect ${language} alternate`);
     }
-    if (actual['x-default'] !== origin + route.group) fail(`${route.path}: missing x-default alternate`);
+    if (JSON.stringify(Object.keys(actual).sort()) !== JSON.stringify(Object.keys(expectedAlternates).sort())) fail(`${route.path}: unexpected alternates`);
   }
 
   $('script[type="application/ld+json"]').each((_, element) => {
@@ -64,7 +62,7 @@ for (const route of routes) {
     if (route.post && data['@type'] === 'BlogPosting' && data.inLanguage !== route.locale) fail(`${route.path}: article schema language mismatch`);
   });
   if (route.post) {
-    if ($('.prose').text().trim().split(/\s+/).length < 250) fail(`${route.path}: article missing from HTML or too short`);
+    if (contentUnits($('.prose').text()) < 250) fail(`${route.path}: article missing from HTML or too short`);
     if (!$('script[type="application/ld+json"]').toArray().some((el) => JSON.parse($(el).text())['@type'] === 'BlogPosting')) fail(`${route.path}: missing article schema`);
     const bodyLinks = $('.prose a[href^="/"], .prose a[href^="' + base + '/"]').toArray();
     for (const link of bodyLinks) {
@@ -106,17 +104,12 @@ for (const route of routes.filter((route) => route.post)) {
   const item = sitemap('url').toArray().find((element) => sitemap(element).children('loc').text() === origin + route.path);
   if (sitemap(item).children('lastmod').text() !== route.post.updatedAt) fail(`${route.path}: sitemap lastmod differs from localized article date`);
 }
-for (const locale of locales) {
-  for (const group of ['/', '/blog/', ...basePosts.map((post) => `/blog/${post.slug}/`)]) {
-    const url = origin + localePath(locale, group);
-    const item = sitemap('url').toArray().find((element) => sitemap(element).children('loc').text() === url);
-    if (!item) fail(`Sitemap missing ${url}`);
-    const alternates = sitemap(item).find('xhtml\\:link[rel="alternate"]').toArray();
-    for (const [language, href] of Object.entries(languageAlternates(group))) {
-      if (!alternates.some((element) => sitemap(element).attr('hreflang') === language && sitemap(element).attr('href') === href)) fail(`Sitemap missing ${language} alternate for ${url}`);
-    }
-    if (!alternates.some((element) => sitemap(element).attr('hreflang') === 'x-default' && sitemap(element).attr('href') === origin + group)) fail(`Sitemap missing x-default alternate for ${url}`);
-  }
+for (const route of routes.filter(route=>route.group)) {
+  const item=sitemap('url').toArray().find(element=>sitemap(element).children('loc').text()===origin+route.path);
+  if(!item) fail(`Sitemap missing ${route.path}`);
+  const actual=Object.fromEntries(sitemap(item).find('xhtml\\:link[rel="alternate"]').toArray().map(element=>[sitemap(element).attr('hreflang'),sitemap(element).attr('href')]));
+  const expected=languageAlternates(route);
+  if(JSON.stringify(Object.entries(actual).sort())!==JSON.stringify(Object.entries(expected).sort())) fail(`${route.path}: sitemap language alternates mismatch`);
 }
 if (!readFileSync(resolve(output, 'robots.txt'), 'utf8').includes(`${origin}/sitemap.xml`)) fail('Missing sitemap declaration');
 for (const file of ['404.html', '.nojekyll']) if (!existsSync(resolve(output, file))) fail(`Missing ${file}`);

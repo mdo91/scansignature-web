@@ -1,4 +1,5 @@
 ---
+translationKey: "scan-handwritten-signature-iphone"
 title: "Cómo escanear tu firma manuscrita en iPhone"
 description: "Captura en el iPhone la firma que escribes en papel, ajusta su fondo y guárdala en SignDocs para reutilizarla al firmar PDF."
 publishedAt: "2026-10-19"

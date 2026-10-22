@@ -4,9 +4,262 @@
   "market": "US",
   "language": "en",
   "markets": [
-    { "locale": "en", "country": "US", "countryName": "United States", "searchConsoleCountry": "usa", "geoTargetId": "2840", "languageId": "1000" },
-    { "locale": "tr", "country": "TR", "countryName": "Türkiye", "searchConsoleCountry": "tur", "geoTargetId": "2792", "languageId": "1037" },
-    { "locale": "de", "country": "DE", "countryName": "Germany", "searchConsoleCountry": "deu", "geoTargetId": "2276", "languageId": "1001" },
-    { "locale": "es", "country": "ES", "countryName": "Spain", "searchConsoleCountry": "esp", "geoTargetId": "2724", "languageId": "1003" }
-  ]
+    {
+      "locale": "en",
+      "country": "US",
+      "countryName": "United States",
+      "searchConsoleCountry": "usa",
+      "geoTargetId": "2840",
+      "languageId": "1000",
+      "seeds": [
+        "scan handwritten signature iphone",
+        "sign pdf on iphone",
+        "scan multiple pages iphone",
+        "remove paper background signature",
+        "reuse saved signature ipad",
+        "sign pdf offline iphone",
+        "share signed pdf iphone",
+        "faint signature strokes iphone",
+        "Clean Balanced Bold signature",
+        "red ink signature scan",
+        "scan document glare iphone",
+        "check signed pdf attachment",
+        "download cloud pdf before signing offline"
+      ]
+    },
+    {
+      "locale": "tr",
+      "country": "TR",
+      "countryName": "Türkiye",
+      "searchConsoleCountry": "tur",
+      "geoTargetId": "2792",
+      "languageId": "1037",
+      "seeds": [
+        "iphone el yazısı imza tarama",
+        "iphone pdf imzalama",
+        "birden fazla sayfayı tek pdf tarama",
+        "imza kağıt arka plan kaldırma",
+        "ipad kayıtlı imzayı yeniden kullanma",
+        "iphone çevrimdışı pdf imzalama",
+        "imzalı pdf paylaşma",
+        "taranan imzada ince çizgiler",
+        "kırmızı mürekkepli imza tarama",
+        "belge tararken parlama",
+        "imzalı pdf eki kontrol etme",
+        "çevrimdışı imzalamadan önce pdf indirme"
+      ]
+    },
+    {
+      "locale": "de",
+      "country": "DE",
+      "countryName": "Germany",
+      "searchConsoleCountry": "deu",
+      "geoTargetId": "2276",
+      "languageId": "1001",
+      "seeds": [
+        "handschriftliche unterschrift scannen iphone",
+        "pdf auf iphone unterschreiben",
+        "mehrere seiten als pdf scannen",
+        "papierhintergrund unterschrift entfernen",
+        "gespeicherte unterschrift ipad wiederverwenden",
+        "pdf offline unterschreiben iphone",
+        "signiertes pdf teilen iphone",
+        "dünne linien unterschrift scannen",
+        "rote unterschrift scannen iphone",
+        "blendung dokument scannen iphone",
+        "signierten pdf anhang prüfen",
+        "cloud pdf vor offline unterschrift herunterladen"
+      ]
+    },
+    {
+      "locale": "es",
+      "country": "ES",
+      "countryName": "Spain",
+      "searchConsoleCountry": "esp",
+      "geoTargetId": "2724",
+      "languageId": "1003",
+      "seeds": [
+        "escanear firma manuscrita iphone",
+        "firmar pdf en iphone",
+        "escanear varias páginas en un pdf",
+        "quitar fondo de papel de firma",
+        "reutilizar firma guardada ipad",
+        "firmar pdf sin conexión iphone",
+        "compartir pdf firmado iphone",
+        "trazos finos firma escaneada",
+        "escanear firma tinta roja",
+        "reflejos escanear documento iphone",
+        "comprobar adjunto pdf firmado",
+        "descargar pdf antes de firmar sin conexión"
+      ]
+    },
+    {
+      "locale": "fr",
+      "country": "WORLDWIDE",
+      "countryName": "Worldwide",
+      "searchConsoleCountry": null,
+      "geoTargetId": null,
+      "languageId": "1002",
+      "googleLanguageCode": "fr",
+      "seeds": [
+        "scanner signature manuscrite iphone",
+        "signer pdf iphone",
+        "scanner plusieurs pages pdf iphone",
+        "supprimer fond papier signature",
+        "réutiliser signature ipad",
+        "signer pdf hors ligne iphone",
+        "partager pdf signé iphone",
+        "traits fins signature scannée",
+        "signature encre rouge iphone",
+        "reflets scanner document iphone",
+        "vérifier pièce jointe pdf signée",
+        "télécharger pdf avant signature hors ligne"
+      ]
+    },
+    {
+      "locale": "ja",
+      "country": "WORLDWIDE",
+      "countryName": "Worldwide",
+      "searchConsoleCountry": null,
+      "geoTargetId": null,
+      "languageId": "1005",
+      "googleLanguageCode": "ja",
+      "seeds": [
+        "iPhone 手書き署名 スキャン",
+        "iPhone PDF 署名",
+        "iPhone 複数ページ PDF スキャン",
+        "署名 紙の背景 削除",
+        "iPad 保存した署名 再利用",
+        "iPhone オフライン PDF 署名",
+        "署名済み PDF 共有",
+        "署名 細い線 消える スキャン",
+        "赤いインク 署名 スキャン",
+        "書類 スキャン 反射 対策",
+        "署名済み PDF 添付 確認",
+        "オフライン 署名 前 PDF ダウンロード"
+      ]
+    },
+    {
+      "locale": "ko",
+      "country": "WORLDWIDE",
+      "countryName": "Worldwide",
+      "searchConsoleCountry": null,
+      "geoTargetId": null,
+      "languageId": "1012",
+      "googleLanguageCode": "ko",
+      "seeds": [
+        "아이폰 손글씨 서명 스캔",
+        "아이폰 PDF 서명",
+        "아이폰 여러 페이지 PDF 스캔",
+        "서명 종이 배경 제거",
+        "아이패드 저장한 서명 재사용",
+        "아이폰 오프라인 PDF 서명",
+        "서명한 PDF 공유",
+        "서명 스캔 가는 선 사라짐",
+        "빨간 잉크 서명 스캔",
+        "문서 스캔 빛 반사",
+        "서명한 PDF 첨부 확인",
+        "오프라인 서명 전 PDF 다운로드"
+      ]
+    },
+    {
+      "locale": "ms",
+      "country": "WORLDWIDE",
+      "countryName": "Worldwide",
+      "searchConsoleCountry": null,
+      "geoTargetId": null,
+      "languageId": "1102",
+      "googleLanguageCode": "ms",
+      "seeds": [
+        "imbas tandatangan tulisan tangan iphone",
+        "tandatangan pdf iphone",
+        "imbas beberapa halaman satu pdf",
+        "buang latar kertas tandatangan",
+        "guna semula tandatangan ipad",
+        "tandatangan pdf luar talian iphone",
+        "kongsi pdf bertandatangan",
+        "garisan halus tandatangan imbasan",
+        "imbas tandatangan dakwat merah",
+        "silau imbas dokumen iphone",
+        "semak lampiran pdf bertandatangan",
+        "muat turun pdf sebelum tandatangan luar talian"
+      ]
+    },
+    {
+      "locale": "pt",
+      "country": "WORLDWIDE",
+      "countryName": "Worldwide",
+      "searchConsoleCountry": null,
+      "geoTargetId": null,
+      "languageId": "1014",
+      "googleLanguageCode": "pt",
+      "seeds": [
+        "digitalizar assinatura manuscrita iphone",
+        "assinar pdf iphone",
+        "digitalizar várias páginas em um pdf",
+        "remover fundo de papel da assinatura",
+        "reutilizar assinatura salva ipad",
+        "assinar pdf offline iphone",
+        "compartilhar pdf assinado",
+        "traços finos assinatura digitalizada",
+        "digitalizar assinatura tinta vermelha",
+        "reflexo ao digitalizar documento iphone",
+        "conferir anexo pdf assinado",
+        "baixar pdf antes de assinar offline"
+      ]
+    },
+    {
+      "locale": "ru",
+      "country": "WORLDWIDE",
+      "countryName": "Worldwide",
+      "searchConsoleCountry": null,
+      "geoTargetId": null,
+      "languageId": "1031",
+      "googleLanguageCode": "ru",
+      "seeds": [
+        "сканировать рукописную подпись iphone",
+        "подписать pdf на iphone",
+        "сканировать несколько страниц в pdf",
+        "убрать бумажный фон подписи",
+        "повторно использовать подпись ipad",
+        "подписать pdf без интернета iphone",
+        "отправить подписанный pdf",
+        "тонкие линии подписи при сканировании",
+        "сканировать красную подпись",
+        "блики при сканировании документа",
+        "проверить подписанное вложение pdf",
+        "скачать pdf перед подписанием без интернета"
+      ]
+    },
+    {
+      "locale": "zh-hans",
+      "country": "WORLDWIDE",
+      "countryName": "Worldwide",
+      "searchConsoleCountry": null,
+      "geoTargetId": null,
+      "languageId": "1017",
+      "googleLanguageCode": "zh_CN",
+      "seeds": [
+        "iPhone 扫描手写签名",
+        "iPhone PDF 签名",
+        "iPhone 扫描多页合成一个 PDF",
+        "去除签名纸张背景",
+        "iPad 重复使用已保存签名",
+        "iPhone 离线签署 PDF",
+        "分享已签署 PDF",
+        "扫描签名细线消失",
+        "扫描红色墨水签名",
+        "扫描文件反光处理",
+        "检查已签名 PDF 附件",
+        "离线签名前下载 PDF"
+      ]
+    }
+  ],
+  "siteUrl": "https://scansignature.app/",
+  "profiles": {
+    "searchConsole": "scansignature",
+    "keywords": "scansignature-keywords"
+  },
+  "keywordCacheDays": 30,
+  "privateReportRetentionDays": 120
 }

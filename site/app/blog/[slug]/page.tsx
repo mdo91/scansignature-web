@@ -3,7 +3,7 @@ import SiteHeader from '@/components/site-header';
 import SiteFooter from '@/components/site-footer';
 import StoreBadge from '@/components/store-badge';
 import StructuredData from '@/components/structured-data';
-import { getPosts, renderPost } from '@/lib/posts.mjs';
+import { getPosts, renderPost, postAlternates, relatedPosts } from '@/lib/posts.mjs';
 import { absoluteUrl, basePath, organization, pageMetadata, sitePath } from '@/lib/site';
 import { copy, localePath, localeInfo, type Locale } from '@/lib/locales';
 
@@ -17,6 +17,7 @@ export function articleMetadata(post: ReturnType<typeof getPosts>[number], local
   const metadata = pageMetadata(`${post.title} | SignDocs`, post.description, path, true, locale, true);
   return {
     ...metadata,
+    alternates: {canonical: absoluteUrl(path), languages: Object.fromEntries(Object.entries(postAlternates(post)).map(([lang,route])=>[lang,absoluteUrl(String(route))]))},
     openGraph: {
       ...metadata.openGraph,
       publishedTime: post.publishedAt,
@@ -38,13 +39,13 @@ export function ArticleView({ slug, locale = 'en' }: { slug: string; locale?: Lo
   const post = getPosts({ locale }).find((item) => item.slug === slug);
   if (!post) notFound();
   const { html, headings } = renderPost(post, basePath, locale);
-  const related = getPosts({ locale }).filter((item) => post.related.includes(item.slug));
+  const related = relatedPosts(post,locale);
   const articlePath = localePath(locale, `/blog/${post.slug}/`);
   const url = absoluteUrl(articlePath);
   const campaign = `guide-${post.slug}-${locale}`;
   return (
     <>
-      <SiteHeader campaign={campaign} locale={locale} route={`/blog/${post.slug}/`} />
+      <SiteHeader campaign={campaign} locale={locale} route={`/blog/${post.slug}/`} articleAlternates={postAlternates(post)} />
       <main id="main" className="wrap article-main">
         <nav className="breadcrumbs" aria-label={t.breadcrumb}>
           <a href={sitePath(localePath(locale, '/'))}>{t.homeLabel}</a>

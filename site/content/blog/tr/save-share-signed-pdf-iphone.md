@@ -1,4 +1,5 @@
 ---
+translationKey: "save-share-signed-pdf-iphone"
 title: "iPhone’da imzalı PDF nasıl kaydedilir ve paylaşılır?"
 description: "İmzalı PDF’nize ad verin, kaydedilen kopyayı açıp kontrol edin ve doğru dosyayı Mail, Mesajlar, AirDrop veya uyumlu başka bir hedefle paylaşın."
 publishedAt: "2026-10-19"

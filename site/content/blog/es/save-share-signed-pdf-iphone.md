@@ -1,4 +1,5 @@
 ---
+translationKey: "save-share-signed-pdf-iphone"
 title: "Cómo guardar y compartir un PDF firmado desde iPhone"
 description: "Pon nombre al PDF firmado, vuelve a abrir la copia para revisarla y comparte el archivo correcto con Mail, Mensajes, AirDrop u otro destino compatible."
 publishedAt: "2026-10-19"

@@ -8,6 +8,7 @@
     "check": "npm --prefix site run check",
     "test": "npm --prefix site test",
     "validate": "npm --prefix site run validate",
-    "growth:collect": "npm --prefix site run growth:collect --"
+    "growth:collect": "npm --prefix site run growth:collect --",
+    "growth:keywords": "npm --prefix site run growth:keywords --"
   }
 }
