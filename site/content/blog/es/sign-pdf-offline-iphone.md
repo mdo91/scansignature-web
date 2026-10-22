@@ -1,4 +1,5 @@
 ---
+translationKey: "sign-pdf-offline-iphone"
 title: "Cómo firmar un PDF sin conexión en iPhone"
 description: "Prepara el PDF y la firma antes de quedarte sin conexión, firma localmente en el iPhone y descubre qué pasos de guardado y envío pueden necesitar internet."
 publishedAt: "2026-10-19"

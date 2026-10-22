@@ -1,4 +1,5 @@
 ---
+translationKey: "scan-handwritten-signature-iphone"
 title: "Handschriftliche Unterschrift auf dem iPhone scannen"
 description: "Erfasse deine Unterschrift auf Papier, passe den Hintergrund an und speichere sie auf dem iPhone, um PDFs in SignDocs zu unterschreiben."
 publishedAt: "2026-10-19"

@@ -1,4 +1,5 @@
 ---
+translationKey: "save-share-signed-pdf-iphone"
 title: "How to save and share a signed PDF from iPhone"
 description: "Name your signed PDF, reopen the saved copy, and share the right file through Mail, Messages, AirDrop, or another compatible destination."
 publishedAt: "2026-10-19"

@@ -1,4 +1,5 @@
 ---
+translationKey: "remove-background-scanned-signature"
 title: "How to remove the paper background from a scanned signature"
 description: "Keep your ink strokes and remove the paper around them on iPhone, then place the cleaned signature on a PDF without a white rectangle."
 publishedAt: "2026-10-19"

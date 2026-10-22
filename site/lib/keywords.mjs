@@ -8,7 +8,7 @@ export const keywordTargetingFor = (country = 'US', language = 'en') => {
     country: market.country,
     language: market.locale,
     network: 'GOOGLE_SEARCH',
-    geoTargetConstants: [`geoTargetConstants/${market.geoTargetId}`],
+    geoTargetConstants: market.geoTargetId?[`geoTargetConstants/${market.geoTargetId}`]:[],
     languageConstant: `languageConstants/${market.languageId}`,
   });
 };

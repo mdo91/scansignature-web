@@ -1,0 +1,79 @@
+{
+  "en": {
+    "asset": "/mockup/DownloadAppleBadge.svg",
+    "width": 155.56,
+    "height": 52,
+    "source": "existing committed Apple artwork",
+    "sha256": "a26fc5b38380272c92e9019a2eb8b45542a66814b3e2b203772db8904b9fb99f"
+  },
+  "fr": {
+    "asset": "/mockup/DownloadAppleBadge-fr.svg",
+    "width": 164.46,
+    "height": 52,
+    "source": "https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/fr-fr?size=250x83",
+    "sha256": "86b6a05f6c8ac9e9a0637edf4f15420d06c8c7bc69662792a46793c1f948b023"
+  },
+  "de": {
+    "asset": "/mockup/DownloadAppleBadge-de.svg",
+    "width": 155.56,
+    "height": 52,
+    "source": "existing committed Apple artwork",
+    "sha256": "4f2967e1f642dd16eec36ac4022f07b7a881cab6301a13be3a4ccfcd3206a614"
+  },
+  "ja": {
+    "asset": "/mockup/DownloadAppleBadge-ja.svg",
+    "width": 141.51,
+    "height": 52,
+    "source": "https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/ja-jp?size=250x83",
+    "sha256": "988fe0a48015c5a56dac88172487a1f5cda96340b34d80fd94312d02e9f67865"
+  },
+  "ko": {
+    "asset": "/mockup/DownloadAppleBadge-ko.svg",
+    "width": 168.61,
+    "height": 52,
+    "source": "https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/ko-kr?size=250x83",
+    "sha256": "fc82d5344d0f2919a7ae697e677fc9c62872f1ee47bd70e24a581245423de9c1"
+  },
+  "ms": {
+    "asset": "/mockup/DownloadAppleBadge-ms.svg",
+    "width": 155.56,
+    "height": 52,
+    "source": "https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/ms-my?size=250x83",
+    "sha256": "b514bd30c4297cf1fce3425272e334f40332bd0d0cffdb9ed7eeb6f59e31d35e"
+  },
+  "pt": {
+    "asset": "/mockup/DownloadAppleBadge-pt.svg",
+    "width": 155.56,
+    "height": 52,
+    "source": "https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/pt-br?size=250x83",
+    "sha256": "0e9291a9c654e479762b75b51dd94a150af6fab76390a79cb2218cdc8f6cc893"
+  },
+  "ru": {
+    "asset": "/mockup/DownloadAppleBadge-ru.svg",
+    "width": 155.56,
+    "height": 52,
+    "source": "https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/ru-ru?size=250x83",
+    "sha256": "27f35c64f2a984ecb4546982889d5514a46666b7aba55909d052e4036862e725"
+  },
+  "zh-hans": {
+    "asset": "/mockup/DownloadAppleBadge-zh-hans.svg",
+    "width": 141.51,
+    "height": 52,
+    "source": "https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/zh-cn?size=250x83",
+    "sha256": "65191b2d1182a194e510b27c9985b1367b60ed6ef565f86fc492f585a27bc932"
+  },
+  "es": {
+    "asset": "/mockup/DownloadAppleBadge-es.svg",
+    "width": 155.56,
+    "height": 52,
+    "source": "existing committed Apple artwork",
+    "sha256": "e4d7c2c1606454536482735c96b933b04ea86a2e72701b3319ae1f3a369b0479"
+  },
+  "tr": {
+    "asset": "/mockup/DownloadAppleBadge-tr.svg",
+    "width": 196.68,
+    "height": 52,
+    "source": "existing committed Apple artwork",
+    "sha256": "b85100fb20198a13c50a056f49ba2889d0510ac4a40e54cd3e19a578299e0170"
+  }
+}

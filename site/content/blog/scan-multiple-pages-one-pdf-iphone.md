@@ -1,4 +1,5 @@
 ---
+translationKey: "scan-multiple-pages-one-pdf-iphone"
 title: "How to scan multiple pages into one PDF on iPhone"
 description: "Scan a stack of paper into one PDF on iPhone, check the crop and page count, and save a document that is ready to sign or share."
 publishedAt: "2026-10-19"

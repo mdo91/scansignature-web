@@ -1,4 +1,5 @@
 ---
+translationKey: "sign-pdf-iphone-without-printing"
 title: "PDF auf dem iPhone ohne Drucken unterschreiben"
 description: "Füge einem bestehenden PDF deine handschriftliche Unterschrift hinzu, positioniere sie passend und speichere eine separate signierte Kopie."
 publishedAt: "2026-10-19"

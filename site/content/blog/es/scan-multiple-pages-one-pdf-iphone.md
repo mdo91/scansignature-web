@@ -1,4 +1,5 @@
 ---
+translationKey: "scan-multiple-pages-one-pdf-iphone"
 title: "Cómo escanear varias páginas en un PDF en iPhone"
 description: "Escanea varias hojas en un único PDF desde el iPhone, comprueba el recorte y el orden de las páginas y guarda un documento listo para firmar o compartir."
 publishedAt: "2026-10-19"

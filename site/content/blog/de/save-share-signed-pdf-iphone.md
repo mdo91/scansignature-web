@@ -1,4 +1,5 @@
 ---
+translationKey: "save-share-signed-pdf-iphone"
 title: "Signiertes PDF auf dem iPhone speichern und teilen"
 description: "Benenne dein signiertes PDF, öffne die gespeicherte Kopie zur Kontrolle und teile die richtige Datei über Mail, Nachrichten, AirDrop oder ein anderes Ziel."
 publishedAt: "2026-10-19"

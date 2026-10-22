@@ -1,4 +1,5 @@
 ---
+translationKey: "remove-background-scanned-signature"
 title: "Cómo quitar el fondo de papel de una firma escaneada"
 description: "Conserva los trazos de tinta y quita el papel que rodea la firma en el iPhone antes de colocarla en un PDF sin un rectángulo blanco."
 publishedAt: "2026-10-19"

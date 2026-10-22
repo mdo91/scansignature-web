@@ -1,4 +1,5 @@
 ---
+translationKey: "remove-background-scanned-signature"
 title: "Papierhintergrund einer gescannten Unterschrift entfernen"
 description: "Erhalte die Tintenlinien und entferne auf dem iPhone das Papier um die Unterschrift, bevor du sie ohne weißen Kasten auf ein PDF setzt."
 publishedAt: "2026-10-19"

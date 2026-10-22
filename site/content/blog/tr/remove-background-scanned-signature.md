@@ -1,4 +1,5 @@
 ---
+translationKey: "remove-background-scanned-signature"
 title: "Taranmış imzanın kağıt arka planı nasıl kaldırılır?"
 description: "iPhone’da el yazısı çizgilerinizi koruyup çevresindeki kağıt zeminini kaldırın; ardından temiz imzayı beyaz bir dikdörtgen olmadan PDF’ye ekleyin."
 publishedAt: "2026-10-19"

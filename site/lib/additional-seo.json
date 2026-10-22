@@ -1,0 +1,44 @@
+{
+  "fr": {
+    "homeTitle": "Scanner et signer des PDF sur iPhone et iPad | Signature Scan",
+    "homeDescription": "Numérisez vos documents, capturez votre signature manuscrite et enregistrez une copie signée avec Signature Scan: Sign PDFs, aussi appelée SignDocs, sur iPhone et iPad.",
+    "blogTitle": "Des questions sur vos documents. Des réponses pratiques. | SignDocs",
+    "blogDescription": "Des guides pratiques pour passer du premier document papier à une copie PDF signée prête à partager."
+  },
+  "pt": {
+    "homeTitle": "Digitalizar e assinar PDFs no iPhone e iPad | Signature Scan",
+    "homeDescription": "Digitalize documentos, capture sua assinatura manuscrita e salve uma cópia assinada com Signature Scan: Sign PDFs, também chamado SignDocs, no iPhone e iPad.",
+    "blogTitle": "Dúvidas sobre documentos. Respostas práticas. | SignDocs",
+    "blogDescription": "Guias práticos para transformar documentos em uma cópia PDF assinada, pronta para compartilhar."
+  },
+  "ms": {
+    "homeTitle": "Imbas dan tandatangani PDF pada iPhone dan iPad | Signature Scan",
+    "homeDescription": "Imbas dokumen, rakam tandatangan tulisan tangan dan simpan salinan yang ditandatangani dengan Signature Scan: Sign PDFs, juga dikenali sebagai SignDocs, pada iPhone dan iPad.",
+    "blogTitle": "Soalan tentang dokumen. Jawapan praktikal. | SignDocs",
+    "blogDescription": "Panduan praktikal daripada imbasan pertama hingga salinan PDF bertandatangan yang sedia dikongsi."
+  },
+  "ja": {
+    "homeTitle": "iPhone・iPadで書類をスキャンしてPDFに署名 | Signature Scan",
+    "homeDescription": "Signature Scan: Sign PDFs（SignDocs）で書類をスキャンし、手書きの署名を取り込み、署名済みコピーを保存。iPhoneとiPadで使えます。",
+    "blogTitle": "書類についての疑問に。 実用的な答えを。 | SignDocs",
+    "blogDescription": "最初のスキャンから共有できる署名済みPDFまで、書類作業に役立つ実用的なガイドです。"
+  },
+  "ko": {
+    "homeTitle": "iPhone 및 iPad에서 문서 스캔과 PDF 서명 | Signature Scan",
+    "homeDescription": "Signature Scan: Sign PDFs, 즉 SignDocs로 문서를 스캔하고 손으로 쓴 서명을 캡처해 서명된 사본을 저장하세요. iPhone과 iPad에서 사용할 수 있습니다.",
+    "blogTitle": "문서에 관한 질문. 실용적인 답변. | SignDocs",
+    "blogDescription": "첫 스캔부터 공유할 수 있는 서명된 PDF까지, 문서 작업을 위한 실용적인 가이드입니다."
+  },
+  "ru": {
+    "homeTitle": "Сканирование документов и подпись PDF на iPhone и iPad | Signature Scan",
+    "homeDescription": "Сканируйте документы, захватывайте рукописную подпись и сохраняйте подписанную копию в Signature Scan: Sign PDFs, также известном как SignDocs, на iPhone и iPad.",
+    "blogTitle": "Вопросы о документах. Практические ответы. | SignDocs",
+    "blogDescription": "Практические руководства: от первого сканирования до подписанного PDF, готового к отправке."
+  },
+  "zh-hans": {
+    "homeTitle": "在 iPhone 和 iPad 上扫描文件并签署 PDF | Signature Scan",
+    "homeDescription": "使用 Signature Scan: Sign PDFs（也称为 SignDocs）扫描文件、提取手写签名，并保存签署后的副本。适用于 iPhone 和 iPad。",
+    "blogTitle": "文件处理有疑问？ 这里有实用答案。 | SignDocs",
+    "blogDescription": "从第一次扫描到可分享的已签署 PDF，这些实用指南帮助你处理眼前的文件。"
+  }
+}

@@ -1,4 +1,5 @@
 ---
+translationKey: "sign-pdf-iphone-without-printing"
 title: "How to sign a PDF on iPhone without printing"
 description: "Sign an existing PDF on your iPhone, add your real handwritten signature, and save a separate signed copy without printing or scanning the whole document."
 publishedAt: "2026-10-19"

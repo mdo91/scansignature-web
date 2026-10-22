@@ -1,4 +1,5 @@
 ---
+translationKey: "scan-multiple-pages-one-pdf-iphone"
 title: "iPhone’da birden çok sayfa tek PDF’ye nasıl taranır?"
 description: "Kağıt sayfaları tek PDF’de birleştirin, kırpma ve sayfa sırasını kontrol edin; ardından iPhone’da imzalamaya veya paylaşmaya hazır bir dosya kaydedin."
 publishedAt: "2026-10-19"

@@ -1,4 +1,5 @@
 ---
+translationKey: "sign-pdf-offline-iphone"
 title: "PDF auf dem iPhone offline signieren"
 description: "Bereite PDF und Unterschrift vor, signiere lokal auf dem iPhone und erfahre, welche Speicher- und Freigabeschritte trotzdem eine Verbindung brauchen können."
 publishedAt: "2026-10-19"

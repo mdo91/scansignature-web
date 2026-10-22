@@ -34,10 +34,7 @@ export function pageMetadata(
       ...(withLanguageAlternates
         ? {
             languages: {
-              [localeInfo.en.hreflang]: absoluteUrl(localizedPathFor('en', canonicalPath)),
-              [localeInfo.tr.hreflang]: absoluteUrl(localizedPathFor('tr', canonicalPath)),
-              [localeInfo.de.hreflang]: absoluteUrl(localizedPathFor('de', canonicalPath)),
-              [localeInfo.es.hreflang]: absoluteUrl(localizedPathFor('es', canonicalPath)),
+              ...Object.fromEntries(locales.map(l=>[localeInfo[l].hreflang,absoluteUrl(localizedPathFor(l,canonicalPath))])),
               'x-default': absoluteUrl(localizedPathFor('en', canonicalPath)),
             },
           }
@@ -57,6 +54,6 @@ export function pageMetadata(
 }
 
 function localizedPathFor(locale: Locale, path: string): string {
-  const englishPath = path.replace(/^\/(?:tr|de|es)(?=\/|$)/, '') || '/';
+  const englishPath = path.replace(new RegExp(`^/(?:${locales.filter(l=>l!=='en').join('|')})(?=/|$)`), '') || '/';
   return localePath(locale, englishPath);
 }
