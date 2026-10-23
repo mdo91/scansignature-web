@@ -10,7 +10,10 @@ export function localePageFilter(locale){
 export function marketFilters(locale){const market=marketFor(locale);return [localePageFilter(locale),...(market.searchConsoleCountry?[{dimension:'country',operator:'equals',expression:market.searchConsoleCountry}]:[])];}
 export function normalizeRow(row,dimensions=['query','page','device','country']){
  const metrics=Object.fromEntries(['clicks','impressions','ctr'].map(key=>[key,typeof row[key]==='number'&&Number.isFinite(row[key])?row[key]:null]));
- return {...Object.fromEntries(dimensions.map((key,i)=>[key,row.keys?.[i]||''])),...metrics,averagePosition:typeof row.position==='number'?row.position:null};
+ // A zero-count aggregate is valid, but has no CTR denominator or observed position.
+ const hasImpressions=metrics.impressions!==null&&metrics.impressions>0;
+ if(!hasImpressions)metrics.ctr=null;
+ return {...Object.fromEntries(dimensions.map((key,i)=>[key,row.keys?.[i]||''])),...metrics,averagePosition:hasImpressions&&Number.isFinite(row.position)&&row.position>=1?row.position:null};
 }
 export function comparison(current,previous){return Object.fromEntries(['clicks','impressions','ctr','averagePosition'].map(key=>[key,current?.[key]!=null&&previous?.[key]!=null?{current:current[key],previous:previous[key],change:current[key]-previous[key]}:{current:current?.[key]??null,previous:previous?.[key]??null,change:null}]));}
 export function opportunities(rows,locale){
