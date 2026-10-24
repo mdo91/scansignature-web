@@ -24,7 +24,11 @@
         "red ink signature scan",
         "scan document glare iphone",
         "check signed pdf attachment",
-        "download cloud pdf before signing offline"
+        "download cloud pdf before signing offline",
+        "scan documents iphone",
+        "sign pdf",
+        "scan signature",
+        "remove signature background"
       ]
     },
     {
@@ -46,7 +50,11 @@
         "kırmızı mürekkepli imza tarama",
         "belge tararken parlama",
         "imzalı pdf eki kontrol etme",
-        "çevrimdışı imzalamadan önce pdf indirme"
+        "çevrimdışı imzalamadan önce pdf indirme",
+        "belge tarama",
+        "pdf imzalama",
+        "imza tarama",
+        "imza arka plan silme"
       ]
     },
     {
@@ -68,7 +76,11 @@
         "rote unterschrift scannen iphone",
         "blendung dokument scannen iphone",
         "signierten pdf anhang prüfen",
-        "cloud pdf vor offline unterschrift herunterladen"
+        "cloud pdf vor offline unterschrift herunterladen",
+        "dokumente scannen",
+        "pdf unterschreiben",
+        "unterschrift scannen",
+        "unterschrift hintergrund entfernen"
       ]
     },
     {
@@ -90,7 +102,11 @@
         "escanear firma tinta roja",
         "reflejos escanear documento iphone",
         "comprobar adjunto pdf firmado",
-        "descargar pdf antes de firmar sin conexión"
+        "descargar pdf antes de firmar sin conexión",
+        "escanear documentos",
+        "firmar pdf",
+        "escanear firma",
+        "quitar fondo firma"
       ]
     },
     {
@@ -113,7 +129,11 @@
         "signature encre rouge iphone",
         "reflets scanner document iphone",
         "vérifier pièce jointe pdf signée",
-        "télécharger pdf avant signature hors ligne"
+        "télécharger pdf avant signature hors ligne",
+        "scanner document",
+        "signer un pdf",
+        "scanner signature",
+        "supprimer fond signature"
       ]
     },
     {
@@ -136,7 +156,11 @@
         "赤いインク 署名 スキャン",
         "書類 スキャン 反射 対策",
         "署名済み PDF 添付 確認",
-        "オフライン 署名 前 PDF ダウンロード"
+        "オフライン 署名 前 PDF ダウンロード",
+        "書類 スキャン",
+        "PDF 署名",
+        "手書き 署名 スキャン",
+        "署名 背景 削除"
       ]
     },
     {
@@ -159,7 +183,11 @@
         "빨간 잉크 서명 스캔",
         "문서 스캔 빛 반사",
         "서명한 PDF 첨부 확인",
-        "오프라인 서명 전 PDF 다운로드"
+        "오프라인 서명 전 PDF 다운로드",
+        "문서 스캔",
+        "PDF 서명",
+        "손글씨 서명 스캔",
+        "서명 배경 제거"
       ]
     },
     {
@@ -182,7 +210,12 @@
         "imbas tandatangan dakwat merah",
         "silau imbas dokumen iphone",
         "semak lampiran pdf bertandatangan",
-        "muat turun pdf sebelum tandatangan luar talian"
+        "muat turun pdf sebelum tandatangan luar talian",
+        "imbas dokumen",
+        "tandatangan pdf",
+        "imbas tandatangan",
+        "buang latar belakang tandatangan",
+        "scan dokumen"
       ]
     },
     {
@@ -205,7 +238,11 @@
         "digitalizar assinatura tinta vermelha",
         "reflexo ao digitalizar documento iphone",
         "conferir anexo pdf assinado",
-        "baixar pdf antes de assinar offline"
+        "baixar pdf antes de assinar offline",
+        "digitalizar documentos",
+        "assinar pdf",
+        "digitalizar assinatura",
+        "remover fundo assinatura"
       ]
     },
     {
@@ -228,7 +265,11 @@
         "сканировать красную подпись",
         "блики при сканировании документа",
         "проверить подписанное вложение pdf",
-        "скачать pdf перед подписанием без интернета"
+        "скачать pdf перед подписанием без интернета",
+        "сканировать документы",
+        "подписать pdf",
+        "сканировать подпись",
+        "убрать фон подписи"
       ]
     },
     {
@@ -251,7 +292,11 @@
         "扫描红色墨水签名",
         "扫描文件反光处理",
         "检查已签名 PDF 附件",
-        "离线签名前下载 PDF"
+        "离线签名前下载 PDF",
+        "扫描文件",
+        "PDF 签名",
+        "扫描手写签名",
+        "去除签名背景"
       ]
     }
   ],

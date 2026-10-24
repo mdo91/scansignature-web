@@ -36,6 +36,26 @@ export const keywordKey = (text) =>
     .replace(/[^\p{L}\p{N}]+/gu, ' ')
     .trim();
 const day = 86400000;
+export const keywordNormalizationVersion = 2;
+const present = (value) => value !== undefined && value !== null && value !== '' && value !== '--';
+const mergeMetrics = (older = {}, newer = {}) => ({...older,...Object.fromEntries(Object.entries(newer || {}).filter(([,value]) => present(value) && (!Array.isArray(value) || value.length)))});
+// Both endpoints can return the same canonical keyword. Preserve usable idea
+// metrics when a later page/response is empty; prefer reported historical fields.
+export function mergeKeywordApiRows(older = {}, newer) {
+  return {...older,...newer,
+    closeVariants: [...new Set([...(older.closeVariants || []),...(newer.closeVariants || [])])],
+    keywordIdeaMetrics: mergeMetrics(older.keywordIdeaMetrics,newer.keywordIdeaMetrics),
+    keywordMetrics: mergeMetrics(older.keywordMetrics,newer.keywordMetrics),
+  };
+}
+export function summarizeKeywordDemand(rows = []) {
+  return {total:rows.length,
+    positiveEstimates:rows.filter(row => typeof row.averageMonthlySearches === 'number' && row.averageMonthlySearches > 0).length,
+    reportedZero:rows.filter(row => row.averageMonthlySearches === 0).length,
+    ranges:rows.filter(row => row.averageMonthlySearches == null && row.searchVolumeRange != null).length,
+    unavailable:rows.filter(row => row.averageMonthlySearches == null && row.searchVolumeRange == null).length,
+  };
+}
 const count = (value) => {
   if (value === undefined || value === null || value === '' || value === '--')
     return null;
@@ -49,7 +69,7 @@ export function normalizeKeywordResults(results = []) {
   for (const row of results) {
     if (typeof row.text !== 'string' || !row.text.trim())
       throw new Error('Keyword text missing');
-    const metrics = row.keywordIdeaMetrics || row.keywordMetrics || {};
+    const metrics = mergeMetrics(row.keywordIdeaMetrics,row.keywordMetrics);
     const item = {
       text: row.text.trim(),
       closeVariants: [...new Set((row.closeVariants || []).map(String))],
@@ -89,6 +109,7 @@ export function makeKeywordCache({
 }) {
   const cache = {
     schemaVersion: 1,
+    normalizationVersion: keywordNormalizationVersion,
     generatedAt,
     observedAt: source.exportedAt || generatedAt,
     targeting: { ...targeting },
@@ -149,11 +170,13 @@ export function assessKeywordCache(cache, now = new Date()) {
     }
     return {
       ...cache,
-      status: age >= 30 * day ? 'stale' : 'ready',
+      demandSummary: summarizeKeywordDemand(cache.keywords),
+      status: age >= 30 * day ? 'stale' : cache.source.kind === 'google-ads-api' && cache.normalizationVersion !== keywordNormalizationVersion ? 'refresh-required' : 'ready',
       note:
         age >= 30 * day
           ? 'Keyword estimates are at least 30 days old; refresh before prioritizing from demand.'
-          : cache.note,
+          : cache.source.kind === 'google-ads-api' && cache.normalizationVersion !== keywordNormalizationVersion
+            ? 'The API metric normalizer changed; refresh once before reusing this cache.' : cache.note,
     };
   } catch (error) {
     return { status: 'invalid', note: error.message };

@@ -2,12 +2,16 @@ import { readFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { config, markets, keywordPlan, cacheName } from './config.mjs';
-import { makeKeywordCache, assessKeywordCache, parseKeywordCsv, keywordKey } from './keyword-library.mjs';
+import { makeKeywordCache, assessKeywordCache, parseKeywordCsv, keywordKey,mergeKeywordApiRows,normalizeKeywordResults,summarizeKeywordDemand } from './keyword-library.mjs';
 import { savePrivate, readPrivate, privateDirectory, safeError } from './storage.mjs';
 import { callGum } from './gum.mjs';
 
 export function loadKeywordCache(locale, now = new Date(), directory = privateDirectory()) {
-  try { return assessKeywordCache(readPrivate(cacheName(locale), directory), now); }
+  try {
+    const cache = assessKeywordCache(readPrivate(cacheName(locale), directory),now), target = keywordPlan(locale).targeting;
+    if (cache.targeting && (cache.targeting.language !== locale || cache.targeting.country !== target.country)) return {status:'invalid',note:'The cache filename and requested market do not match its targeting.'};
+    return cache;
+  }
   catch (error) { return { status: 'invalid', note: safeError(error) }; }
 }
 function keywordSettings(directory) {
@@ -26,7 +30,7 @@ export async function collectKeywords(locale, { refresh = false, now = new Date(
     return result;
   };
   try {
-    if (!csv && previous.status === 'ready' && !refresh && (previous.source.kind === 'keyword-planner-csv' || previous.seedFingerprint === plan.seedFingerprint)) return finish('ready', { reusedCache: true, source: previous.source.kind, keywords: previous.keywords.length, observedAt: previous.observedAt });
+    if (!csv && previous.status === 'ready' && !refresh && (previous.source.kind === 'keyword-planner-csv' || previous.seedFingerprint === plan.seedFingerprint)) return finish('ready', { reusedCache: true, source: previous.source.kind, keywords: previous.keywords.length, observedAt: previous.observedAt,demandSummary:previous.demandSummary });
     let results, source;
     if (csv) {
       if (csv.geography !== plan.targeting.country || csv.network !== 'GOOGLE_SEARCH' || csv.language !== locale || !csv.exportedAt) throw new Error('CSV import requires explicit worldwide, matching language, Google Search and original export date');
@@ -38,21 +42,33 @@ export async function collectKeywords(locale, { refresh = false, now = new Date(
       if (!/^\d{10}$/.test(settings.customerId) || settings.loginCustomerId && !/^\d{10}$/.test(settings.loginCustomerId)) throw new Error('Ads account identifiers must contain ten digits');
       const target = { customerId: settings.customerId, ...(settings.loginCustomerId ? { loginCustomerId: settings.loginCustomerId } : {}), geoTargetConstants: plan.targeting.geoTargetConstants, language: plan.targeting.languageConstant, keywordPlanNetwork: 'GOOGLE_SEARCH' };
       const byText = new Map();
+      const audit = {schemaVersion:1,observedAt:now.toISOString(),locale,targeting:plan.targeting,responses:[]};
+      const recordResponse = (operation, seeds, response) => {
+        if (response.results !== undefined && !Array.isArray(response.results)) throw new Error('Keyword API results must be an array');
+        const requested = new Set(seeds.map(keywordKey));
+        const rows = (response.results || []).map(row => ({text:row.text,closeVariants:row.closeVariants || [],keywordIdeaMetrics:row.keywordIdeaMetrics,keywordMetrics:row.keywordMetrics}));
+        const seedResults = rows.filter(row => [row.text,...row.closeVariants].some(value => requested.has(keywordKey(value))));
+        const returned = new Set(seedResults.flatMap(row => [row.text,...row.closeVariants]).map(keywordKey));
+        audit.responses.push({operation,requestedSeeds:seeds,returnedRows:rows.length,demandSummary:summarizeKeywordDemand(normalizeKeywordResults(rows)),metricFields:[...new Set(rows.flatMap(row => [...Object.keys(row.keywordIdeaMetrics || {}),...Object.keys(row.keywordMetrics || {})]))],seedResults,notReturnedSeeds:seeds.filter(seed => !returned.has(keywordKey(seed)))});
+        savePrivate(`keyword-api-audit-${locale}.json`,audit,directory);
+      };
       const merge = (row) => {
         const key = keywordKey(row.text), old = byText.get(key);
-        byText.set(key, { ...old, ...row, closeVariants: [...new Set([...(old?.closeVariants || []), ...(row.closeVariants || [])])] });
+        byText.set(key, mergeKeywordApiRows(old,row));
       };
       for (let offset = 0; offset < plan.seeds.length; offset += 20) {
         const keywords = plan.seeds.slice(offset, offset + 20), seen = new Set();
         let pageToken;
         do {
           const response = await call('googleads.keywordPlanIdeas.generateKeywordIdeas', { ...target, keywords, url: plan.seedUrl, pageSize: 10000, ...(pageToken ? { pageToken } : {}) });
+          recordResponse('generateKeywordIdeas',keywords,response);
           for (const row of response.results || []) merge(row);
           pageToken = response.nextPageToken;
           if (pageToken && (seen.has(pageToken) || seen.size >= 100)) throw new Error('Keyword pagination incomplete; prior cache retained');
           if (pageToken) seen.add(pageToken);
         } while (pageToken);
         const historical = await call('googleads.keywordPlanIdeas.generateKeywordHistoricalMetrics', { ...target, keywords });
+        recordResponse('generateKeywordHistoricalMetrics',keywords,historical);
         for (const row of historical.results || []) merge(row);
       }
       results = [...byText.values()];
@@ -62,7 +78,7 @@ export async function collectKeywords(locale, { refresh = false, now = new Date(
     const cache = makeKeywordCache({ results, source, targeting: plan.targeting, generatedAt: now.toISOString() });
     if (assessKeywordCache(cache, now).status !== 'ready') throw new Error('Imported demand must be less than 30 days old');
     savePrivate(cacheName(locale), cache, directory);
-    return finish('ready', { keywords: cache.keywords.length, observedAt: cache.observedAt, source: source.kind, targeting: plan.targeting });
+    return finish('ready', { keywords: cache.keywords.length, observedAt: cache.observedAt, source: source.kind, targeting: plan.targeting,demandSummary:summarizeKeywordDemand(cache.keywords) });
   } catch (error) {
     return finish('action-required', { note: safeError(error), previousCacheRetained: true, cacheStatus: previous.status });
   }
