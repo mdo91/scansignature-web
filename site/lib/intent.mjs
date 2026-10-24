@@ -1,5 +1,11 @@
 const contentLocale=name=>name?.startsWith('site/content/blog/')?(name.split('/').length===4?'en':name.split('/')[3]):null;
-export const intentPolicyVersion=1;
+export const intentPolicyVersion=2;
+export function keywordDemand(row){
+ const value=row.averageMonthlySearches,range=row.searchVolumeRange;
+ if(typeof value==='number'&&Number.isFinite(value)&&value>=0)return {status:value>0?'positive-estimate':'reported-zero',verified:value>0,tier:value>0?2:0};
+ if(range&&Number.isFinite(range.min)&&Number.isFinite(range.max)&&range.min>=0&&range.max>=range.min)return {status:'reported-range',verified:range.min>0,tier:range.min>0?2:range.max>0?1:0};
+ return {status:'unavailable',verified:false,tier:0};
+}
 export const keywordKey=value=>String(value||'').normalize('NFKC').normalize('NFD').replace(/(\p{Script=Latin})\p{M}+/gu,'$1').normalize('NFC').toLowerCase().replace(/[^\p{L}\p{N}]+/gu,' ').trim();
 const signature=/signature|\bsign(?:ed|ing|er|e|ee|es|ees)?\b|assin[ae]|unterschreib|unterzeich|unterschrift|signatur|firma|assinatura|tandatangan|imza|подпис|роспись|署名|サイン|서명|签名|簽名|签署/;
 const document=/pdf|pages?|seiten|paginas?|halaman|sayfa|страниц|ページ|페이지|页面|document|dokument|dokumen|belge|evrak|kagit|paper|papier|kertas|papel|документ|бумаг|書類|文書|문서|서류|文件|纸张/;
@@ -33,13 +39,14 @@ export function rankKeywords(keywords=[],locale,{limit=25,opportunities=[],cover
  for(const item of keywords){
   const intent=classifyKeyword(item.text,locale);if(!intent.eligible){excluded[intent.reason]=(excluded[intent.reason]||0)+1;continue;}
   const existingQuery=[item.text,...(item.closeVariants||[])].some(value=>covered.has(keywordKey(value)));
-  const volume=item.averageMonthlySearches,demand=typeof volume==='number'&&Number.isFinite(volume)&&volume>=0?Math.min(9,Math.log10(volume+1)*2):0;
-  eligible.push({...item,intent:{...intent,existingQuery,discoveryTier:existingQuery?0:1,priority:intent.fitScore+demand+(opportunities.some(row=>keywordKey(row.query)===keywordKey(item.text))?3:0)}});
+  const evidence=keywordDemand(item),volume=item.averageMonthlySearches??item.searchVolumeRange?.min,demand=typeof volume==='number'&&Number.isFinite(volume)&&volume>=0?Math.min(9,Math.log10(volume+1)*2):0;
+  eligible.push({...item,demand:evidence,intent:{...intent,demandTier:evidence.tier,existingQuery,discoveryTier:existingQuery?0:1,priority:intent.fitScore+demand+(opportunities.some(row=>keywordKey(row.query)===keywordKey(item.text))?3:0)}});
  }
  const parent=eligible.map((_,i)=>i),seen=new Map(),root=i=>parent[i]===i?i:(parent[i]=root(parent[i]));
  eligible.forEach((item,i)=>{for(const key of [item.text,...(item.closeVariants||[])].map(keywordKey)){if(seen.has(key))parent[root(i)]=root(seen.get(key));else seen.set(key,i);}});
  const coveredGroups=new Set(eligible.flatMap((item,i)=>item.intent.existingQuery?[root(i)]:[]));
- const groups=new Map();eligible.forEach((item,i)=>{const key=root(i);if(coveredGroups.has(key)){item.intent.existingQuery=true;item.intent.discoveryTier=0;}const old=groups.get(key);if(!old||item.intent.priority>old.intent.priority)groups.set(key,item);});
- const ranked=[...groups.values()].sort((a,b)=>b.intent.discoveryTier-a.intent.discoveryTier||b.intent.priority-a.intent.priority||keywordKey(a.text).localeCompare(keywordKey(b.text)));
- return {policyVersion:intentPolicyVersion,considered:keywords.length,eligible:ranked.length,excluded,keywords:ranked.slice(0,limit)};
+ const compare=(a,b)=>b.intent.demandTier-a.intent.demandTier||b.intent.discoveryTier-a.intent.discoveryTier||b.intent.priority-a.intent.priority||keywordKey(a.text).localeCompare(keywordKey(b.text));
+ const groups=new Map();eligible.forEach((item,i)=>{const key=root(i);if(coveredGroups.has(key)){item.intent.existingQuery=true;item.intent.discoveryTier=0;}const old=groups.get(key);if(!old||compare(item,old)<0)groups.set(key,item);});
+ const ranked=[...groups.values()].sort(compare);
+ return {policyVersion:intentPolicyVersion,considered:keywords.length,eligible:ranked.length,excluded,demandSummary:{verified:ranked.filter(row=>row.demand.verified).length,unavailable:ranked.filter(row=>row.demand.status==='unavailable').length,reportedZero:ranked.filter(row=>row.demand.status==='reported-zero').length,ranges:ranked.filter(row=>row.demand.status==='reported-range').length},keywords:ranked.slice(0,limit)};
 }
