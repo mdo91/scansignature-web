@@ -28,7 +28,16 @@
         "scan documents iphone",
         "sign pdf",
         "scan signature",
-        "remove signature background"
+        "remove signature background",
+        "fill PDF form on iPhone",
+        "add text and checkmarks to a scanned PDF",
+        "place multiple signatures and initials on a PDF",
+        "reusable PDF document template",
+        "fill PDF form",
+        "add text to PDF",
+        "add checkmark to PDF",
+        "add initials to PDF",
+        "PDF form template"
       ]
     },
     {
@@ -54,7 +63,16 @@
         "belge tarama",
         "pdf imzalama",
         "imza tarama",
-        "imza arka plan silme"
+        "imza arka plan silme",
+        "iPhone’da PDF formu doldurma",
+        "taranmış PDF’ye metin ve onay işareti ekleme",
+        "PDF’ye birden fazla imza ve paraf yerleştirme",
+        "yeniden kullanılabilir PDF belge şablonu",
+        "PDF form doldurma",
+        "PDF metin ekleme",
+        "PDF onay işareti ekleme",
+        "PDF paraf ekleme",
+        "PDF form şablonu"
       ]
     },
     {
@@ -80,7 +98,16 @@
         "dokumente scannen",
         "pdf unterschreiben",
         "unterschrift scannen",
-        "unterschrift hintergrund entfernen"
+        "unterschrift hintergrund entfernen",
+        "PDF-Formular auf dem iPhone ausfüllen",
+        "Text und Häkchen in gescanntes PDF einfügen",
+        "mehrere Unterschriften und Initialen in einem PDF platzieren",
+        "wiederverwendbare PDF-Dokumentvorlage",
+        "PDF Formular ausfüllen",
+        "Text in PDF einfügen",
+        "Häkchen in PDF einfügen",
+        "Initialen in PDF einfügen",
+        "PDF Formular Vorlage"
       ]
     },
     {
@@ -106,7 +133,16 @@
         "escanear documentos",
         "firmar pdf",
         "escanear firma",
-        "quitar fondo firma"
+        "quitar fondo firma",
+        "rellenar un formulario PDF en iPhone",
+        "añadir texto y marcas de verificación a un PDF escaneado",
+        "colocar varias firmas e iniciales en un PDF",
+        "plantilla reutilizable de documento PDF",
+        "rellenar formulario PDF",
+        "añadir texto PDF",
+        "añadir marca de verificación PDF",
+        "añadir iniciales PDF",
+        "plantilla formulario PDF"
       ]
     },
     {
@@ -133,7 +169,16 @@
         "scanner document",
         "signer un pdf",
         "scanner signature",
-        "supprimer fond signature"
+        "supprimer fond signature",
+        "remplir un formulaire PDF sur iPhone",
+        "ajouter du texte et des coches à un PDF numérisé",
+        "placer plusieurs signatures et paraphes dans un PDF",
+        "modèle de document PDF réutilisable",
+        "remplir formulaire PDF",
+        "ajouter texte PDF",
+        "ajouter coche PDF",
+        "ajouter paraphe PDF",
+        "modèle formulaire PDF"
       ]
     },
     {
@@ -160,7 +205,16 @@
         "書類 スキャン",
         "PDF 署名",
         "手書き 署名 スキャン",
-        "署名 背景 削除"
+        "署名 背景 削除",
+        "iPhoneでPDFフォームに入力する",
+        "スキャンしたPDFに文字とチェックマークを追加",
+        "PDFに複数の署名とイニシャルを配置",
+        "再利用できるPDF文書テンプレート",
+        "PDF フォーム 入力",
+        "PDF 文字 追加",
+        "PDF チェックマーク 追加",
+        "PDF イニシャル 追加",
+        "PDF フォーム テンプレート"
       ]
     },
     {
@@ -187,7 +241,16 @@
         "문서 스캔",
         "PDF 서명",
         "손글씨 서명 스캔",
-        "서명 배경 제거"
+        "서명 배경 제거",
+        "아이폰에서 PDF 양식 작성",
+        "스캔한 PDF에 텍스트와 체크 표시 추가",
+        "PDF에 여러 서명과 이니셜 배치",
+        "재사용 가능한 PDF 문서 템플릿",
+        "PDF 양식 작성",
+        "PDF 텍스트 추가",
+        "PDF 체크 표시 추가",
+        "PDF 이니셜 추가",
+        "PDF 양식 템플릿"
       ]
     },
     {
@@ -215,7 +278,16 @@
         "tandatangan pdf",
         "imbas tandatangan",
         "buang latar belakang tandatangan",
-        "scan dokumen"
+        "scan dokumen",
+        "isi borang PDF pada iPhone",
+        "tambah teks dan tanda semak pada PDF yang diimbas",
+        "letakkan berbilang tandatangan dan paraf dalam PDF",
+        "templat dokumen PDF boleh guna semula",
+        "isi borang PDF",
+        "tambah teks PDF",
+        "tambah tanda semak PDF",
+        "tambah paraf PDF",
+        "templat borang PDF"
       ]
     },
     {
@@ -242,7 +314,16 @@
         "digitalizar documentos",
         "assinar pdf",
         "digitalizar assinatura",
-        "remover fundo assinatura"
+        "remover fundo assinatura",
+        "preencher formulário PDF no iPhone",
+        "adicionar texto e marcas de seleção a um PDF digitalizado",
+        "colocar várias assinaturas e rubricas em um PDF",
+        "modelo de documento PDF reutilizável",
+        "preencher formulário PDF",
+        "adicionar texto PDF",
+        "adicionar marca de seleção PDF",
+        "adicionar rubrica PDF",
+        "modelo formulário PDF"
       ]
     },
     {
@@ -269,7 +350,16 @@
         "сканировать документы",
         "подписать pdf",
         "сканировать подпись",
-        "убрать фон подписи"
+        "убрать фон подписи",
+        "заполнить PDF форму на iPhone",
+        "добавить текст и галочки в отсканированный PDF",
+        "разместить несколько подписей и инициалов в PDF",
+        "многоразовый шаблон PDF документа",
+        "заполнить форму PDF",
+        "добавить текст в PDF",
+        "добавить галочку в PDF",
+        "добавить инициалы в PDF",
+        "шаблон формы PDF"
       ]
     },
     {
@@ -296,7 +386,16 @@
         "扫描文件",
         "PDF 签名",
         "扫描手写签名",
-        "去除签名背景"
+        "去除签名背景",
+        "在 iPhone 上填写 PDF 表单",
+        "向扫描的 PDF 添加文字和勾选标记",
+        "在 PDF 中放置多个签名和姓名首字母",
+        "可重复使用的 PDF 文档模板",
+        "填写 PDF 表单",
+        "PDF 添加文字",
+        "PDF 添加勾选标记",
+        "PDF 添加姓名首字母",
+        "PDF 表单模板"
       ]
     }
   ],

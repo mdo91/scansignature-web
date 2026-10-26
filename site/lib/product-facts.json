@@ -1,16 +1,67 @@
 {
-  "appStoreId":6805875185,
-  "source":"https://apps.apple.com/us/app/signature-scan-sign-pdfs/id6805875185",
-  "observedAt":"2026-10-22",
-  "minimumIos":"26.0",
-  "minimumIpados":"26.0",
-  "primaryDevices":["iPhone","iPad"],
-  "interfaceLanguages":["en","fr","ja","pt","zh-hans","tr"],
-  "supportedFeatures":["document-scan","signature-capture","background-removal","pdf-signing","document-sharing"],
-  "extractionModes":["Clean","Balanced","Bold"],
-  "supportedInkColors":["black","red","dark blue"],
-  "processing":"on device; no document or signature upload for processing",
-  "limitations":["iOS/iPadOS 26 or later","limited free document exports; no invented numeric allowance","installation, purchases/restores, cloud retrieval and sharing have their own connection requirements","signature image is not identity verification or a certificate signature","no documented OCR, merging existing PDFs, standalone PNG export or signature requests"],
-  "mac":"Apple lists macOS 26 and Apple M1 or later compatibility; this does not verify a native Mac workflow or testing",
-  "editorialEvidence":"Product documentation, supplied screenshots and cited primary sources; not independent hands-on testing"
+  "appStoreId": 6805875185,
+  "source": "https://apps.apple.com/us/app/signature-scan-sign-pdfs/id6805875185",
+  "observedAt": "2026-10-26",
+  "minimumIos": "26.0",
+  "minimumIpados": "26.0",
+  "primaryDevices": [
+    "iPhone",
+    "iPad"
+  ],
+  "interfaceLanguages": [
+    "en",
+    "fr",
+    "ja",
+    "pt",
+    "zh-hans",
+    "tr"
+  ],
+  "supportedFeatures": [
+    "document-scan",
+    "signature-capture",
+    "background-removal",
+    "pdf-signing",
+    "document-sharing",
+    "native-form-filling",
+    "manual-text-checkmarks",
+    "multiple-placements",
+    "reusable-templates"
+  ],
+  "extractionModes": [
+    "Clean",
+    "Balanced",
+    "Bold"
+  ],
+  "supportedInkColors": [
+    "black",
+    "red",
+    "dark blue"
+  ],
+  "processing": "on device; no document or signature upload for processing",
+  "limitations": [
+    "iOS/iPadOS 26 or later",
+    "limited free document exports; no invented numeric allowance",
+    "installation, purchases/restores, cloud retrieval and sharing have their own connection requirements",
+    "signature image is not identity verification or a certificate signature",
+    "no documented OCR, merging existing PDFs, standalone PNG export or signature requests",
+    "supported standard fields only; read-only fields remain read-only; no automatic field detection",
+    "added text/checkmarks do not edit or remove existing page content",
+    "templates do not automatically reapply handwriting or clear printed/flattened personal information",
+    "duplicate placements across pages require matching geometry; use manual placement otherwise"
+  ],
+  "mac": "Apple lists macOS 26 and Apple M1 or later compatibility; this does not verify a native Mac workflow or testing",
+  "editorialEvidence": "Product documentation, supplied screenshots and cited primary sources; not independent hands-on testing",
+  "version": "1.1.0",
+  "formFields": [
+    "text",
+    "checkbox",
+    "radio",
+    "choice"
+  ],
+  "completedOutput": "separate flattened PDF copy; imported original unchanged",
+  "templates": {
+    "Saved form": "protected local PDF copy and layout; existing printed/flattened content remains",
+    "Layout only": "positions and field definitions without PDF content; compatible PDF required",
+    "reuse": "entries, dates and handwriting cleared; select handwriting again"
+  }
 }

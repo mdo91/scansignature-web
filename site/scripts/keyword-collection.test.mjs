@@ -24,9 +24,9 @@ test('a real-shaped two-endpoint response is normalized, audited privately, then
  const dir=directory(t),plan=keywordPlan('en'),query=plan.seeds[0],calls=[];
  const call=async(operation,args)=>{calls.push({operation,args});return {results:[{text:query,...(operation.endsWith('generateKeywordIdeas')?{keywordIdeaMetrics:{}}:{keywordMetrics:{avgMonthlySearches:'100',monthlySearchVolumes:[{year:'2026',month:'SEPTEMBER',monthlySearches:'130'}]}})}]};};
  const result=await collectKeywords('en',{directory:dir,now,settings,call});
- assert.equal(result.status,'ready');assert.equal(calls.length,2);assert.equal(result.demandSummary.positiveEstimates,1);
+ assert.equal(result.status,'ready');assert.equal(calls.length,2*Math.ceil(plan.seeds.length/20));assert.equal(result.demandSummary.positiveEstimates,1);
  const cache=loadKeywordCache('en',now,dir);assert.equal(cache.keywords[0].averageMonthlySearches,100);assert.equal(cache.normalizationVersion,keywordNormalizationVersion);
- const audit=readPrivate('keyword-api-audit-en.json',dir);assert.equal(audit.responses.length,2);assert.equal(audit.responses[1].seedResults[0].keywordMetrics.avgMonthlySearches,'100');assert.ok(!JSON.stringify(audit).includes(settings.customerId));
+ const audit=readPrivate('keyword-api-audit-en.json',dir);assert.equal(audit.responses.length,calls.length);assert.equal(audit.responses.find(row=>row.operation==='generateKeywordHistoricalMetrics').seedResults[0].keywordMetrics.avgMonthlySearches,'100');assert.ok(!JSON.stringify(audit).includes(settings.customerId));
  const cached=await collectKeywords('en',{directory:dir,now,settings,call:()=>{throw Error('Fresh monthly cache must not call Google');}});
  assert.equal(cached.reusedCache,true);assert.deepEqual(cached.demandSummary,result.demandSummary);
 });
@@ -35,7 +35,7 @@ test('legacy API normalization triggers one refresh, while authentic CSV age and
  const cache=makeKeywordCache({results:[{text:plan.seeds[0],keywordMetrics:{avgMonthlySearches:'10'}}],source:{kind:'google-ads-api'},targeting:plan.targeting,generatedAt:now.toISOString()});
  const legacy={...cache,normalizationVersion:1,seedFingerprint:plan.seedFingerprint};savePrivate(cacheName('en'),legacy,dir);
  assert.equal(loadKeywordCache('en',now,dir).status,'refresh-required');let calls=0;
- await collectKeywords('en',{directory:dir,now,settings,call:async()=>{calls++;return {results:[{text:plan.seeds[0],keywordMetrics:{avgMonthlySearches:'20'}}]};}});assert.equal(calls,2);
+ await collectKeywords('en',{directory:dir,now,settings,call:async()=>{calls++;return {results:[{text:plan.seeds[0],keywordMetrics:{avgMonthlySearches:'20'}}]};}});assert.equal(calls,2*Math.ceil(plan.seeds.length/20));
  const csv={...cache,normalizationVersion:undefined,source:{kind:'keyword-planner-csv',exportedAt:'2026-10-20'},observedAt:'2026-10-20'};savePrivate(cacheName('en'),csv,dir);
  assert.equal((await collectKeywords('en',{directory:dir,now,call:()=>{throw Error('Do not replace an authentic fresh CSV');}})).reusedCache,true);
  const wrong=makeKeywordCache({results:[],source:{kind:'keyword-planner-csv',exportedAt:'2026-10-20'},targeting:keywordPlan('tr').targeting,generatedAt:now.toISOString()});savePrivate(cacheName('en'),wrong,dir);
