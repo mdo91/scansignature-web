@@ -1,5 +1,6 @@
+import {requiredFeatureIds} from './product-intents.mjs';
 const contentLocale=name=>name?.startsWith('site/content/blog/')?(name.split('/').length===4?'en':name.split('/')[3]):null;
-export const intentPolicyVersion=2;
+export const intentPolicyVersion=3;
 export function keywordDemand(row){
  const value=row.averageMonthlySearches,range=row.searchVolumeRange;
  if(typeof value==='number'&&Number.isFinite(value)&&value>=0)return {status:value>0?'positive-estimate':'reported-zero',verified:value>0,tier:value>0?2:0};
@@ -21,12 +22,16 @@ const unsupported=[
  ['image-export',/\bpng\b|export.*jpe?g|standalone.*image|скачать.*изображен|画像.*書き出し|图片.*导出/],
  ['certificate-or-identity',/certificate|certificat|zertifikat|certificad|sijil|sertifika|сертификат|電子証明|数字证书|인증서|identity verif|identite|identitat|identidad|identidade|pengesahan identiti|kimlik dogrula|идентификац|本人確認|身份验证|본인 인증|eidas|esign|legally binding|юридическ|法的|法律效力/],
  ['signature-request',/request signature|collect signatures|demande de signature|unterschrift anfordern|solicitar.*firma|solicitar.*assinatura|minta tandatangan|imza talebi|запрос.*подпис|署名依頼|请求签名|서명 요청/],
- ['unsupported-editor',/edit pdf text|password protect|encrypt pdf|modifier.*texte|pdf.*verschlussel|editar.*texto|sunting.*teks|pdf.*sifrele|редактировать.*текст|暗号化|加密|암호화/],
+ ['unsupported-form-engine',/\bxfa\b|\bjavascript\b/],
+ ['automatic-field-detection',/automatic (?:form )?field (?:detection|recognition)|auto(?:matic(?:ally)?)? detect.{0,40}(?:form|field)/],
+ ['unsupported-editor',/edit (?:the )?(?:existing )?pdf text|password protect|encrypt pdf|modifier.*texte|pdf.*verschlussel|editar.*texto|sunting.*teks|pdf.*sifrele|редактировать.*текст|暗号化|加密|암호화/],
  ['unsupported-platform',/android|windows|macbook|\bmacos\b|\bmac\b/]
 ];
 export function classifyKeyword(text,locale){
  const key=keywordKey(text);
  for(const [reason,pattern]of unsupported)if(pattern.test(key))return {eligible:false,reason};
+ const requiredFeatures=requiredFeatureIds(key);
+ if(requiredFeatures.length){const feature=requiredFeatures[0];return {eligible:true,locale,feature,requiredFeatures,reasons:[`supported-${feature}`,...(device.test(key)?['apple-device']:[])],fitScore:100+(device.test(key)?20:0)+(app.test(key)?10:0)};}
  const s=signature.test(key),d=document.test(key),c=scan.test(key),b=background.test(key),r=share.test(key);
  const reused=/reus|reutil|wieder|guna semula|yeniden|повтор|再利用|재사용|重复使用/.test(key),ink=/\bink\b|encre|tinta|dakwat|murekkep|чернил|インク|잉크|墨水/.test(key);
  const feature=s&&b?'background-removal':s&&(c||reused||ink)?'signature-capture':r&&(s||d)?'document-sharing':s&&d?'pdf-signing':c&&d?'document-scan':null;
