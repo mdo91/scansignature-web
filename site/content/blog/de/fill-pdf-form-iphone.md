@@ -1,10 +1,10 @@
 ---
 translationKey: "fill-pdf-form-iphone"
 title: "Wie füllst du ein PDF-Formular auf dem iPhone aus?"
-description: "Ein PDF-Formular lässt sich auf dem iPhone in SignDocs mit unterstützten Feldern ausfüllen und als separate, reduzierte PDF-Kopie speichern."
+description: "Ein PDF-Formular lässt sich auf dem iPhone in SignDocs mit unterstützten Feldern ausfüllen und als separate PDF-Kopie mit fest eingebetteten Antworten speichern."
 publishedAt: "2026-10-26"
 updatedAt: "2026-10-26"
-topic: "PDF FORMS"
+topic: "PDF-FORMULARE"
 primaryQuery: "pdf ausfüllen"
 image: "/mockup/place-signature.png"
 imageAlt: "Handschrift auf einem PDF in SignDocs; das Bild zeigt keine Formularsteuerung."
@@ -13,7 +13,7 @@ sources: [{"title":"Signature Scan: Sign PDFs — App Store","url":"https://apps
 status: "published"
 ---
 
-Ein PDF-Formular lässt sich auf dem iPhone in SignDocs mit unterstützten Feldern ausfüllen und als separate, reduzierte PDF-Kopie speichern. Öffne die Datei, trage die Antworten ein und prüfe jede Auswahl vor dem Weitergeben. Auch Apples Vorschau unter iOS 26 kann Formulare ausfüllen und unterschreiben. Dafür ist nicht immer eine zusätzliche App nötig.
+Ein PDF-Formular lässt sich auf dem iPhone in SignDocs mit unterstützten Feldern ausfüllen und als separate PDF-Kopie mit fest eingebetteten Antworten speichern. Öffne die Datei, trage die Antworten ein und prüfe jede Auswahl vor dem Weitergeben. Auch Apples Vorschau unter iOS 26 kann Formulare ausfüllen und unterschreiben. Dafür ist nicht immer eine zusätzliche App nötig.
 
 ## Formular oder eingescannte Seite?
 
@@ -36,7 +36,7 @@ Kontrolliere den Namen, den ausgewählten Termin und einen zweizeiligen Material
 
 Öffne unter iOS 26 das PDF in Vorschau, wähle die Formularfunktion, anschließend ein Feld und tippe die Antwort ein. Apples Anleitung beschreibt auch zusätzliche Textfelder, wenn direktes Ausfüllen nicht möglich ist. Wenn das genügt, kannst du dort fertig werden. SignDocs eignet sich, wenn du zusätzlich Handschrift vom Papier erfassen und wiederverwenden möchtest.
 
-SignDocs benötigt iOS/iPadOS 26 oder neuer. Kostenlose Exporte sind begrenzt. Die fertige PDF-Kopie ist reduziert; interaktive Exportfelder werden nicht zugesichert. Bewahre das leere Original auf. Die Verarbeitung erfolgt auf dem Gerät ohne Konto oder Dokumentupload zur Verarbeitung. Installation, Käufe und Wiederherstellungen, Cloudabruf und externes Teilen benötigen gegebenenfalls eine eigene Verbindung.
+SignDocs benötigt iOS/iPadOS 26 oder neuer. Kostenlose Exporte sind begrenzt. Die fertige PDF-Kopie enthält fest eingebettete Inhalte; interaktive Exportfelder werden nicht zugesichert. Bewahre das leere Original auf. Die Verarbeitung erfolgt auf dem Gerät ohne Konto oder Dokumentupload zur Verarbeitung. Installation, Käufe und Wiederherstellungen, Cloudabruf und externes Teilen benötigen gegebenenfalls eine eigene Verbindung.
 
 ![Handschrift auf einem PDF in SignDocs; das Bild zeigt keine Formularsteuerung.](/mockup/place-signature.png)
 
