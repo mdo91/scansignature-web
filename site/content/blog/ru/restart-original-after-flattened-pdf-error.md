@@ -7,7 +7,7 @@ updatedAt: "2026-11-06"
 topic: "ИСПРАВЛЕНИЕ PDF"
 primaryQuery: "ошибка в плоском pdf заполнить исходный файл заново"
 image: "/mockup/place-signature.png"
-imageAlt: "Рукописная подпись на PDF в SignDocs; изображение не показывает средства исправления."
+imageAlt: "Рукописная подпись на PDF в SignDocs; изображение не показывает, как начать заново с оригинала."
 related: ["fill-pdf-form-iphone","save-share-signed-pdf-iphone"]
 sources: [{"title":"Signature Scan: Sign PDFs — App Store","url":"https://apps.apple.com/us/app/signature-scan-sign-pdfs/id6805875185"},{"title":"Apple iPhone User Guide: fill out and sign PDF forms (iOS 26)","url":"https://support.apple.com/guide/iphone/fill-out-and-sign-pdf-forms-iphd7e3c0c74/26/ios/26"}]
 status: "published"
@@ -42,6 +42,6 @@ status: "published"
 
 SignDocs требует iOS/iPadOS 26 или новее. Бесплатный экспорт ограничен, включая новые копии взамен ошибочных. Обработка выполняется на устройстве без учётной записи и загрузки документов для обработки. Установка, покупки/восстановление, получение облачных файлов и внешняя отправка имеют отдельные требования к соединению. Готовый результат плоский: этот способ начинает работу с исходника, а не меняет существующий текст страницы.
 
-![Рукописная подпись на PDF в SignDocs; изображение не показывает средства исправления.](/mockup/place-signature.png)
+![Рукописная подпись на PDF в SignDocs; изображение не показывает, как начать заново с оригинала.](/mockup/place-signature.png)
 
 [Источник сведений о продукте: Signature Scan: Sign PDFs — App Store](https://apps.apple.com/us/app/signature-scan-sign-pdfs/id6805875185)

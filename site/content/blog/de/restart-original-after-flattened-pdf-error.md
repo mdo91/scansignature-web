@@ -7,7 +7,7 @@ updatedAt: "2026-11-06"
 topic: "PDF KORREKTUREN"
 primaryQuery: "nach fehlerhaftem pdf export mit dem unveränderten original neu beginnen"
 image: "/mockup/place-signature.png"
-imageAlt: "Handschrift auf einem PDF in SignDocs; das Bild zeigt keine Korrekturfunktion."
+imageAlt: "Handschrift auf einem PDF in SignDocs; das Bild zeigt nicht, wie du mit dem Original neu beginnst."
 related: ["fill-pdf-form-iphone","save-share-signed-pdf-iphone"]
 sources: [{"title":"Signature Scan: Sign PDFs — App Store","url":"https://apps.apple.com/us/app/signature-scan-sign-pdfs/id6805875185"},{"title":"Apple iPhone User Guide: fill out and sign PDF forms (iOS 26)","url":"https://support.apple.com/guide/iphone/fill-out-and-sign-pdf-forms-iphd7e3c0c74/26/ios/26"}]
 status: "published"
@@ -42,6 +42,6 @@ War die erste Kopie bereits verschickt, ersetzt eine neue Datei den zugestellten
 
 SignDocs benötigt iOS/iPadOS 26 oder neuer. Kostenlose Exporte sind begrenzt, auch Ersatzkopien. Die Verarbeitung erfolgt auf dem Gerät ohne Konto oder Dokumentupload zur Verarbeitung. Installation, Käufe/Wiederherstellungen, Cloudabruf und externes Teilen haben eigene Verbindungsanforderungen. Die fertige Ausgabe ist abgeflacht; diese Methode beginnt mit der Quelle und verändert keinen bestehenden Seitentext.
 
-![Handschrift auf einem PDF in SignDocs; das Bild zeigt keine Korrekturfunktion.](/mockup/place-signature.png)
+![Handschrift auf einem PDF in SignDocs; das Bild zeigt nicht, wie du mit dem Original neu beginnst.](/mockup/place-signature.png)
 
 [Produktquelle: Signature Scan: Sign PDFs — App Store](https://apps.apple.com/us/app/signature-scan-sign-pdfs/id6805875185)

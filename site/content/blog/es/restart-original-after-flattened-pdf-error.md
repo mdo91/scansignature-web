@@ -7,7 +7,7 @@ updatedAt: "2026-11-06"
 topic: "CORRECCIONES PDF"
 primaryQuery: "error en pdf aplanado volver a empezar con el original"
 image: "/mockup/place-signature.png"
-imageAlt: "Escritura sobre un PDF en SignDocs; la imagen no muestra controles de corrección."
+imageAlt: "Escritura sobre un PDF en SignDocs; la imagen no muestra cómo volver a empezar desde el original."
 related: ["fill-pdf-form-iphone","save-share-signed-pdf-iphone"]
 sources: [{"title":"Signature Scan: Sign PDFs — App Store","url":"https://apps.apple.com/us/app/signature-scan-sign-pdfs/id6805875185"},{"title":"Apple iPhone User Guide: fill out and sign PDF forms (iOS 26)","url":"https://support.apple.com/guide/iphone/fill-out-and-sign-pdf-forms-iphd7e3c0c74/26/ios/26"}]
 status: "published"
@@ -42,6 +42,6 @@ Si ya enviaste la primera copia, guardar otro archivo no sustituye el adjunto en
 
 SignDocs requiere iOS/iPadOS 26 o posterior. Las exportaciones gratuitas son limitadas, incluidas las copias sustitutas. El procesamiento ocurre en el dispositivo sin cuenta ni subida del documento para procesarlo. Instalación, compras/restauraciones, recuperación de la nube y envío externo tienen requisitos de conexión propios. La salida está aplanada: este método empieza por la fuente y no modifica texto existente en la página.
 
-![Escritura sobre un PDF en SignDocs; la imagen no muestra controles de corrección.](/mockup/place-signature.png)
+![Escritura sobre un PDF en SignDocs; la imagen no muestra cómo volver a empezar desde el original.](/mockup/place-signature.png)
 
 [Fuente del producto: Signature Scan: Sign PDFs — App Store](https://apps.apple.com/us/app/signature-scan-sign-pdfs/id6805875185)

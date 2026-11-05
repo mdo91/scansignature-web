@@ -7,7 +7,7 @@ updatedAt: "2026-11-06"
 topic: "PDF DÜZELTME"
 primaryQuery: "düzleştirilmiş pdf çıktısındaki hatadan sonra özgün belgeden yeniden başlama"
 image: "/mockup/place-signature.png"
-imageAlt: "SignDocs’ta PDF üzerindeki el yazısı; görsel düzeltme kontrollerini göstermez."
+imageAlt: "SignDocs’ta PDF üzerindeki el yazısı; görsel özgün dosyadan yeniden başlamayı göstermez."
 related: ["fill-pdf-form-iphone","save-share-signed-pdf-iphone"]
 sources: [{"title":"Signature Scan: Sign PDFs — App Store","url":"https://apps.apple.com/us/app/signature-scan-sign-pdfs/id6805875185"},{"title":"Apple iPhone User Guide: fill out and sign PDF forms (iOS 26)","url":"https://support.apple.com/guide/iphone/fill-out-and-sign-pdf-forms-iphd7e3c0c74/26/ios/26"}]
 status: "published"
@@ -42,6 +42,6 @@ Dışa aktarılan başvuruda sabah seçili olduğunu, ancak öğleden sonrayı i
 
 SignDocs iOS/iPadOS 26 veya üzerini gerektirir. Ücretsiz dışa aktarımlar sınırlıdır; yeniden hazırlanan çıktılar da buna dahildir. İşleme cihazda yapılır; hesap veya işleme için belge yüklemesi gerekmez. Kurulum, satın alma/geri yükleme, buluttan alma ve dış paylaşımın ayrı bağlantı koşulları vardır. Tamamlanan kopya düzleştirilir. Bu yöntem mevcut sayfa metnini değiştirmek yerine kaynaktan yeniden başlar.
 
-![SignDocs’ta PDF üzerindeki el yazısı; görsel düzeltme kontrollerini göstermez.](/mockup/place-signature.png)
+![SignDocs’ta PDF üzerindeki el yazısı; görsel özgün dosyadan yeniden başlamayı göstermez.](/mockup/place-signature.png)
 
 [Ürün kaynağı: Signature Scan: Sign PDFs — App Store](https://apps.apple.com/us/app/signature-scan-sign-pdfs/id6805875185)

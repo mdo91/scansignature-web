@@ -7,7 +7,7 @@ updatedAt: "2026-11-06"
 topic: "PDF 修正"
 primaryQuery: "pdf 扁平 化 导出 后 发现 填 错 从 未 改动 的 原始 pdf 重新 填写"
 image: "/mockup/place-signature.png"
-imageAlt: "SignDocs 中放在 PDF 上的笔迹；此图不展示修正控件。"
+imageAlt: "SignDocs 中放在 PDF 上的笔迹；此图不展示从原始文件重新开始的步骤。"
 related: ["fill-pdf-form-iphone","save-share-signed-pdf-iphone"]
 sources: [{"title":"Signature Scan: Sign PDFs — App Store","url":"https://apps.apple.com/us/app/signature-scan-sign-pdfs/id6805875185"},{"title":"Apple iPhone User Guide: fill out and sign PDF forms (iOS 26)","url":"https://support.apple.com/guide/iphone/fill-out-and-sign-pdf-forms-iphd7e3c0c74/26/ios/26"}]
 status: "published"
@@ -44,6 +44,6 @@ status: "published"
 
 SignDocs 需要 iOS/iPadOS 26 或更新版本。免费完成文件导出有限，替代副本同样属于完成输出。处理在设备上进行，无需账户或为处理而上传文档。安装、购买与恢复、云端文件获取和外部分享有各自的连接要求。完成副本会扁平化；本方法从来源重做，不会编辑已有页面文字，也不承诺恢复已导出的可交互字段。
 
-![SignDocs 中放在 PDF 上的笔迹；此图不展示修正控件。](/mockup/place-signature.png)
+![SignDocs 中放在 PDF 上的笔迹；此图不展示从原始文件重新开始的步骤。](/mockup/place-signature.png)
 
 [产品来源：Signature Scan: Sign PDFs — App Store](https://apps.apple.com/us/app/signature-scan-sign-pdfs/id6805875185)

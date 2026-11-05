@@ -7,7 +7,7 @@ updatedAt: "2026-11-06"
 topic: "CORRECTIONS PDF"
 primaryQuery: "reprendre l original après une erreur dans un pdf aplati"
 image: "/mockup/place-signature.png"
-imageAlt: "Écriture placée dans SignDocs ; l’image ne montre pas de commandes de correction."
+imageAlt: "Écriture placée dans SignDocs ; l’image ne montre pas comment repartir du document original."
 related: ["fill-pdf-form-iphone","save-share-signed-pdf-iphone"]
 sources: [{"title":"Signature Scan: Sign PDFs — App Store","url":"https://apps.apple.com/us/app/signature-scan-sign-pdfs/id6805875185"},{"title":"Apple iPhone User Guide: fill out and sign PDF forms (iOS 26)","url":"https://support.apple.com/guide/iphone/fill-out-and-sign-pdf-forms-iphd7e3c0c74/26/ios/26"}]
 status: "published"
@@ -42,6 +42,6 @@ Si l’ancienne copie est déjà partie, un nouvel enregistrement ne remplace pa
 
 SignDocs nécessite iOS/iPadOS 26 ou ultérieur. Les exports gratuits sont limités, y compris les copies de remplacement. Le traitement reste sur l’appareil sans compte ni téléversement pour traitement. Installation, achats/restaurations, récupération cloud et partage externe ont leurs propres besoins de connexion. Cette méthode reprend la source ; elle ne modifie pas le texte existant d’une sortie aplatie.
 
-![Écriture placée dans SignDocs ; l’image ne montre pas de commandes de correction.](/mockup/place-signature.png)
+![Écriture placée dans SignDocs ; l’image ne montre pas comment repartir du document original.](/mockup/place-signature.png)
 
 [Source produit : Signature Scan: Sign PDFs — App Store](https://apps.apple.com/us/app/signature-scan-sign-pdfs/id6805875185)

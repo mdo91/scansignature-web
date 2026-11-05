@@ -7,7 +7,7 @@ updatedAt: "2026-11-06"
 topic: "PEMBETULAN PDF"
 primaryQuery: "mula semula daripada pdf asal selepas tersalah eksport pdf diratakan"
 image: "/mockup/place-signature.png"
-imageAlt: "Tulisan tangan pada PDF dalam SignDocs; imej ini tidak menunjukkan kawalan pembetulan."
+imageAlt: "Tulisan tangan pada PDF dalam SignDocs; imej ini tidak menunjukkan cara memulakan semula daripada fail asal."
 related: ["fill-pdf-form-iphone","save-share-signed-pdf-iphone"]
 sources: [{"title":"Signature Scan: Sign PDFs — App Store","url":"https://apps.apple.com/us/app/signature-scan-sign-pdfs/id6805875185"},{"title":"Apple iPhone User Guide: fill out and sign PDF forms (iOS 26)","url":"https://support.apple.com/guide/iphone/fill-out-and-sign-pdf-forms-iphd7e3c0c74/26/ios/26"}]
 status: "published"
@@ -42,6 +42,6 @@ Jika salinan terdahulu sudah dihantar, menyimpan fail baharu tidak menggantikan 
 
 SignDocs memerlukan iOS/iPadOS 26 atau lebih baharu. Eksport percuma terhad, termasuk hasil pengganti. Pemprosesan berlaku pada peranti tanpa akaun atau muat naik dokumen untuk pemprosesan. Pemasangan, pembelian/pemulihan, pengambilan awan dan perkongsian luar mempunyai keperluan sambungan berasingan. Hasil lengkap diratakan; kaedah ini bermula daripada sumber dan tidak mengubah teks halaman sedia ada.
 
-![Tulisan tangan pada PDF dalam SignDocs; imej ini tidak menunjukkan kawalan pembetulan.](/mockup/place-signature.png)
+![Tulisan tangan pada PDF dalam SignDocs; imej ini tidak menunjukkan cara memulakan semula daripada fail asal.](/mockup/place-signature.png)
 
 [Sumber produk: Signature Scan: Sign PDFs — App Store](https://apps.apple.com/us/app/signature-scan-sign-pdfs/id6805875185)
