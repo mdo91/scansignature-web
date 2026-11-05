@@ -7,7 +7,7 @@ updatedAt: "2026-11-06"
 topic: "PDF CORRECTIONS"
 primaryQuery: "restart the original after an incorrect flattened pdf export"
 image: "/mockup/place-signature.png"
-imageAlt: "Handwriting placed on a PDF in SignDocs; this image does not show correction controls."
+imageAlt: "Handwriting placed on a PDF in SignDocs; this image does not show restarting from the original."
 related: ["fill-pdf-form-iphone","save-share-signed-pdf-iphone"]
 sources: [{"title":"Signature Scan: Sign PDFs — App Store","url":"https://apps.apple.com/us/app/signature-scan-sign-pdfs/id6805875185"},{"title":"Apple iPhone User Guide: fill out and sign PDF forms (iOS 26)","url":"https://support.apple.com/guide/iphone/fill-out-and-sign-pdf-forms-iphd7e3c0c74/26/ios/26"}]
 status: "published"
@@ -42,6 +42,6 @@ If the earlier copy was already sent, creating another file does not replace tha
 
 SignDocs requires iOS/iPadOS 26 or later. Free completed exports are limited, including replacement outputs. Processing happens on device without an account or document upload for processing. Installation, purchases/restores, cloud retrieval and external sharing have separate connection requirements. Completed copies are flattened; this method starts again from the source rather than editing existing page text.
 
-![Handwriting placed on a PDF in SignDocs; this image does not show correction controls.](/mockup/place-signature.png)
+![Handwriting placed on a PDF in SignDocs; this image does not show restarting from the original.](/mockup/place-signature.png)
 
 [Product source: Signature Scan: Sign PDFs — App Store](https://apps.apple.com/us/app/signature-scan-sign-pdfs/id6805875185)

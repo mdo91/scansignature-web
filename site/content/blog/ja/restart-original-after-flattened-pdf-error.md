@@ -7,7 +7,7 @@ updatedAt: "2026-11-06"
 topic: "PDFの修正"
 primaryQuery: "フラット 化し て 書き出し た pdf の 記入 ミス 未 変更 の 元 pdf から やり直す 方法"
 image: "/mockup/place-signature.png"
-imageAlt: "SignDocsでPDFに配置した筆跡。修正用の操作を示す画像ではありません。"
+imageAlt: "SignDocsでPDFに配置した筆跡。元のPDFからやり直す手順を示す画像ではありません。"
 related: ["fill-pdf-form-iphone","save-share-signed-pdf-iphone"]
 sources: [{"title":"Signature Scan: Sign PDFs — App Store","url":"https://apps.apple.com/us/app/signature-scan-sign-pdfs/id6805875185"},{"title":"Apple iPhone User Guide: fill out and sign PDF forms (iOS 26)","url":"https://support.apple.com/guide/iphone/fill-out-and-sign-pdf-forms-iphd7e3c0c74/26/ios/26"}]
 status: "published"
@@ -44,6 +44,6 @@ SignDocsで書き出した平面化済みPDFに記入ミスを見つけたら、
 
 SignDocsはiOS/iPadOS 26以降が必要です。無料の書き出しには制限があり、作り直した完成コピーも対象です。処理は端末上で行われ、処理用の書類アップロードやアカウントは不要です。インストール、購入や復元、クラウド取得、外部共有には別途接続が必要な場合があります。出力は平面化されます。この方法は原本からやり直す手順であり、既存のページ文字を編集する手順ではありません。
 
-![SignDocsでPDFに配置した筆跡。修正用の操作を示す画像ではありません。](/mockup/place-signature.png)
+![SignDocsでPDFに配置した筆跡。元のPDFからやり直す手順を示す画像ではありません。](/mockup/place-signature.png)
 
 [製品情報：Signature Scan: Sign PDFs — App Store](https://apps.apple.com/us/app/signature-scan-sign-pdfs/id6805875185)

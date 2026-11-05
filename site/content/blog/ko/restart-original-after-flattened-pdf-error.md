@@ -7,7 +7,7 @@ updatedAt: "2026-11-06"
 topic: "PDF 수정"
 primaryQuery: "평면화 해 내 보낸 pdf 에 오류 가 있을 때 원본 pdf 로 다시 작성"
 image: "/mockup/place-signature.png"
-imageAlt: "SignDocs의 PDF에 놓인 손글씨이며 수정 기능 화면은 아닙니다."
+imageAlt: "SignDocs의 PDF에 놓인 손글씨이며, 원본에서 다시 시작하는 과정을 보여 주는 화면은 아닙니다."
 related: ["fill-pdf-form-iphone","save-share-signed-pdf-iphone"]
 sources: [{"title":"Signature Scan: Sign PDFs — App Store","url":"https://apps.apple.com/us/app/signature-scan-sign-pdfs/id6805875185"},{"title":"Apple iPhone User Guide: fill out and sign PDF forms (iOS 26)","url":"https://support.apple.com/guide/iphone/fill-out-and-sign-pdf-forms-iphd7e3c0c74/26/ios/26"}]
 status: "published"
@@ -42,6 +42,6 @@ SignDocs에서 내보낸 평면화 PDF에 잘못된 답변이 있다면 파일 �
 
 SignDocs는 iOS/iPadOS 26 이상이 필요합니다. 무료 내보내기는 제한되며 교체용 완성 사본도 포함됩니다. 처리는 기기에서 이루어지고 처리용 문서 업로드나 계정이 필요하지 않습니다. 설치, 구매 및 복원, 클라우드 파일 가져오기와 외부 공유에는 별도의 연결 조건이 있습니다. 완성본은 평면화됩니다. 이 방법은 기존 페이지 글자를 바꾸는 대신 원본에서 다시 시작하는 절차입니다.
 
-![SignDocs의 PDF에 놓인 손글씨이며 수정 기능 화면은 아닙니다.](/mockup/place-signature.png)
+![SignDocs의 PDF에 놓인 손글씨이며, 원본에서 다시 시작하는 과정을 보여 주는 화면은 아닙니다.](/mockup/place-signature.png)
 
 [제품 출처: Signature Scan: Sign PDFs — App Store](https://apps.apple.com/us/app/signature-scan-sign-pdfs/id6805875185)

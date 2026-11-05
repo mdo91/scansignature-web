@@ -7,7 +7,7 @@ updatedAt: "2026-11-06"
 topic: "CORREÇÕES EM PDF"
 primaryQuery: "erro no pdf achatado recomeçar a partir do original"
 image: "/mockup/place-signature.png"
-imageAlt: "Escrita sobre um PDF no SignDocs; a imagem não mostra controles de correção."
+imageAlt: "Escrita sobre um PDF no SignDocs; a imagem não mostra como recomeçar a partir do original."
 related: ["fill-pdf-form-iphone","save-share-signed-pdf-iphone"]
 sources: [{"title":"Signature Scan: Sign PDFs — App Store","url":"https://apps.apple.com/us/app/signature-scan-sign-pdfs/id6805875185"},{"title":"Apple iPhone User Guide: fill out and sign PDF forms (iOS 26)","url":"https://support.apple.com/guide/iphone/fill-out-and-sign-pdf-forms-iphd7e3c0c74/26/ios/26"}]
 status: "published"
@@ -42,6 +42,6 @@ O [Pré-Visualização da Apple no iOS 26](https://support.apple.com/guide/iphon
 
 O SignDocs requer iOS/iPadOS 26 ou posterior. As exportações gratuitas são limitadas, inclusive cópias substitutas. O processamento ocorre no dispositivo sem conta nem envio do documento para processamento. Instalação, compras/restaurações, recuperação da nuvem e compartilhamento externo têm requisitos de conexão próprios. A saída é achatada: este método recomeça pela fonte e não altera texto existente na página.
 
-![Escrita sobre um PDF no SignDocs; a imagem não mostra controles de correção.](/mockup/place-signature.png)
+![Escrita sobre um PDF no SignDocs; a imagem não mostra como recomeçar a partir do original.](/mockup/place-signature.png)
 
 [Fonte do produto: Signature Scan: Sign PDFs — App Store](https://apps.apple.com/us/app/signature-scan-sign-pdfs/id6805875185)
