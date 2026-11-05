@@ -1,4 +1,4 @@
-import {requiredFeatureIds} from './product-intents.mjs';
+import {requiredFeatureIds,unsupportedFormFieldReason} from './product-intents.mjs';
 const contentLocale=name=>name?.startsWith('site/content/blog/')?(name.split('/').length===4?'en':name.split('/')[3]):null;
 export const intentPolicyVersion=3;
 export function keywordDemand(row){
@@ -30,6 +30,7 @@ const unsupported=[
 export function classifyKeyword(text,locale){
  const key=keywordKey(text);
  for(const [reason,pattern]of unsupported)if(pattern.test(key))return {eligible:false,reason};
+ const unsupportedField=unsupportedFormFieldReason(key);if(unsupportedField)return {eligible:false,reason:unsupportedField};
  const requiredFeatures=requiredFeatureIds(key);
  if(requiredFeatures.length){const feature=requiredFeatures[0];return {eligible:true,locale,feature,requiredFeatures,reasons:[`supported-${feature}`,...(device.test(key)?['apple-device']:[])],fitScore:100+(device.test(key)?20:0)+(app.test(key)?10:0)};}
  const s=signature.test(key),d=document.test(key),c=scan.test(key),b=background.test(key),r=share.test(key);

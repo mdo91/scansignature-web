@@ -37,7 +37,19 @@
         "add text to PDF",
         "add checkmark to PDF",
         "add initials to PDF",
-        "PDF form template"
+        "PDF form template",
+        "fill checkboxes in a PDF form",
+        "select a radio button in a PDF form",
+        "choose an option from a PDF form dropdown list",
+        "fit a long answer into a PDF text field",
+        "add multiline text to a scanned PDF",
+        "add a checkmark to a flat PDF",
+        "why a PDF form will not let me type",
+        "add a date beside a handwritten signature in a PDF",
+        "check printed answers before saving a Saved form PDF template",
+        "check PDF compatibility with a Layout only template",
+        "place two different handwritten signatures in one PDF",
+        "restart the original after an incorrect flattened PDF export"
       ]
     },
     {
@@ -72,7 +84,19 @@
         "PDF metin ekleme",
         "PDF onay işareti ekleme",
         "PDF paraf ekleme",
-        "PDF form şablonu"
+        "PDF form şablonu",
+        "PDF formundaki onay kutularını doldurma",
+        "PDF formunda radyo düğmesiyle seçenek işaretleme",
+        "PDF formundaki açılır listeden seçenek seçme",
+        "uzun yanıtı PDF metin alanına sığdırma",
+        "taranmış PDF’ye çok satırlı metin ekleme",
+        "etkileşimsiz PDF’ye onay işareti ekleme",
+        "PDF formuna neden yazı yazamıyorum",
+        "PDF’de el yazısı imzanın yanına tarih ekleme",
+        "Saved form PDF şablonunda kalan basılı yanıtları kontrol etme",
+        "PDF’nin Layout only şablonuyla uyumunu kontrol etme",
+        "tek PDF’ye iki farklı el yazısı imza yerleştirme",
+        "düzleştirilmiş PDF çıktısındaki hatadan sonra özgün belgeden yeniden başlama"
       ]
     },
     {
@@ -107,7 +131,19 @@
         "Text in PDF einfügen",
         "Häkchen in PDF einfügen",
         "Initialen in PDF einfügen",
-        "PDF Formular Vorlage"
+        "PDF Formular Vorlage",
+        "Kontrollkästchen in einem PDF-Formular ausfüllen",
+        "Optionsfeld in einem PDF-Formular auswählen",
+        "Eintrag aus einer PDF-Formular-Auswahlliste wählen",
+        "lange Antwort in ein PDF-Textfeld einpassen",
+        "mehrzeiligen Text in ein gescanntes PDF einfügen",
+        "Häkchen in ein nicht interaktives PDF einfügen",
+        "warum kann ich in ein PDF-Formular nicht schreiben",
+        "Datum neben einer handschriftlichen Unterschrift im PDF einfügen",
+        "gedruckte Antworten vor dem Speichern einer Saved form PDF-Vorlage prüfen",
+        "Kompatibilität eines PDFs mit einer Layout only Vorlage prüfen",
+        "zwei verschiedene handschriftliche Unterschriften in einem PDF platzieren",
+        "nach fehlerhaftem PDF-Export mit dem unveränderten Original neu beginnen"
       ]
     },
     {
@@ -142,7 +178,19 @@
         "añadir texto PDF",
         "añadir marca de verificación PDF",
         "añadir iniciales PDF",
-        "plantilla formulario PDF"
+        "plantilla formulario PDF",
+        "rellenar casillas de verificación de un formulario PDF",
+        "seleccionar un botón de opción en un formulario PDF",
+        "elegir una opción en la lista desplegable del formulario PDF",
+        "ajustar una respuesta larga en un campo de texto PDF",
+        "añadir texto de varias líneas a un PDF escaneado",
+        "añadir una marca de verificación a un PDF no interactivo",
+        "por qué un formulario PDF no me deja escribir",
+        "añadir fecha junto a una firma manuscrita en un PDF",
+        "revisar respuestas impresas de una plantilla PDF Saved form",
+        "comprobar compatibilidad de un PDF con una plantilla Layout only",
+        "colocar dos firmas manuscritas distintas en un mismo PDF",
+        "error en PDF aplanado: volver a empezar con el original"
       ]
     },
     {
@@ -178,7 +226,19 @@
         "ajouter texte PDF",
         "ajouter coche PDF",
         "ajouter paraphe PDF",
-        "modèle formulaire PDF"
+        "modèle formulaire PDF",
+        "remplir les cases à cocher d’un formulaire PDF",
+        "sélectionner un bouton radio dans un formulaire PDF",
+        "choisir une option dans la liste déroulante d’un formulaire PDF",
+        "faire tenir une longue réponse dans un champ PDF",
+        "ajouter du texte multiligne à un PDF numérisé",
+        "ajouter une coche dans un PDF non interactif",
+        "pourquoi mon formulaire PDF refuse la saisie de texte",
+        "ajouter une date près d’une signature manuscrite dans un PDF",
+        "vérifier les réponses imprimées d’un modèle PDF Saved form",
+        "vérifier la compatibilité PDF d’un modèle Layout only",
+        "placer deux signatures manuscrites différentes dans un même PDF",
+        "reprendre l’original après une erreur dans un PDF aplati"
       ]
     },
     {
@@ -214,7 +274,19 @@
         "PDF 文字 追加",
         "PDF チェックマーク 追加",
         "PDF イニシャル 追加",
-        "PDF フォーム テンプレート"
+        "PDF フォーム テンプレート",
+        "PDFフォームのチェックボックスにチェックを入れる",
+        "PDFフォームのラジオボタンで回答を選ぶ",
+        "PDFフォームのプルダウンから項目を選択",
+        "PDFフォームの長い回答を枠内に収める",
+        "スキャンしたPDFに複数行の文字を追加",
+        "フラット化されたPDFにチェックマークを追加",
+        "PDFに入力できない原因 フラット化・読み取り専用・未対応フォームの見分け方",
+        "PDFの署名の横に日付を追加",
+        "Saved formのPDFテンプレートに残る印刷済みの回答を確認",
+        "Layout onlyのPDFテンプレートと書類の互換性を確認",
+        "許可を得た異なる2つの手書き署名を1つのPDFに入れる",
+        "フラット化して書き出したPDFの記入ミス 未変更の元PDFからやり直す方法"
       ]
     },
     {
@@ -250,7 +322,19 @@
         "PDF 텍스트 추가",
         "PDF 체크 표시 추가",
         "PDF 이니셜 추가",
-        "PDF 양식 템플릿"
+        "PDF 양식 템플릿",
+        "PDF 양식 체크박스에 체크하기",
+        "PDF 양식 라디오 버튼으로 답변 선택",
+        "PDF 양식 드롭다운에서 항목 선택",
+        "PDF 양식의 긴 답변을 입력란 안에 맞추기",
+        "스캔한 PDF에 여러 줄 텍스트 추가",
+        "평면화된 PDF에 체크 표시 추가",
+        "PDF 양식에 입력할 수 없는 이유",
+        "PDF 서명 옆에 날짜 추가",
+        "Saved form PDF 템플릿에 남는 기존 인쇄 내용 확인",
+        "Layout only PDF 템플릿과 문서 레이아웃 호환성 확인",
+        "허락받은 서로 다른 손글씨 서명 두 개를 한 PDF에 넣기",
+        "평면화해 내보낸 PDF에 오류가 있을 때 원본 PDF로 다시 작성"
       ]
     },
     {
@@ -287,7 +371,19 @@
         "tambah teks PDF",
         "tambah tanda semak PDF",
         "tambah paraf PDF",
-        "templat borang PDF"
+        "templat borang PDF",
+        "tandakan kotak pilihan dalam borang PDF",
+        "pilih jawapan dengan butang radio dalam borang PDF",
+        "pilih jawapan daripada senarai pilihan dalam borang PDF",
+        "muatkan jawapan panjang dalam ruang borang PDF",
+        "tambah teks berbilang baris pada PDF yang diimbas",
+        "tambah tanda semak pada PDF yang diratakan",
+        "kenapa borang PDF tidak boleh ditaip",
+        "tambah tarikh di sebelah tandatangan dalam PDF",
+        "semak jawapan yang tercetak dalam templat PDF Saved form",
+        "semak keserasian PDF dengan templat Layout only",
+        "letak dua tandatangan tulisan tangan berbeza dalam PDF dengan izin",
+        "mula semula daripada PDF asal selepas tersalah eksport PDF diratakan"
       ]
     },
     {
@@ -323,7 +419,19 @@
         "adicionar texto PDF",
         "adicionar marca de seleção PDF",
         "adicionar rubrica PDF",
-        "modelo formulário PDF"
+        "modelo formulário PDF",
+        "preencher caixas de seleção de um formulário PDF",
+        "selecionar um botão de opção em um formulário PDF",
+        "escolher uma opção na lista suspensa de um formulário PDF",
+        "ajustar uma resposta longa em um campo de texto PDF",
+        "adicionar texto em várias linhas a um PDF digitalizado",
+        "adicionar uma marca de seleção a um PDF não interativo",
+        "por que não consigo digitar em um formulário PDF",
+        "adicionar data junto à assinatura manuscrita em um PDF",
+        "conferir respostas impressas de um modelo PDF Saved form",
+        "verificar compatibilidade entre PDF e modelo Layout only",
+        "colocar duas assinaturas manuscritas diferentes em um PDF",
+        "erro no PDF achatado: recomeçar a partir do original"
       ]
     },
     {
@@ -359,7 +467,19 @@
         "добавить текст в PDF",
         "добавить галочку в PDF",
         "добавить инициалы в PDF",
-        "шаблон формы PDF"
+        "шаблон формы PDF",
+        "отметить флажок в форме PDF",
+        "выбрать ответ переключателем в форме PDF",
+        "выбрать вариант в выпадающем списке формы PDF",
+        "уместить длинный ответ в поле формы PDF",
+        "добавить несколько строк текста в отсканированный PDF",
+        "добавить галочку в плоский PDF",
+        "почему в форму PDF нельзя ввести текст",
+        "добавить дату рядом с подписью в PDF",
+        "проверить напечатанные ответы в шаблоне PDF Saved form",
+        "проверить совместимость PDF с шаблоном Layout only",
+        "добавить две разные рукописные подписи в PDF с разрешения владельцев",
+        "ошибка в плоском PDF: заполнить исходный файл заново"
       ]
     },
     {
@@ -395,7 +515,19 @@
         "PDF 添加文字",
         "PDF 添加勾选标记",
         "PDF 添加姓名首字母",
-        "PDF 表单模板"
+        "PDF 表单模板",
+        "勾选 PDF 表单中的复选框",
+        "在 PDF 表单中选择单选按钮",
+        "在 PDF 表单下拉列表中选择选项",
+        "PDF 表单长答案如何完整放进输入框",
+        "在扫描的 PDF 上添加多行文字",
+        "在扁平化的 PDF 上添加勾选标记",
+        "PDF 无法输入文字 是扁平化只读还是表单字段不受支持",
+        "在 PDF 签名旁边添加日期",
+        "保存 Saved form PDF 模板前检查页面原有文字",
+        "检查 PDF 与 Layout only 模板的版式兼容性",
+        "经签名人授权将两个不同的手写签名放入同一份 PDF",
+        "PDF 扁平化导出后发现填错 从未改动的原始 PDF 重新填写"
       ]
     }
   ],
